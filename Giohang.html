@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Giỏ Hàng | MewTea — Trà Sữa Thủ Công Cao Cấp</title>
+  <meta name="description" content="Quản lý giỏ hàng MewTea của bạn — trà sữa thủ công từ nguyên liệu tự nhiên, phong cách tối giản Nhật Bản & Bắc Âu.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/Header.css">
+  <link rel="stylesheet" href="assets/css/Footer.css">
+  <link rel="stylesheet" href="assets/css/Giohang.css">
+  <link rel="stylesheet" href="assets/css/pop-up.css">
+  <script src="assets/js/cart-handler.js"></script>
+  <style>
+    @font-face {
+      font-family: "MewFont" ;
+      src: url("assets/Font/MewFont.ttf") format("truetype");
+      font-weight: normal;
+      font-style: normal;
+    }
+  </style>
+
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header__inner">
+
+    <!-- Header Logo -->
+    <a href="Index.html" class="logo" aria-label="MewTea — Trang chủ" target="_self">
+      <span class="logo__mark">
+        <img src="assets/Logo/MT.png" alt="Logo MewTea">
+      </span>
+      <span class="logo__text">Mew<em>Tea</em></span>
+    </a>
+
+    <input type="checkbox" id="nav-toggle" class="nav-toggle-input">
+
+    <nav class="nav" aria-label="Điều hướng chính">
+      <ul class="nav__list">
+        <li><a href="Index.html#hero" class="nav__link" target="_self">Trang Chủ</a></li>
+        <li><a href="Menu.html" class="nav__link" target="_self">Menu</a></li>
+        <li><a href="Safe.html" class="nav__link" target="_self">Khuyến mãi</a></li>
+        <li><a href="Ourapp.html" class="nav__link" target="_self">Ứng dụng</a></li>
+        <li><a href="Client-partner.html" class="nav__link" target="_self">Đối Tác & Đánh Giá</a></li>
+        <li><a href="About.html" class="nav__link" target="_self">Giới thiệu</a></li>
+        <li><a href="Index.html#contact" class="nav__link" target="_self">Liên hệ</a></li>
+      </ul>
+    </nav>
+
+    <div class="header__actions">
+      <button class="icon-btn icon-btn--search" aria-label="Tìm kiếm"><i class="fa-solid fa-magnifying-glass"></i></button>
+      <a href="Giohang.html" class="icon-btn" aria-label="Giỏ hàng" target="_self">
+        <i class="fa-solid fa-bag-shopping"></i>
+        <span class="cart-badge">2</span>
+      </a>
+      <a href="Login.html" class="icon-btn" aria-label="Tài khoản" target="_self"><i class="fa-solid fa-user"></i></a>
+      <label for="nav-toggle" class="nav-toggle-label" aria-label="Mở menu">
+        <span></span><span></span><span></span>
+      </label>
+    </div>
+
+    <label for="nav-toggle" class="nav-overlay" aria-hidden="true"></label>
+  </div>
+</header>
+
+  <main class="cart-section section--tight">
+    <div class="container">
+      <h1 class="cart-title">Giỏ Hàng Của Bạn</h1>
+      
+      <div class="cart-grid" id="cart-grid">
+        
+        <section class="cart-left">
+          <div class="cart-list" id="cart-items-container">
+            </div>
+        </section>
+
+        <aside class="cart-right cart-summary" id="cart-summary-section">
+          <div class="order-summary glass">
+            <h2 class="summary-title">Tóm tắt đơn hàng</h2>
+            
+            <div class="promo-box">
+              <label for="voucher-input" class="promo-label">Mã khuyến mãi / Voucher</label>
+              <div class="promo-input-group">
+                <input type="text" id="voucher-input" placeholder="Nhập mã MEWTEA..." autocomplete="off">
+                <button type="button" class="btn-apply" id="btn-apply-voucher">Áp dụng</button>
+              </div>
+              <p class="promo-message" id="promo-msg"></p>
+            </div>
+
+            <div class="summary-details">
+              <div class="summary-row">
+                <span>Tạm tính</span>
+                <span id="summary-subtotal">0đ</span>
+              </div>
+              <div class="summary-row" id="voucher-row" style="display: none;">
+                <span>Voucher giảm giá</span>
+                <span class="discount-color" id="summary-discount">-0đ</span>
+              </div>
+              <div class="summary-row">
+                <span>Phí giao hàng</span>
+                <span id="summary-shipping">30.000đ</span>
+              </div>
+              <div class="summary-row" id="shipping-discount-row" style="display: none;">
+                <span>Hỗ trợ phí ship (Freeship)</span>
+                <span class="discount-color" id="summary-shipping-discount">-30.000đ</span>
+              </div>
+              <div class="summary-row">
+                <span>Thuế VAT (8%)</span>
+                <span id="summary-vat">0đ</span>
+              </div>
+              <div class="summary-divider"></div>
+              <div class="summary-row summary-total">
+                <span>Tổng tiền</span>
+                <span id="summary-total">0đ</span>
+              </div>
+            </div>
+
+            <div class="summary-actions">
+              <button class="btn btn--gold btn--full ripple-effect" id="btn-checkout">Thanh toán ngay</button>
+              <a href="Menu.html" class="btn btn--outline btn--full ripple-effect">Tiếp tục mua sắm</a>
+            </div>
+          </div>
+        </aside>
+
+      </div>
+
+      <div class="cart-empty" id="cart-empty-state" style="display: none;">
+        <div class="empty-illustration">
+          <div class="bubble-container">
+            <div class="empty-bubble"></div>
+            <div class="empty-bubble"></div>
+            <div class="empty-bubble"></div>
+          </div>
+          <i class="fa-solid fa-bag-shopping empty-icon"></i>
+        </div>
+        <h2>Giỏ hàng của bạn đang trống</h2>
+        <p>Có vẻ như bạn chưa chọn ly trà sữa thơm lành nào cho ngày hôm nay.</p>
+        <a href="Menu.html" class="btn btn--gold ripple-effect">Khám phá Menu ngay</a>
+      </div>
+
+    </div>
+  </main>
+
+  <section class="recommended-section bg-alt section--tight">
+    <div class="container">
+      <div class="section-head section-head--center">
+        <span class="eyebrow">Đề xuất cho bạn</span>
+        <h2>Có thể bạn thích</h2>
+        <p>Khám phá những hương vị trà sữa được yêu thích nhất tại MewTea tuần này.</p>
+      </div>
+
+      <div class="recommend-grid" id="cart-recommend-grid"></div>
+    </div>
+  </section>
+
+<footer class="site-footer">
+  <div class="container footer__top">
+    <div class="footer__brand">
+      <a href="Index.html" class="logo" target="_self">
+        <span class="logo__mark">
+          <img src="assets/Logo/MT.png" alt="Logo MewTea">
+        </span>
+        <span class="logo__text">Mew<em>Tea</em></span>
+      </a>
+      <p>Trà sữa thủ công, phong cách tối giản — mỗi ly là một khoảnh khắc chậm rãi giữa nhịp sống hối hả.</p>
+      <div class="footer__social">
+        <a href="https://facebook.com/mewtea.vn" aria-label="Facebook" target="_blank" rel="noopener"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="https://instagram.com/mewtea.vn" aria-label="Instagram" target="_blank" rel="noopener"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.tiktok.com/@mewtea.vn" aria-label="TikTok" target="_blank" rel="noopener"><i class="fa-brands fa-tiktok"></i></a>
+      </div>
+    </div>
+
+    <div class="footer__col">
+      <h4>Liên kết nhanh</h4>
+      <ul>
+        <li><a href="Index.html#hero" target="_self">Trang chủ</a></li>
+        <li><a href="Menu.html" target="_self">Menu</a></li>
+        <li><a href="Safe.html" target="_self">Khuyến mãi</a></li>
+        <li><a href="About.html" target="_self">Giới thiệu</a></li>
+      </ul>
+    </div>
+
+    <div class="footer__col">
+      <h4>Thông tin liên hệ</h4>
+      <ul class="footer__contact">
+        <li><i class="fa-solid fa-location-dot"></i> 12 Nguyễn Huệ, Q.1, TP.HCM</li>
+        <li><i class="fa-solid fa-phone"></i> 0909 123 456</li>
+        <li><i class="fa-solid fa-envelope"></i> hello@mewtea.vn</li>
+      </ul>
+    </div>
+
+    <div class="footer__col">
+      <h4>Kết nối</h4>
+      <ul>
+        <li><a href="Index.html#contact" target="_self">Tuyển dụng</a></li>
+        <li><a href="Index.html#contact" target="_self">Nhượng quyền</a></li>
+        <li><a href="Menu.html" target="_self">Blog trà</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="container footer__bottom">
+    <p>© 2026 MewTea. Bảo lưu mọi quyền.</p>
+    <div class="footer__legal">
+      <a href="About.html" target="_self">Chính sách bảo mật</a>
+      <a href="About.html" target="_self">Điều khoản sử dụng</a>
+      <a href="About.html" target="_self">Thiết kế bởi MewTea Studio</a>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/EffectGioHang.js"></script>
+
+<script src="assets/js/mewtea-data.js"></script>
+<script src="assets/js/GioHang.js"></script>
+
+<a href="https://zalo.me/pc" class="mt-floating-popup-link" target="_blank">
+  <button class="mt-floating-popup" aria-label="Liên hệ MewTea">
+      <i class="fa-solid fa-comments"></i>
+  </button>
+  <span class="mt-floating-tooltip">
+      Chat với MewTea
+  </span>
+</a>
+</body>
+</html>

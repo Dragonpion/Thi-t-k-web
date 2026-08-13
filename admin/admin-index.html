@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MewTea CMS — Dashboard Quản Trị Cao Cấp</title>
+    
+    <!-- Fonts & Icons from MewTea Design System -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Chart.js for Admin Analytics -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <link rel="stylesheet" href="../assets/css/admin-index.css">
+    <style>
+      @font-face {
+        font-family: "MewFont" ;
+        src: url("../assets/Font/MewFont.ttf") format("truetype");
+        font-weight: normal;
+        font-style: normal;
+      }
+    </style>
+</head>
+<body>
+
+    <!-- LEFT SIDEBAR -->
+    <aside class="sidebar" id="adminSidebar">
+        <div class="sidebar-header">
+            <div class="brand-logo">
+                <img src="../assets/Logo/MT.png" alt="MewTea Logo" onerror="this.src='https://via.placeholder.com/38?text=MT'">
+                <div class="brand-logo-text">Mew<em>Tea</em></div>
+            </div>
+            <span class="admin-tag">CMS</span>
+        </div>
+
+        <div class="sidebar-user">
+            <div class="avatar-wrapper">
+                <img src="../assets/Img/AvtAdmin.jpg" alt="Admin Avatar" class="avatar-img">
+                <span class="status-online"></span>
+            </div>
+            <div class="user-meta">
+                <h4 id="adminUserName">Quản Trị Viên</h4>
+                <p>Super Administrator</p>
+            </div>
+        </div>
+
+        <nav class="sidebar-nav">
+            <div class="nav-section-title">Tổng quan</div>
+            <div class="nav-item">
+                <a href="admin-index.html" class="nav-link active">
+                    <div class="nav-link-content">
+                        <i class="fa-solid fa-chart-pie"></i>
+                        <span>Dashboard</span>
+                    </div>
+                </a>
+            </div>
+
+            <div class="nav-section-title">Quản lý cửa hàng</div>
+            <div class="nav-item">
+                <a href="#" class="nav-link" onclick="alert('Tính năng Sản phẩm đang được phát triển ở giai đoạn sau!'); return false;">
+                    <div class="nav-link-content">
+                        <i class="fa-solid fa-mug-saucer"></i>
+                        <span>Sản phẩm</span>
+                    </div>
+                    <span class="badge-count">24</span>
+                </a>
+            </div>
+            <div class="nav-item">
+                <a href="#" class="nav-link" onclick="alert('Tính năng Đơn hàng đang được phát triển ở giai đoạn sau!'); return false;">
+                    <div class="nav-link-content">
+                        <i class="fa-solid fa-receipt"></i>
+                        <span>Đơn hàng</span>
+                    </div>
+                    <span class="badge-count">8</span>
+                </a>
+            </div>
+            <div class="nav-item">
+                <a href="#" class="nav-link" onclick="alert('Tính năng Khách hàng đang được phát triển ở giai đoạn sau!'); return false;">
+                    <div class="nav-link-content">
+                        <i class="fa-solid fa-users"></i>
+                        <span>Khách hàng</span>
+                    </div>
+                </a>
+            </div>
+            <div class="nav-item">
+                <a href="#" class="nav-link" onclick="alert('Tính năng Khuyến mãi đang được phát triển ở giai đoạn sau!'); return false;">
+                    <div class="nav-link-content">
+                        <i class="fa-solid fa-ticket-simple"></i>
+                        <span>Khuyến mãi</span>
+                    </div>
+                </a>
+            </div>
+            <div class="nav-item">
+                <a href="#" class="nav-link" onclick="alert('Tính năng Đánh giá đang được phát triển ở giai đoạn sau!'); return false;">
+                    <div class="nav-link-content">
+                        <i class="fa-solid fa-star"></i>
+                        <span>Đánh giá</span>
+                    </div>
+                </a>
+            </div>
+
+            <div class="nav-section-title">Báo cáo & Hệ thống</div>
+            <div class="nav-item">
+                <a href="#" class="nav-link" onclick="alert('Tính năng Thống kê chi tiết đang phát triển!'); return false;">
+                    <div class="nav-link-content">
+                        <i class="fa-solid fa-chart-line"></i>
+                        <span>Thống kê</span>
+                    </div>
+                </a>
+            </div>
+            <div class="nav-item">
+                <a href="#" class="nav-link" onclick="alert('Tính năng Cài đặt hệ thống đang phát triển!'); return false;">
+                    <div class="nav-link-content">
+                        <i class="fa-solid fa-gear"></i>
+                        <span>Cài đặt</span>
+                    </div>
+                </a>
+            </div>
+        </nav>
+
+        <div class="sidebar-footer">
+            <button class="logout-btn" id="logoutBtn">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                <span>Đăng xuất</span>
+            </button>
+        </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <div class="main-wrapper">
+        
+        <!-- TOP TOOLBAR HEADER -->
+        <header class="header-bar">
+            <div style="display: flex; align-items: center; gap: 16px;">
+                <button class="tool-btn" id="mobileToggleBtn" style="display: none;" aria-label="Toggle Sidebar">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+                <div class="header-search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" placeholder="Tìm kiếm đơn hàng, trà sữa, voucher...">
+                </div>
+            </div>
+
+            <div class="header-right-tools">
+                <a href="../Index.html" target="_blank" class="view-site-link">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    <span>Xem Website</span>
+                </a>
+
+                <button class="tool-btn" id="darkModeBtn" title="Chuyển chế độ Sáng/Tối">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+
+                <button class="tool-btn" title="Thông báo hệ thống">
+                    <i class="fa-regular fa-bell"></i>
+                    <span class="pulse-dot"></span>
+                </button>
+            </div>
+        </header>
+
+        <!-- CONTENT BODY -->
+        <main class="dashboard-body">
+            
+            <div class="page-welcome">
+                <div>
+                    <h1>MewTea Dashboard Overview</h1>
+                    <p>Chào mừng trở lại! Dưới đây là thống kê tình hình kinh doanh hôm nay.</p>
+                </div>
+                <div class="date-badge">
+                    <i class="fa-regular fa-calendar-check" style="color:var(--gold-dark);"></i>
+                    <span id="currentDateStr">Thứ Năm, 06/08/2026</span>
+                </div>
+            </div>
+
+            <!-- STATS COUNTER CARDS GRID -->
+            <div class="stats-grid">
+                
+                <div class="glass-card stat-card-inner">
+                    <div class="stat-top">
+                        <div class="stat-icon-box icon-gold">
+                            <i class="fa-solid fa-coins"></i>
+                        </div>
+                        <span class="stat-trend trend-up">
+                            <i class="fa-solid fa-arrow-trend-up"></i> +18.4%
+                        </span>
+                    </div>
+                    <div class="stat-val" id="countRevenue">18.450.000₫</div>
+                    <div class="stat-label">Tổng doanh thu hôm nay</div>
+                </div>
+
+                <div class="glass-card stat-card-inner">
+                    <div class="stat-top">
+                        <div class="stat-icon-box icon-blue">
+                            <i class="fa-solid fa-bag-shopping"></i>
+                        </div>
+                        <span class="stat-trend trend-up">
+                            <i class="fa-solid fa-arrow-trend-up"></i> +12%
+                        </span>
+                    </div>
+                    <div class="stat-val" id="countOrders">142</div>
+                    <div class="stat-label">Tổng đơn hàng mới</div>
+                </div>
+
+                <div class="glass-card stat-card-inner">
+                    <div class="stat-top">
+                        <div class="stat-icon-box icon-green">
+                            <i class="fa-solid fa-users"></i>
+                        </div>
+                        <span class="stat-trend trend-up">
+                            <i class="fa-solid fa-arrow-trend-up"></i> +8.5%
+                        </span>
+                    </div>
+                    <div class="stat-val" id="countUsers">1.280</div>
+                    <div class="stat-label">Khách hàng thành viên</div>
+                </div>
+
+                <div class="glass-card stat-card-inner">
+                    <div class="stat-top">
+                        <div class="stat-icon-box icon-purple">
+                            <i class="fa-solid fa-mug-hot"></i>
+                        </div>
+                        <span class="stat-trend trend-up">
+                            <i class="fa-solid fa-check"></i> Sẵn sàng
+                        </span>
+                    </div>
+                    <div class="stat-val" id="countProducts">36</div>
+                    <div class="stat-label">Món trà đang bán</div>
+                </div>
+
+            </div>
+
+            <!-- CHARTS & QUICK ACTIONS SECTION -->
+            <div class="dash-layout-grid">
+                
+                <!-- Main Chart -->
+                <div class="glass-card">
+                    <div class="section-card-title">
+                        <h3><i class="fa-solid fa-chart-area" style="color:var(--gold-dark); margin-right:8px;"></i> Doanh thu theo tuần</h3>
+                        <select style="padding:4px 10px; border-radius:6px; border:1px solid var(--s-200); font-size:0.8rem;">
+                            <option>7 ngày qua</option>
+                            <option>Tháng này</option>
+                        </select>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="revenueChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Right Side Widget: Quick Actions & Best Sellers -->
+                <div style="display: flex; flex-direction: column; gap: 24px;">
+                    
+                    <!-- Quick Action Card -->
+                    <div class="glass-card">
+                        <div class="section-card-title">
+                            <h3><i class="fa-solid fa-bolt" style="color:var(--gold-dark); margin-right:8px;"></i> Tác vụ nhanh</h3>
+                        </div>
+                        <div class="quick-actions-grid">
+                            <button class="action-btn" onclick="alert('Tính năng Thêm sản phẩm sẽ cập nhật!');">
+                                <i class="fa-solid fa-circle-plus"></i>
+                                <span>Thêm trà mới</span>
+                            </button>
+                            <button class="action-btn" onclick="alert('Tính năng Tạo Voucher sẽ cập nhật!');">
+                                <i class="fa-solid fa-ticket"></i>
+                                <span>Tạo Voucher</span>
+                            </button>
+                            <button class="action-btn" onclick="window.open('Menu.html', '_blank');">
+                                <i class="fa-solid fa-list-check"></i>
+                                <span>Quản lý Menu</span>
+                            </button>
+                            <button class="action-btn" onclick="window.open('Index.html', '_blank');">
+                                <i class="fa-solid fa-globe"></i>
+                                <span>Xem Khách</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Top Selling Drinks -->
+                    <div class="glass-card">
+                        <div class="section-card-title">
+                            <h3><i class="fa-solid fa-fire" style="color:#e74c3c; margin-right:8px;"></i> Top Trà Bán Chạy</h3>
+                        </div>
+                        <div class="best-sellers-list">
+                            <div class="seller-item">
+                                <div class="seller-info">
+                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTt3PkAhqECe3VG-CmLZtAMNtaKlacT9H08khmIFOzrtksJyvRxR9rUd54&s=10" alt="Hokkaido" class="seller-img">
+                                    <div class="seller-details">
+                                        <h5>Hokkaido Trân Châu</h5>
+                                        <p>Trà sữa truyền thống</p>
+                                    </div>
+                                </div>
+                                <div class="seller-sales">
+                                    <strong>490 ly</strong>
+                                    <span>49.000₫</span>
+                                </div>
+                            </div>
+
+                            <div class="seller-item">
+                                <div class="seller-info">
+                                    <img src="https://picsum.photos/seed/tea2/100/100" alt="Oolong" class="seller-img">
+                                    <div class="seller-details">
+                                        <h5>Ô Long Nướng Sữa</h5>
+                                        <p>Trà đậm vị Nướng</p>
+                                    </div>
+                                </div>
+                                <div class="seller-sales">
+                                    <strong>320 ly</strong>
+                                    <span>55.000₫</span>
+                                </div>
+                            </div>
+
+                            <div class="seller-item">
+                                <div class="seller-info">
+                                    <img src="https://picsum.photos/seed/tea3/100/100" alt="Matcha" class="seller-img">
+                                    <div class="seller-details">
+                                        <h5>Matcha Latte Kem Trứng</h5>
+                                        <p>Matcha Nhật Bản</p>
+                                    </div>
+                                </div>
+                                <div class="seller-sales">
+                                    <strong>280 ly</strong>
+                                    <span>52.000₫</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- RECENT ORDERS TABLE -->
+            <div class="glass-card">
+                <div class="section-card-title">
+                    <h3><i class="fa-solid fa-clock-rotate-left" style="color:var(--gold-dark); margin-right:8px;"></i> Đơn hàng gần đây</h3>
+                    <a href="#" style="font-size:0.85rem; color:var(--gold-dark); font-weight:600;" onclick="alert('Giai đoạn sau sẽ cập nhật danh sách đầy đủ'); return false;">Xem tất cả đơn</a>
+                </div>
+                <div class="table-responsive">
+                    <table class="mew-table">
+                        <thead>
+                            <tr>
+                                <th>Mã Đơn</th>
+                                <th>Khách Hàng</th>
+                                <th>Món Đặt</th>
+                                <th>Tổng Tiền</th>
+                                <th>Thời Gian</th>
+                                <th>Trạng Thái</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>#MT-8842</strong></td>
+                                <td>Lê Minh Hoàng</td>
+                                <td>2x Hokkaido Trân Châu (L)</td>
+                                <td><strong>108.000₫</strong></td>
+                                <td>10:12 AM</td>
+                                <td><span class="status-pill status-delivered"><i class="fa-solid fa-circle-check"></i> Đã hoàn thành</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>#MT-8841</strong></td>
+                                <td>Nguyễn Thảo Nhi</td>
+                                <td>1x Ô Long Nướng, 1x Trà Đào</td>
+                                <td><strong>95.000₫</strong></td>
+                                <td>09:55 AM</td>
+                                <td><span class="status-pill status-processing"><i class="fa-solid fa-arrows-rotate"></i> Đang pha chế</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>#MT-8840</strong></td>
+                                <td>Trần Quang Khải</td>
+                                <td>3x Matcha Latte Kem Trứng</td>
+                                <td><strong>156.000₫</strong></td>
+                                <td>09:40 AM</td>
+                                <td><span class="status-pill status-pending"><i class="fa-solid fa-clock"></i> Chờ xác nhận</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>#MT-8839</strong></td>
+                                <td>Phạm Vũ Hà</td>
+                                <td>1x Lục Trà Mắt Rồng (M)</td>
+                                <td><strong>42.000₫</strong></td>
+                                <td>09:15 AM</td>
+                                <td><span class="status-pill status-delivered"><i class="fa-solid fa-circle-check"></i> Đã hoàn thành</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </main>
+
+    </div>
+
+    <!-- DASHBOARD LOGIC SCRIPT -->
+    <script src="../assets/js/admin-index.js"></script>
+</body>
+</html>

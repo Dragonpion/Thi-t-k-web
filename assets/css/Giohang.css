@@ -1,0 +1,438 @@
+    /* ==========================================================================
+   0. ROOT TOKENS — Đồng bộ tuyệt đối với MewTea Design System
+   ========================================================================== */
+   :root {
+    /* Primary (Winter / Charcoal-Steel) */
+    --p-900: #313C45;
+    --p-800: #3C4C59;
+    --p-700: #4F6271;
+    --p-600: #64798A;
+    --p-500: #778CA4;
+  
+    /* Secondary */
+    --s-400: #B3BFCB;
+    --s-300: #C7D1DB;
+    --s-200: #D5DBE2;
+    --s-100: #E8EDF2;
+  
+    /* Background */
+    --bg-100: #F9FAFB;
+    --bg-200: #F4F6F8;
+    --bg-300: #EEF2F5;
+  
+    /* Accent — Luxury Gold */
+    --gold-dark: #C9A227;
+    --gold: #D4AF37;
+    --gold-light: #F2D479;
+  
+    /* Neutrals */
+    --white: #FFFFFF;
+    --ink: #20272D;
+  
+    /* Custom Page Specs */
+    --glass-bg: rgba(255, 255, 255, 0.45);
+    --glass-border: rgba(255, 255, 255, 0.6);
+  
+    /* Fonts */
+    --font-display: 'Playfair Display', serif;
+    --font-body: 'Inter', sans-serif;
+  
+    /* Spacing */
+    --sp-1: .5rem;   --sp-2: 1rem;   --sp-3: 1.5rem;  --sp-4: 2rem;
+    --sp-5: 3rem;    --sp-6: 4rem;   --sp-7: 6rem;
+  
+    /* Radius */
+    --r-sm: 10px; --r-md: 18px; --r-lg: 28px; --r-pill: 999px;
+  
+    /* Shadow */
+    --sh-sm: 0 2px 10px rgba(49,60,69,.06);
+    --sh-md: 0 10px 30px rgba(49,60,69,.10);
+    --sh-lg: 0 24px 60px rgba(49,60,69,.16);
+  
+    /* Motion */
+    --ease: cubic-bezier(.4, 0, .2, 1);
+    --t-fast: .25s var(--ease);
+    --t-med: .45s var(--ease);
+  }
+  
+  /* ==========================================================================
+     1. RESET & BASE
+     ========================================================================== */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body {
+    font-family: var(--font-body);
+    color: var(--p-900);
+    background: var(--bg-100);
+    line-height: 1.6;
+    font-weight: 400;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+  img { max-width: 100%; height: auto; display: block; }
+  a { text-decoration: none; color: inherit; }
+  ul { list-style: none; }
+  button { font-family: inherit; border: none; background: none; cursor: pointer; position: relative; overflow: hidden; }
+  input { font-family: inherit; border: none; outline: none; }
+  h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; color: var(--p-900); line-height: 1.2; letter-spacing: .01em; }
+  
+  .container { width: 100%; max-width: 1320px; margin-inline: auto; padding-inline: clamp(1.25rem, 4vw, 2.5rem); }
+  .section--tight { padding-block: clamp(2rem, 4vw, 3.5rem); }
+  .bg-alt { background: var(--bg-200); }
+  
+  /* Eyebrow & Section Head */
+  .eyebrow {
+    font-family: var(--font-body); font-size: .78rem; font-weight: 600; letter-spacing: .22em;
+    text-transform: uppercase; color: var(--gold-dark); margin-bottom: var(--sp-2);
+    display: inline-flex; align-items: center; gap: .6rem;
+  }
+  .eyebrow::before { content: ''; width: 22px; height: 1px; background: var(--gold-dark); display: inline-block; }
+  
+  .section-head { max-width: 640px; margin-bottom: clamp(2rem, 4vw, 3.5rem); }
+  .section-head h2 { font-size: clamp(1.75rem, 3.2vw, 2.5rem); margin-bottom: var(--sp-2); }
+  .section-head p { color: var(--p-600); font-size: 1rem; }
+  .section-head--center { margin-inline: auto; text-align: center; }
+  
+  /* Global Buttons */
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: .6rem;
+    padding: 0.9rem 1.8rem; border-radius: var(--r-pill); font-weight: 600; font-size: .95rem;
+    transition: transform var(--t-fast), box-shadow var(--t-fast), background var(--t-fast), color var(--t-fast), border-color var(--t-fast);
+    white-space: nowrap;
+  }
+  .btn--gold { background: linear-gradient(135deg, var(--gold-dark), var(--gold)); color: var(--p-900); box-shadow: var(--sh-sm); }
+  .btn--gold:hover { transform: translateY(-2px); box-shadow: var(--sh-md); }
+  .btn--outline { border: 1.5px solid var(--s-300); color: var(--p-800); }
+  .btn--outline:hover { border-color: var(--gold-dark); color: var(--gold-dark); transform: translateY(-2px); }
+  .btn--full { width: 100%; }
+  
+  /* Glassmorphism */
+  .glass {
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px) saturate(140%);
+    -webkit-backdrop-filter: blur(20px) saturate(140%);
+    border: 1px solid var(--glass-border);
+  }
+  
+  /* ==========================================================================
+     3. BREADCRUMB
+     ========================================================================== */
+  .breadcrumb-nav { background: var(--bg-200); padding-block: 1rem; border-bottom: 1px solid var(--s-200); }
+  .breadcrumb-list { display: flex; align-items: center; gap: 0.6rem; font-size: 0.85rem; color: var(--p-600); }
+  .breadcrumb-list a { transition: color var(--t-fast); }
+  .breadcrumb-list a:hover { color: var(--gold-dark); }
+  .breadcrumb-list i { font-size: 0.7rem; color: var(--s-400); }
+  .breadcrumb-list .active { color: var(--p-900); font-weight: 600; }
+  
+  /* ==========================================================================
+     4. LAYOUT GIỎ HÀNG (Desktop 70% / 30%)
+     ========================================================================== */
+  .cart-title { font-size: clamp(1.8rem, 3vw, 2.5rem); font-weight: 700; margin-bottom: var(--sp-4); animation: slideUp 0.6s var(--ease); }
+  .cart-grid { display: grid; grid-template-columns: 68% 32%; gap: var(--sp-4); align-items: start; animation: slideUp 0.8s var(--ease); }
+  
+  /* --- CỘT TRÁI: DANH SÁCH SẢN PHẨM --- */
+  .cart-list { display: flex; flex-direction: column; gap: var(--sp-3); }
+  
+  /* Card item sản phẩm */
+  .cart-item {
+    display: grid;
+    grid-template-columns: 100px 1fr auto auto;
+    align-items: center;
+    gap: var(--sp-3);
+    background: var(--white);
+    border: 1px solid var(--s-100);
+    border-radius: var(--r-md);
+    padding: var(--sp-3);
+    box-shadow: var(--sh-sm);
+    transition: transform var(--t-fast), box-shadow var(--t-fast);
+  }
+  .cart-item:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--sh-md);
+  }
+  
+  /* Thumbnail */
+  .item-img-wrapper {
+    background: var(--bg-300);
+    border-radius: var(--r-sm);
+    aspect-ratio: 1;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+  }
+  .item-img { max-height: 100%; object-fit: contain; }
+  
+  /* Thông tin tùy chọn */
+  .item-details { display: flex; flex-direction: column; gap: 0.35rem; }
+  .item-name { font-size: 1.15rem; font-weight: 700; color: var(--p-900); font-family: var(--font-body); }
+  .item-options { display: flex; flex-wrap: wrap; gap: 0.4rem 0.8rem; font-size: 0.8rem; color: var(--p-600); }
+  .item-options span strong { color: var(--p-800); }
+  
+  /* Giá đơn vị */
+  .item-price { font-size: 0.95rem; color: var(--p-500); font-weight: 500; }
+  
+  /* QUANTITY CONTROLLER (Phong cách tối giản Apple Store) */
+  .quantity-control {
+    display: flex;
+    align-items: center;
+    background: var(--bg-200);
+    border-radius: var(--r-pill);
+    padding: 3px;
+    border: 1px solid var(--s-200);
+  }
+  .qty-btn {
+    width: 34px; height: 34px;
+    display: flex; align-items: center; justify-content: center;
+    border-radius: 50%;
+    background: var(--white);
+    color: var(--p-800);
+    font-size: 0.85rem;
+    box-shadow: var(--sh-sm);
+    transition: transform 0.15s cubic-bezier(0.175, 0.885, 0.32, 1.275), background var(--t-fast), color var(--t-fast);
+  }
+  .qty-btn:active { transform: scale(0.85); }
+  .qty-btn:hover { background: var(--p-900); color: var(--white); }
+  .qty-input { width: 38px; text-align: center; font-size: 0.95rem; font-weight: 700; background: transparent; color: var(--p-900); }
+  
+  /* Thành tiền & Xóa */
+  .item-total-price { font-size: 1.15rem; font-weight: 700; color: var(--p-900); text-align: right; min-width: 90px; }
+  .btn-delete {
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    color: #B8452F;
+    display: flex; align-items: center; justify-content: center;
+    background: rgba(184,69,47,0.06);
+    transition: background var(--t-fast), color var(--t-fast), transform var(--t-fast);
+  }
+  .btn-delete:hover { background: #B8452F; color: var(--white); transform: scale(1.08); }
+  
+  /* --- CỘT PHẢI: ORDER SUMMARY --- */
+  .order-summary {
+    position: sticky; top: 110px;
+    border-radius: var(--r-lg);
+    padding: var(--sp-4);
+    box-shadow: var(--sh-md);
+  }
+  .summary-title { font-size: 1.45rem; font-weight: 700; margin-bottom: var(--sp-3); border-bottom: 1.5px solid var(--s-200); padding-bottom: 1rem; }
+  
+  /* Promo Box */
+  .promo-box { margin-bottom: var(--sp-3); }
+  .promo-label { font-size: 0.85rem; font-weight: 600; color: var(--p-700); margin-bottom: 0.5rem; display: block; }
+  .promo-input-group {
+    display: flex;
+    background: var(--white);
+    border: 1.5px solid var(--s-300);
+    border-radius: var(--r-pill);
+    padding: 3px 3px 3px 15px;
+    transition: border-color var(--t-fast);
+  }
+  .promo-input-group:focus-within { border-color: var(--gold-dark); }
+  .promo-input-group input { flex: 1; font-size: 0.9rem; background: transparent; color: var(--p-900); }
+  .promo-input-group input::placeholder { color: var(--s-400); }
+  .btn-apply {
+    background: var(--p-900); color: var(--white);
+    font-size: 0.85rem; font-weight: 600;
+    padding: 0.7rem 1.4rem; border-radius: var(--r-pill);
+    transition: background var(--t-fast);
+  }
+  .btn-apply:hover { background: var(--p-700); }
+  .promo-message { font-size: 0.78rem; font-weight: 500; margin-top: 0.4rem; padding-left: 10px; display: none; }
+  .promo-message.success { color: #2E7D32; display: block; }
+  .promo-message.error { color: #C62828; display: block; }
+  
+  /* Financial Details */
+  .summary-details { display: flex; flex-direction: column; gap: var(--sp-2); margin-bottom: var(--sp-3); }
+  .summary-row { display: flex; justify-content: space-between; font-size: 0.95rem; color: var(--p-700); }
+  .summary-row span:last-child { font-weight: 600; color: var(--p-900); }
+  .discount-color { color: #2E7D32 !important; }
+  .summary-divider { height: 1px; background: var(--s-200); margin-block: 0.5rem; }
+  .summary-total { font-size: 1.35rem; color: var(--p-900); }
+  .summary-total span:first-child { font-weight: 700; font-family: var(--font-display); }
+  .summary-total span:last-child { font-size: 1.45rem; font-weight: 700; color: var(--gold-dark); }
+  
+  .summary-actions { display: flex; flex-direction: column; gap: 0.8rem; }
+  
+  /* ==========================================================================
+     5. EMPTY STATE (Trạng thái giỏ hàng trống)
+     ========================================================================== */
+  .cart-empty { text-align: center; padding-block: var(--sp-5); max-width: 500px; margin-inline: auto; animation: fadeIn 0.8s var(--ease); }
+  .empty-illustration {
+    position: relative; width: 140px; height: 140px; margin-inline: auto; margin-bottom: var(--sp-3);
+    background: radial-gradient(circle, var(--s-100) 0%, transparent 70%);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .empty-icon { font-size: 4.5rem; color: var(--s-400); animation: continuousFloat 6s infinite ease-in-out; }
+  .bubble-container { position: absolute; inset: 0; pointer-events: none; }
+  .empty-bubble {
+    position: absolute; border-radius: 50%; background: var(--s-200); opacity: 0.5;
+    animation: floatBubble 5s infinite ease-in-out alternate;
+  }
+  .empty-bubble:nth-child(1) { width: 16px; height: 16px; top: 15%; left: 15%; animation-delay: 0.5s; }
+  .empty-bubble:nth-child(2) { width: 22px; height: 22px; bottom: 20%; right: 10%; animation-delay: 1.5s; }
+  .empty-bubble:nth-child(3) { width: 12px; height: 12px; bottom: 15%; left: 20%; animation-delay: 2.5s; }
+  
+  .cart-empty h2 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+  .cart-empty p { color: var(--p-600); margin-bottom: var(--sp-3); }
+  
+  /* ==========================================================================
+     6. RECOMMENDED SECTION CARD (Đồng bộ tuyệt đối từ Index.html)
+     ========================================================================== */
+  .recommend-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--sp-3);
+    margin-top: var(--sp-3);
+  }
+  .rec-card {
+    background: var(--white);
+    border-radius: var(--r-md);
+    border: 1px solid var(--s-100);
+    box-shadow: var(--sh-sm);
+    overflow: hidden;
+    transition: transform var(--t-fast), box-shadow var(--t-fast);
+  }
+  .rec-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--sh-md);
+  }
+  .rec-card__visual {
+    position: relative; aspect-ratio: 1.1 / 1; background: linear-gradient(135deg, #F0F4F8, var(--bg-300));
+    overflow: hidden; display: flex; align-items: center; justify-content: center;
+  }
+  .rec-card__bg-blob {
+    position: absolute; width: 80%; height: 80%; border-radius: 50%;
+    background: radial-gradient(circle, rgba(212,175,55,0.1) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .rec-card__img { width: 68%; height: 68%; object-fit: contain; transition: transform var(--t-fast); }
+  .rec-card:hover .rec-card__img { transform: scale(1.06) rotate(1deg); }
+  
+  .rec-quick-add {
+    position: absolute; bottom: 12px; right: 12px;
+    width: 38px; height: 38px; border-radius: 50%;
+    background: var(--p-900); color: var(--white);
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: var(--sh-sm); transition: background var(--t-fast), transform var(--t-fast);
+    z-index: 5;
+  }
+  .rec-quick-add:hover { background: var(--gold-dark); transform: scale(1.1); }
+  
+  .rec-card__info { padding: var(--sp-2); }
+  .rec-card__title { font-family: var(--font-body); font-size: 1rem; font-weight: 700; margin-bottom: 0.25rem; color: var(--p-900); }
+  .rec-card__desc { font-size: 0.8rem; color: var(--p-600); margin-bottom: var(--sp-2); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; height: 2.6em; }
+  .rec-card__footer { display: flex; justify-content: space-between; align-items: center; }
+  .rec-card__price { font-size: 1.05rem; font-weight: 700; color: var(--p-900); }
+  .rec-card__rating { font-size: 0.8rem; font-weight: 600; color: var(--gold-dark); }
+  
+  /* ==========================================================================
+     8. ANIMATION EFFECTS (Không sử dụng thư viện)
+     ========================================================================== */
+  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+  @keyframes slideUp { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes floatBubble { from { transform: translateY(0) scale(1); } to { transform: translateY(-12px) scale(1.08); } }
+  @keyframes continuousFloat { 0% { transform: translateY(0px); } 50% { transform: translateY(-8px); } 100% { transform: translateY(0px); } }
+  
+  /* Ripple Effect Styles */
+  .ripple {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    transform: scale(0);
+    animation: rippleAnimation 0.6s linear;
+    pointer-events: none;
+  }
+  @keyframes rippleAnimation { to { transform: scale(4); opacity: 0; } }
+  
+  /* ==========================================================================
+     9. RESPONSIVE BREAKPOINTS
+     ========================================================================== */
+  @media (max-width: 1200px) {
+    .recommend-grid { grid-template-columns: repeat(3, 1fr); }
+    .recommend-grid article:last-child { display: none; }
+  }
+  
+  @media (max-width: 991px) {
+    .cart-grid { grid-template-columns: 1fr; gap: var(--sp-4); }
+    .order-summary { position: static; }
+    .recommend-grid { grid-template-columns: repeat(2, 1fr); }
+    .recommend-grid article:last-child { display: block; }
+  }
+  
+  @media (max-width: 768px) {
+    .cart-item { grid-template-columns: 80px 1fr auto; gap: var(--sp-2); padding: var(--sp-2); }
+    .item-name { font-size: 1rem; }
+    .item-total-price { grid-column: span 2; text-align: right; margin-top: 0.3rem; }
+    .quantity-control { order: 3; }
+    .btn-delete { order: 4; }
+    .recommend-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ==========================================================================
+     10. CART ROW COMPATIBILITY LAYER
+     Các dòng sản phẩm trong giỏ hàng được cart-handler.js render động bằng
+     class .cart-item-row / .p-qty / .cart-item-subtotal / .btn-remove-item.
+     Khối CSS này áp style Apple-Store tối giản (giống .cart-item / .quantity-control
+     / .qty-btn / .item-total-price / .btn-delete) lên đúng các class đó,
+     KHÔNG can thiệp vào logic JS.
+     ========================================================================== */
+  .cart-item-row {
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--sp-3);
+    background: var(--white);
+    border: 1px solid var(--s-100) !important;
+    border-radius: var(--r-md) !important;
+    padding: var(--sp-3) !important;
+    box-shadow: var(--sh-sm);
+    transition: transform var(--t-fast), box-shadow var(--t-fast);
+    animation: slideUp 0.5s var(--ease);
+  }
+  .cart-item-row:hover { transform: translateY(-4px); box-shadow: var(--sh-md); }
+  .cart-item-row .item-img-wrapper { width: 90px !important; height: 90px !important; flex-shrink: 0; }
+  .cart-item-row .item-name { font-size: 1.1rem; font-family: var(--font-body); }
+  .cart-item-row .item-note { display: block; }
+
+  .cart-item-row .p-qty {
+    display: flex !important;
+    align-items: center;
+    background: var(--bg-200);
+    border-radius: var(--r-pill);
+    padding: 3px;
+    border: 1px solid var(--s-200) !important;
+    height: auto !important;
+  }
+  .cart-item-row .p-qty__btn {
+    width: 34px; height: 34px;
+    display: flex; align-items: center; justify-content: center;
+    border-radius: 50%;
+    background: var(--white);
+    color: var(--p-800);
+    font-size: 0.85rem;
+    box-shadow: var(--sh-sm);
+    transition: transform 0.15s cubic-bezier(0.175,0.885,0.32,1.275), background var(--t-fast), color var(--t-fast);
+  }
+  .cart-item-row .p-qty__btn:active { transform: scale(0.85); }
+  .cart-item-row .p-qty__btn:hover { background: var(--p-900); color: var(--white); }
+  .cart-item-row .p-qty__num, .cart-item-row .cart-item__qty-num {
+    width: 34px !important; text-align: center; font-size: 0.95rem; font-weight: 700; color: var(--p-900);
+  }
+
+  .cart-item-row .cart-item-subtotal { font-size: 1.15rem; font-weight: 700; color: var(--p-900); }
+
+  .cart-item-row .btn-remove-item {
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    color: #B8452F !important;
+    display: flex; align-items: center; justify-content: center;
+    background: rgba(184,69,47,0.06);
+    transition: background var(--t-fast), color var(--t-fast), transform var(--t-fast);
+  }
+  .cart-item-row .btn-remove-item:hover { background: #B8452F; color: var(--white) !important; transform: scale(1.08); }
+
+  @media (max-width: 575px) {
+    .cart-item-row { flex-wrap: wrap; }
+  }
+  

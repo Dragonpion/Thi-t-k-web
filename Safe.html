@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MewTea — Chương Trình Khuyến Mãi & Ưu Đãi Đặc Biệt</title>
+<meta name="description" content="Khám phá các chương trình ưu đãi, flash sale trà sữa thủ công MewTea cao cấp. Mua ngay với giá cực hấp dẫn.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="assets/css/Header.css">
+<link rel="stylesheet" href="assets/css/Footer.css">
+<link rel="stylesheet" href="assets/css/Safe.css">
+<link rel="stylesheet" href="assets/css/pop-up.css">
+<style>
+    @font-face {
+      font-family: "MewFont" ;
+      src: url("assets/Font/MewFont.ttf") format("truetype");
+      font-weight: normal;
+      font-style: normal;
+  }
+</style>
+</head>
+
+<body>
+
+<!-- =========================================================
+     HEADER (Active menu: Khuyến mãi)
+========================================================== -->
+<header class="site-header">
+  <div class="container header__inner">
+
+    <!-- Header Logo -->
+    <a href="Index.html" class="logo" aria-label="MewTea — Trang chủ" target="_self">
+      <span class="logo__mark">
+        <img src="assets/Logo/MT.png" alt="Logo MewTea">
+      </span>
+      <span class="logo__text">Mew<em>Tea</em></span>
+    </a>
+
+    <input type="checkbox" id="nav-toggle" class="nav-toggle-input">
+
+    <nav class="nav" aria-label="Điều hướng chính">
+      <ul class="nav__list">
+        <li><a href="Index.html#hero" class="nav__link" target="_self">Trang Chủ</a></li>
+        <li><a href="Menu.html" class="nav__link" target="_self">Menu</a></li>
+        <li><a href="Safe.html" class="nav__link nav__link--active" target="_self">Khuyến mãi</a></li>
+        <li><a href="Ourapp.html" class="nav__link" target="_self">Ứng dụng</a></li>
+        <li><a href="Client-partner.html" class="nav__link" target="_self">Đối Tác & Đánh Giá</a></li>
+        <li><a href="About.html" class="nav__link" target="_self">Giới thiệu</a></li>
+        <li><a href="Index.html#contact" class="nav__link" target="_self">Liên hệ</a></li>
+      </ul>
+    </nav>
+
+    <div class="header__actions">
+      <button class="icon-btn icon-btn--search" aria-label="Tìm kiếm"><i class="fa-solid fa-magnifying-glass"></i></button>
+      <a href="Giohang.html" class="icon-btn" aria-label="Giỏ hàng" target="_self">
+        <i class="fa-solid fa-bag-shopping"></i>
+        <span class="cart-badge">2</span>
+      </a>
+      <a href="Login.html" class="icon-btn" aria-label="Tài khoản" target="_self"><i class="fa-solid fa-user"></i></a>
+      <label for="nav-toggle" class="nav-toggle-label" aria-label="Mở menu">
+        <span></span><span></span><span></span>
+      </label>
+    </div>
+
+    <label for="nav-toggle" class="nav-overlay" aria-hidden="true"></label>
+  </div>
+</header>
+
+<!-- =========================================================
+     HERO SALE (Rich Vector Floating Styles)
+========================================================== -->
+<section class="hero-sale">
+  <div class="container hero-sale__container">
+    <div class="hero-sale__content">
+      <p class="eyebrow">MewTea Premium Deals</p>
+      <h1 class="hero-sale__title">Ưu Đãi<br><span>Hôm Nay</span></h1>
+      <p class="hero-sale__desc">Tận hưởng những ly trà sữa thủ công ngọt lành với mức giá hấp dẫn chỉ diễn ra trong thời gian giới hạn. Chọn ngay hương vị của bạn!</p>
+      <div class="hero-sale__cta">
+        <a href="#sale-products" class="btn btn--red">Mua Ngay <i class="fa-solid fa-fire"></i></a>
+        <a href="#vouchers" class="btn btn--outline">Xem Voucher</a>
+      </div>
+    </div>
+
+    <div class="hero-sale__media">
+      <div class="blob-bg"></div>
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTt3PkAhqECe3VG-CmLZtAMNtaKlacT9H08khmIFOzrtksJyvRxR9rUd54&s=10" class="product-cup" alt="MewTea Signature Cup">
+      
+      <!-- Floating bubble elements -->
+      <div class="bubble-float bubble-float--1"></div>
+      <div class="bubble-float bubble-float--2"></div>
+      <div class="bubble-float bubble-float--3"></div>
+      
+      <!-- Premium Leaves and Splashes (Icon-font, đồng bộ phong cách Hero About.html) -->
+      <i class="fa-solid fa-leaf hero-sale__deco-leaf hero-sale__deco-leaf--1" aria-hidden="true"></i>
+      <i class="fa-solid fa-leaf hero-sale__deco-leaf hero-sale__deco-leaf--2" aria-hidden="true"></i>
+      <i class="fa-solid fa-leaf hero-sale__deco-leaf hero-sale__deco-leaf--3" aria-hidden="true"></i>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     FLASH SALE BANNER (Horizontal Countdown Design)
+========================================================== -->
+<section class="container flash-sale">
+  <div class="flash-sale__banner" id="flash-sale-banner">
+    <div class="flash-sale__info">
+      <i class="fa-solid fa-bolt-lightning flash-sale__icon"></i>
+      <div class="flash-sale__text">
+        <h3>Flash Sale Giới Hạn <span class="flash-sale__status-badge" id="flash-sale-status">ĐANG DIỄN RA</span></h3>
+        <p id="flash-sale-desc">Giảm cực mạnh lên đến <span>50%</span> cho các sản phẩm bùng nổ.</p>
+      </div>
+    </div>
+
+    <div class="countdown" id="flash-sale-countdown">
+      <span class="countdown__title" id="countdown-title">Kết thúc sau:</span>
+      <div class="countdown__box">
+        <span class="countdown__num" id="fs-hours">00</span>
+        <span class="countdown__lbl">Giờ</span>
+      </div>
+      <span class="countdown__sep">:</span>
+      <div class="countdown__box">
+        <span class="countdown__num" id="fs-minutes">00</span>
+        <span class="countdown__lbl">Phút</span>
+      </div>
+      <span class="countdown__sep">:</span>
+      <div class="countdown__box">
+        <span class="countdown__num" id="fs-seconds">00</span>
+        <span class="countdown__lbl">Giây</span>
+      </div>
+    </div>
+
+    <a href="#sale-products" class="btn btn--gold btn--sm" id="flash-sale-buy-btn">Mua Flash Sale <i class="fa-solid fa-bolt"></i></a>
+  </div>
+</section>
+
+<!-- =========================================================
+     DANH SÁCH SẢN PHẨM SALE (10 Products)
+========================================================== -->
+<section id="sale-products" class="section">
+  <div class="container">
+    <div class="section-head section-head--center">
+      <p class="eyebrow">MewTea Menu</p>
+      <h2>Danh Sách Sản Phẩm Sale</h2>
+      <p>Sự giao hòa hảo giữa lá trà tinh khiết và mức giá tuyệt vời dành riêng cho thành viên.</p>
+    </div>
+
+    <div class="sale-menu__grid" id="sale-products-grid"></div>
+  </div>
+</section>
+
+<!-- =========================================================
+     BANNER KHUYẾN MÃI XEN KẼ & COMBO SALE SECTION
+========================================================== -->
+<section class="section bg-alt">
+  <div class="container">
+    
+    <!-- Promotion Cards Grid -->
+    <div class="promo-banners__grid">
+      
+      <!-- Banner 1: Free Topping -->
+      <div class="promo-banner-card">
+        <div class="promo-banner-card__content">
+          <span class="promo-banner-card__tag">Ưu Đãi Độc Quyền</span>
+          <h3 class="promo-banner-card__title">Miễn Phí Topping</h3>
+          <p class="promo-banner-card__desc">Mỗi ly trà sữa size L bất kỳ nhận ngay trân châu hoàng kim dai giòn miễn phí.</p>
+          <a href="#sale-products" class="btn btn--dark btn--sm">Lấy Ưu Đãi</a>
+        </div>
+        <div class="promo-banner-card__img">
+          <img src="https://picsum.photos/seed/topping/500/350" alt="Free Topping">
+        </div>
+      </div>
+
+      <!-- Banner 2: Free Ship -->
+      <div class="promo-banner-card">
+        <div class="promo-banner-card__content">
+          <span class="promo-banner-card__tag">Free Shipping</span>
+          <h3 class="promo-banner-card__title">Giao Hàng 0đ</h3>
+          <p class="promo-banner-card__desc">Miễn phí vận chuyển bán kính 3km cho hóa đơn trà sữa từ 100.000đ.</p>
+          <a href="#sale-products" class="btn btn--dark btn--sm">Đặt Đơn Ngay</a>
+        </div>
+        <div class="promo-banner-card__img">
+          <img src="https://picsum.photos/seed/freeship/500/350" alt="Free Shipping">
+        </div>
+      </div>
+
+    </div>
+
+    <!-- COMBO SALE (Specialized layout block) -->
+    <div class="combo-sale">
+      <div class="combo-sale__grid">
+        <div class="combo-sale__left">
+          <p class="combo-sale__eyebrow">Tiết kiệm nhiều hơn</p>
+          <h2 class="combo-sale__title">Combo Bạn Bè: Gắn Kết Đam Mê</h2>
+          <p class="combo-sale__desc">Gói trọn niềm vui với bộ đôi trà sữa Hokkaido và Trà Đào Cam Sả bất kỳ cùng 2 phần Pudding béo ngậy đi kèm.</p>
+          <div class="combo-sale__benefit-list">
+            <div class="combo-sale__benefit-item">
+              <i class="fa-solid fa-circle-check"></i> 2 Ly Trà sữa bất kỳ size L
+            </div>
+            <div class="combo-sale__benefit-item">
+              <i class="fa-solid fa-circle-check"></i> 2 Topping Thạch Trân châu tự chọn
+            </div>
+            <div class="combo-sale__benefit-item">
+              <i class="fa-solid fa-circle-check"></i> Giảm trực tiếp 30% tổng hóa đơn combo
+            </div>
+          </div>
+          <a href="Menu.html" class="btn btn--red">Mua Combo chỉ với 79.000đ</a>
+        </div>
+        <div class="combo-sale__right">
+          <div class="combo-sale__img-card">
+            <span class="combo-sale__tag">GIẢM<br>30%</span>
+            <img src="https://gcs.tripi.vn/public-tripi/tripi-feed/img/482601qKY/anh-mo-ta.png" alt="Combo Sale MewTea">
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- =========================================================
+     BRAND CTA (Banner thúc giục hành động cuối trang)
+========================================================== -->
+<section class="container section">
+  <div class="cta-banner">
+    <div class="cta-banner__inner">
+      <div class="cta-banner__text">
+        <h2>Đừng bỏ lỡ ưu đãi hôm nay!</h2>
+        <p>Hàng ngàn mã ưu đãi cùng hàng trăm phần trà sữa đang đợi bạn rinh về ngay trong ngày hôm nay.</p>
+        <a href="#sale-products" class="btn btn--gold">Đặt Ngay Bằng Mã Giảm <i class="fa-solid fa-arrow-right-long"></i></a>
+      </div>
+      <div class="cta-banner__img">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTt3PkAhqECe3VG-CmLZtAMNtaKlacT9H08khmIFOzrtksJyvRxR9rUd54&s=10" class="cta-banner__cup" alt="MewTea Ly">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     FOOTER
+========================================================== -->
+<footer class="site-footer">
+  <div class="container footer__top">
+    <div class="footer__brand">
+      <a href="Index.html" class="logo" target="_self">
+        <span class="logo__mark">
+          <img src="assets/Logo/MT.png" alt="Logo MewTea">
+        </span>
+        <span class="logo__text">Mew<em>Tea</em></span>
+      </a>
+      <p>Trà sữa thủ công, phong cách tối giản — mỗi ly là một khoảnh khắc chậm rãi giữa nhịp sống hối hả.</p>
+      <div class="footer__social">
+        <a href="https://facebook.com/mewtea.vn" aria-label="Facebook" target="_blank" rel="noopener"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="https://instagram.com/mewtea.vn" aria-label="Instagram" target="_blank" rel="noopener"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.tiktok.com/@mewtea.vn" aria-label="TikTok" target="_blank" rel="noopener"><i class="fa-brands fa-tiktok"></i></a>
+      </div>
+    </div>
+
+    <div class="footer__col">
+      <h4>Liên kết nhanh</h4>
+      <ul>
+        <li><a href="Index.html#hero" target="_self">Trang chủ</a></li>
+        <li><a href="Menu.html" target="_self">Menu</a></li>
+        <li><a href="Safe.html" target="_self">Khuyến mãi</a></li>
+        <li><a href="About.html" target="_self">Giới thiệu</a></li>
+      </ul>
+    </div>
+
+    <div class="footer__col">
+      <h4>Thông tin liên hệ</h4>
+      <ul class="footer__contact">
+        <li><i class="fa-solid fa-location-dot"></i> 12 Nguyễn Huệ, Q.1, TP.HCM</li>
+        <li><i class="fa-solid fa-phone"></i> 0909 123 456</li>
+        <li><i class="fa-solid fa-envelope"></i> hello@mewtea.vn</li>
+      </ul>
+    </div>
+
+    <div class="footer__col">
+      <h4>Kết nối</h4>
+      <ul>
+        <li><a href="Index.html#contact" target="_self">Tuyển dụng</a></li>
+        <li><a href="Index.html#contact" target="_self">Nhượng quyền</a></li>
+        <li><a href="Menu.html" target="_self">Blog trà</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="container footer__bottom">
+    <p>© 2026 MewTea. Bảo lưu mọi quyền.</p>
+    <div class="footer__legal">
+      <a href="About.html" target="_self">Chính sách bảo mật</a>
+      <a href="About.html" target="_self">Điều khoản sử dụng</a>
+      <a href="About.html" target="_self">Thiết kế bởi MewTea Studio</a>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/cart-handler.js"></script>
+<script src="assets/js/mewtea-data.js"></script>
+<script src="assets/js/Safe.js"></script>
+
+<a href="https://zalo.me/pc" class="mt-floating-popup-link" target="_blank">
+  <button class="mt-floating-popup" aria-label="Liên hệ MewTea">
+      <i class="fa-solid fa-comments"></i>
+  </button>
+  <span class="mt-floating-tooltip">
+      Chat với MewTea
+  </span>
+</a>
+
+</body>
+</html>

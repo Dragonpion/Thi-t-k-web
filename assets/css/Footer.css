@@ -1,0 +1,38 @@
+/* ==========================================================================
+   FOOTER.CSS — MewTea Shared Site Footer
+   ==========================================================================
+   Nguồn: tách nguyên trạng từ khối CSS "8. FOOTER" của Menu.html
+   (Menu.html = SOURCE OF TRUTH cho Header/Footer theo yêu cầu refactor).
+   File này chỉ chứa CSS của: Footer layout, Footer brand/logo, Footer social,
+   Footer columns/links, Footer contact, Footer bottom/legal.
+   Không chứa CSS của Header/Main content/Trang riêng/Popup.
+   Lưu ý: một vài trang (vd. Client-partner.css) có thêm override màu sắc
+   Footer riêng cho trang đó — các override này KHÔNG được đưa vào đây vì
+   không áp dụng chung cho toàn site (xem báo cáo cuối).
+   ========================================================================== */
+.site-footer{ background:var(--p-900); color:var(--s-300); }
+.footer__top{ padding-block:clamp(3rem,6vw,5rem); display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:var(--sp-5); }
+
+.footer__brand .logo__text { color: var(--white) !important; }
+.footer__brand .logo__text em { color: var(--gold-light) !important; }
+.footer__brand p{ margin-top:var(--sp-2); font-size:.9rem; color:var(--s-400); max-width:280px; }
+.footer__col h4{ color:var(--white); font-family:var(--font-body); font-size:.85rem; letter-spacing:.08em; text-transform:uppercase; margin-bottom:var(--sp-3); font-weight:600; }
+.footer__col ul{ display:grid; gap:.7rem; }
+.footer__col a{ font-size:.9rem; color:var(--s-400); transition:color var(--t-fast), padding-left var(--t-fast); }
+.footer__col a:hover{ color:var(--gold-light); padding-left:4px; }
+.footer__contact li{ display:flex; gap:.7rem; font-size:.9rem; color:var(--s-400); align-items:flex-start; }
+.footer__contact i{ color:var(--gold); width:16px; margin-top:.2rem; }
+.footer__social{ display:flex; gap:.6rem; margin-top:var(--sp-1); }
+.footer__social a{
+  width:40px; height:40px; border-radius:50%; border:1px solid rgba(212,175,55,.3);
+  display:flex; align-items:center; justify-content:center; color:var(--s-300); transition:all var(--t-fast);
+}
+.footer__social a:hover{ background:var(--gold-dark); border-color:var(--gold-dark); color:var(--p-900); transform:translateY(-3px); }
+
+.footer__bottom{
+  border-top:1px solid rgba(211,219,226,.12); padding-block:var(--sp-3);
+  display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:var(--sp-2);
+  font-size:.8rem; color:var(--s-400);
+}
+.footer__legal{ display:flex; gap:var(--sp-3); flex-wrap:wrap; }
+.footer__legal a:hover{ color:var(--gold-light); }

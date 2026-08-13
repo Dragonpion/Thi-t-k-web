@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hokkaido Trân Châu | MewTea — Trà Sữa Thủ Công Cao Cấp</title>
+<meta name="description" content="MewTea — trà sữa thủ công từ nguyên liệu tự nhiên, phong cách tối giản Nhật Bản & Bắc Âu.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="assets/css/Header.css">
+<link rel="stylesheet" href="assets/css/Footer.css">
+<link rel="stylesheet" href="assets/css/Chitietsanpham.css">
+<script src="assets/js/cart-handler.js"></script>
+<style>
+  @font-face {
+    font-family: "MewFont" ;
+    src: url("assets/Font/MewFont.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+  }
+</style>
+
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header__inner">
+
+    <!-- Header Logo -->
+    <a href="Index.html" class="logo" aria-label="MewTea — Trang chủ" target="_self">
+      <span class="logo__mark">
+        <img src="assets/Logo/MT.png" alt="Logo MewTea">
+      </span>
+      <span class="logo__text">Mew<em>Tea</em></span>
+    </a>
+
+    <input type="checkbox" id="nav-toggle" class="nav-toggle-input">
+
+    <nav class="nav" aria-label="Điều hướng chính">
+      <ul class="nav__list">
+        <li><a href="Index.html#hero" class="nav__link" target="_self">Trang Chủ</a></li>
+        <li><a href="Menu.html" class="nav__link" target="_self">Menu</a></li>
+        <li><a href="Safe.html" class="nav__link" target="_self">Khuyến mãi</a></li>
+        <li><a href="Ourapp.html" class="nav__link" target="_self">Ứng dụng</a></li>
+        <li><a href="Client-partner.html" class="nav__link" target="_self">Đối Tác & Đánh Giá</a></li>
+        <li><a href="About.html" class="nav__link" target="_self">Giới thiệu</a></li>
+        <li><a href="Index.html#contact" class="nav__link" target="_self">Liên hệ</a></li>
+      </ul>
+    </nav>
+
+    <div class="header__actions">
+      <button class="icon-btn icon-btn--search" aria-label="Tìm kiếm"><i class="fa-solid fa-magnifying-glass"></i></button>
+      <a href="Giohang.html" class="icon-btn" aria-label="Giỏ hàng" target="_self">
+        <i class="fa-solid fa-bag-shopping"></i>
+        <span class="cart-badge">2</span>
+      </a>
+      <a href="Login.html" class="icon-btn" aria-label="Tài khoản" target="_self"><i class="fa-solid fa-user"></i></a>
+      <label for="nav-toggle" class="nav-toggle-label" aria-label="Mở menu">
+        <span></span><span></span><span></span>
+      </label>
+    </div>
+
+    <label for="nav-toggle" class="nav-overlay" aria-hidden="true"></label>
+  </div>
+</header>
+
+<section class="p-hero" 
+         id="product-detail-container" 
+         data-id="sp-hokkaido-tran-chau" 
+         data-name="Hokkaido Trân Châu" 
+         data-price="49000" 
+         data-image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTt3PkAhqECe3VG-CmLZtAMNtaKlacT9H08khmIFOzrtksJyvRxR9rUd54&s=10">
+  <div class="container p-hero__grid">
+    
+    <div class="p-hero__visuals">
+      <div class="p-main-card">
+        <div class="p-shape p-shape--circle"></div>
+        <div class="p-shape p-shape--blob"></div>
+        <div class="p-shape p-shape--leaf"></div>
+        <div class="p-shape p-shape--bubble"></div>
+        
+        <img class="p-main-img" id="p-main-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTt3PkAhqECe3VG-CmLZtAMNtaKlacT9H08khmIFOzrtksJyvRxR9rUd54&s=10" alt="Hokkaido Trân Châu">
+      </div>
+      
+      <div class="p-gallery" id="p-gallery">
+        <div class="p-gallery__thumb p-gallery__thumb--active">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTt3PkAhqECe3VG-CmLZtAMNtaKlacT9H08khmIFOzrtksJyvRxR9rUd54&s=10" alt="Góc nhìn 1">
+        </div>
+        <div class="p-gallery__thumb">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLoEDk97SZ9deOV2gtDuAoYq9zcCodEbcDcdKKd78GGC_QDgY-1pWjTTQL&s=10" alt="Góc nhìn 2">
+        </div>
+        <div class="p-gallery__thumb">
+          <img src="https://horecavn.com/wp-content/uploads/2025/11/Cong-thuc-17-1.png" alt="Góc nhìn 3">
+        </div>
+        <div class="p-gallery__thumb">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSv9g6OPnGifsht2mRJSdqVZGMVgfKBvqvshyhfPkfI_UIMAX2ZNB7hHw7H&s=10" alt="Góc nhìn 4">
+        </div>
+      </div>
+    </div>
+
+    <div class="p-hero__info">
+      <div class="p-badge-wrapper" id="p-badge-wrapper">
+        <span class="p-badge p-badge--best" id="p-badge-main">Best Seller</span>
+        <span class="p-badge p-badge--hot">Hot</span>
+        <span class="p-badge p-badge--new">New</span>
+        <span class="p-badge p-badge--limit">Limited</span>
+      </div>
+      
+      <h1 class="p-title-main" id="p-title-main">Hokkaido Trân Châu</h1>
+      <p class="p-title-sub" id="p-title-sub">Hokkaido Milk Tea with Pearl</p>
+      
+      <div class="p-meta">
+        <div class="p-rating" id="p-rating">
+          <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+          <span id="p-rating-value">4.8</span>
+        </div>
+        <div class="p-meta__separator"></div>
+        <div class="p-meta__reviews" id="p-meta-reviews">1,240 đánh giá</div>
+        <div class="p-meta__separator"></div>
+        <div class="p-meta__sold">Đã bán <span id="p-meta-sold">5,890</span></div>
+      </div>
+      
+      <div class="p-price-card">
+        <span class="p-price-current" id="p-price-current">49.000₫</span>
+        <span class="p-price-old" id="p-price-old">59.000₫</span>
+        <span class="p-price-discount" id="p-price-discount">-17%</span>
+      </div>
+      
+      <p class="p-short-desc" id="p-short-desc">Trà sữa Hokkaido truyền thống kết hợp hương caramel béo ngậy đặc trưng từ Nhật Bản. Sự kết hợp hoàn hảo cùng hạt trân châu thủ công mềm dẻo mang lại trải nghiệm vị giác vô cùng tinh tế và cao cấp.</p>
+      
+      <div class="p-config-section">
+        <h3 class="p-config-title">Chọn Kích Cỡ (Size)</h3>
+        <div class="p-pill-grid">
+          <div>
+            <input type="radio" name="size" id="size-s" value="S" class="p-pill-input">
+            <label for="size-s" class="p-pill-label">S</label>
+          </div>
+          <div>
+            <input type="radio" name="size" id="size-m" value="M" class="p-pill-input" checked>
+            <label for="size-m" class="p-pill-label">M</label>
+          </div>
+          <div>
+            <input type="radio" name="size" id="size-l" value="L" class="p-pill-input">
+            <label for="size-l" class="p-pill-label">L</label>
+          </div>
+          <div>
+            <input type="radio" name="size" id="size-xl" value="XL" class="p-pill-input">
+            <label for="size-xl" class="p-pill-label">XL</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="p-config-section">
+        <h3 class="p-config-title">Thêm Topping</h3>
+        <div class="p-topping-grid">
+          <label>
+            <input type="checkbox" name="topping" value="Trân châu đen" data-price="8000" class="p-pill-input p-topping-input" checked>
+            <div class="p-topping-card">
+              <span class="p-topping-name">Trân châu đen</span>
+              <span class="p-topping-price">+8k</span>
+            </div>
+          </label>
+          <label>
+            <input type="checkbox" name="topping" value="Trân châu trắng" data-price="10000" class="p-pill-input p-topping-input">
+            <div class="p-topping-card">
+              <span class="p-topping-name">Trân châu trắng</span>
+              <span class="p-topping-price">+10k</span>
+            </div>
+          </label>
+          <label>
+            <input type="checkbox" name="topping" value="Pudding" data-price="10000" class="p-pill-input p-topping-input">
+            <div class="p-topping-card">
+              <span class="p-topping-name">Pudding</span>
+              <span class="p-topping-price">+10k</span>
+            </div>
+          </label>
+          <label>
+            <input type="checkbox" name="topping" value="Thạch phô mai" data-price="12000" class="p-pill-input p-topping-input">
+            <div class="p-topping-card">
+              <span class="p-topping-name">Thạch phô mai</span>
+              <span class="p-topping-price">+12k</span>
+            </div>
+          </label>
+          <label>
+            <input type="checkbox" name="topping" value="Kem Cheese" data-price="15000" class="p-pill-input p-topping-input">
+            <div class="p-topping-card">
+              <span class="p-topping-name">Kem Cheese</span>
+              <span class="p-topping-price">+15k</span>
+            </div>
+          </label>
+          <label>
+            <input type="checkbox" name="topping" value="Nha đam" data-price="8000" class="p-pill-input p-topping-input">
+            <div class="p-topping-card">
+              <span class="p-topping-name">Nha đam</span>
+              <span class="p-topping-price">+8k</span>
+            </div>
+          </label>
+        </div>
+      </div>
+
+      <div class="p-config-section">
+        <h3 class="p-config-title">Mức Đường</h3>
+        <div class="p-pill-grid">
+          <div><input type="radio" name="sugar" id="s-0" value="0%" class="p-pill-input"><label for="s-0" class="p-pill-label">0%</label></div>
+          <div><input type="radio" name="sugar" id="s-30" value="30%" class="p-pill-input"><label for="s-30" class="p-pill-label">30%</label></div>
+          <div><input type="radio" name="sugar" id="s-50" value="50%" class="p-pill-input"><label for="s-50" class="p-pill-label">50%</label></div>
+          <div><input type="radio" name="sugar" id="s-70" value="70%" class="p-pill-input"><label for="s-70" class="p-pill-label">70%</label></div>
+          <div><input type="radio" name="sugar" id="s-100" value="100%" class="p-pill-input" checked><label for="s-100" class="p-pill-label">100%</label></div>
+        </div>
+      </div>
+
+      <div class="p-config-section">
+        <h3 class="p-config-title">Mức Đá</h3>
+        <div class="p-pill-grid">
+          <div><input type="radio" name="ice" id="i-0" value="Không đá" class="p-pill-input"><label for="i-0" class="p-pill-label">Không đá</label></div>
+          <div><input type="radio" name="ice" id="i-30" value="Ít đá" class="p-pill-input"><label for="i-30" class="p-pill-label">Ít đá</label></div>
+          <div><input type="radio" name="ice" id="i-50" value="Vừa đá" class="p-pill-input" checked><label for="i-50" class="p-pill-label">Vừa</label></div>
+          <div><input type="radio" name="ice" id="i-100" value="Nhiều đá" class="p-pill-input"><label for="i-100" class="p-pill-label">Nhiều</label></div>
+        </div>
+      </div>
+
+      <div class="p-action-block">
+        <div class="p-qty">
+          <button type="button" class="p-qty__btn" id="btn-decrease-qty"><i class="fa-solid fa-minus"></i></button>
+          <span class="p-qty__num" id="display-qty">1</span>
+          <button type="button" class="p-qty__btn" id="btn-increase-qty"><i class="fa-solid fa-plus"></i></button>
+        </div>
+        <button type="button" class="btn btn--outline" id="btn-add-to-cart"><i class="fa-solid fa-cart-plus"></i> Thêm vào giỏ hàng</button>
+        <button type="button" class="btn btn--gold" id="btn-buy-now">Mua ngay <i class="fa-solid fa-bolt"></i></button>
+      </div>
+
+      <div class="p-commits">
+        <div class="p-commit-item"><i class="fa-solid fa-seedling"></i><span>100% nguyên liệu tự nhiên</span></div>
+        <div class="p-commit-item"><i class="fa-solid fa-blender"></i><span>Pha chế ngay khi đặt</span></div>
+        <div class="p-commit-item"><i class="fa-solid fa-arrow-rotate-left"></i><span>Đổi trả nếu có lỗi</span></div>
+        <div class="p-commit-item"><i class="fa-solid fa-truck-fast"></i><span>Giao nhanh trong 30 phút</span></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">Đánh Giá</p>
+      <h2>Trải nghiệm thực tế</h2>
+      <p>Ý kiến phản hồi chân thực từ những khách hàng đã trực tiếp thưởng thức vị trà.</p>
+    </div>
+
+    <div class="p-reviews-grid">
+      <div class="p-rev-card">
+        <div class="p-rev-header">
+          <div class="p-rev-user">
+            <img class="p-rev-avatar" src="https://picsum.photos/seed/user1/80/80" alt="Avatar">
+            <div>
+              <p class="p-rev-name">Linh Đan</p>
+              <p class="p-rev-date">02/07/2026</p>
+            </div>
+          </div>
+          <div class="p-rev-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+        </div>
+        <p class="p-rev-text">Vị caramel nướng rất thơm, đặc biệt trân châu mềm dẻo thấm mật ong ngon đỉnh chóp luôn á. Highly recommend chọn mức đường 50% là vừa vị nha mọi người.</p>
+      </div>
+
+      <div class="p-rev-card">
+        <div class="p-rev-header">
+          <div class="p-rev-user">
+            <img class="p-rev-avatar" src="https://picsum.photos/seed/user2/80/80" alt="Avatar">
+            <div>
+              <p class="p-rev-name">Hoàng Long</p>
+              <p class="p-rev-date">28/06/2026</p>
+            </div>
+          </div>
+          <div class="p-rev-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></div>
+        </div>
+        <p class="p-rev-text">Vị béo ngậy đậm chất sữa tươi cao cấp chứ không phải kiểu bột béo công nghiệp thông thường. Sẽ tiếp tục đặt lại món này.</p>
+      </div>
+
+      <div class="p-rev-card">
+        <div class="p-rev-header">
+          <div class="p-rev-user">
+            <img class="p-rev-avatar" src="https://picsum.photos/seed/user3/80/80" alt="Avatar">
+            <div>
+              <p class="p-rev-name">Khánh Huyền</p>
+              <p class="p-rev-date">15/06/2026</p>
+            </div>
+          </div>
+          <div class="p-rev-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+        </div>
+        <p class="p-rev-text">App giao siêu nhanh luôn, nhận hàng ly nước vẫn lạnh sâu và giữ nguyên form phân lớp bọt sữa đẹp mắt. Rất hài lòng với chất lượng đóng gói chỉn chu của MewTea.</p>
+      </div>
+
+      <div class="p-rev-card">
+        <div class="p-rev-header">
+          <div class="p-rev-user">
+            <img class="p-rev-avatar" src="https://picsum.photos/seed/user4/80/80" alt="Avatar">
+            <div>
+              <p class="p-rev-name">Tuấn Kiệt</p>
+              <p class="p-rev-date">10/06/2026</p>
+            </div>
+          </div>
+          <div class="p-rev-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i></div>
+        </div>
+        <p class="p-rev-text">Trà đậm vị, không bị lấn át bởi sữa. Ai không thích ngọt quá nhớ giảm lượng đường xuống nhé, tổng thể nước uống rất ổn áp.</p>
+      </div>
+
+      <div class="p-rev-card">
+        <div class="p-rev-header">
+          <div class="p-rev-user">
+            <img class="p-rev-avatar" src="https://picsum.photos/seed/user5/80/80" alt="Avatar">
+            <div>
+              <p class="p-rev-name">Minh Thư</p>
+              <p class="p-rev-date">01/06/2026</p>
+            </div>
+          </div>
+          <div class="p-rev-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+        </div>
+        <p class="p-rev-text">Món tủ mỗi lần ghé MewTea làm việc luôn á. Ly thủy tinh ở quán decor sang chảnh chụp hình sống ảo siêu mê luôn.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="section bg-alt">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">Đề Xuất Cho Bạn</p>
+      <h2>Sản phẩm liên quan</h2>
+    </div>
+
+    <div class="products__grid" id="related-products-grid"></div>
+  </div>
+</section>
+
+<div class="container" style="padding-block: var(--sp-2);">
+  <section class="p-cta">
+    <div class="p-cta__content">
+      <h2>Khát quá thì tag tên MewTea vào</h2>
+      <p>Chia sẻ khoảnh khắc chill cùng trà sữa MewTea của bạn trên mạng xã hội ngay hôm nay.</p>
+      <button type="button" class="btn btn--gold" id="btn-cta-order">Đặt ngay <i class="fa-solid fa-circle-arrow-right"></i></button>
+    </div>
+  </section>
+</div>
+
+<footer class="site-footer">
+  <div class="container footer__top">
+    <div class="footer__brand">
+      <a href="Index.html" class="logo" target="_self">
+        <span class="logo__mark">
+          <img src="assets/Logo/MT.png" alt="Logo MewTea">
+        </span>
+        <span class="logo__text">Mew<em>Tea</em></span>
+      </a>
+      <p>Trà sữa thủ công, phong cách tối giản — mỗi ly là một khoảnh khắc chậm rãi giữa nhịp sống hối hả.</p>
+      <div class="footer__social">
+        <a href="https://facebook.com/mewtea.vn" aria-label="Facebook" target="_blank" rel="noopener"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="https://instagram.com/mewtea.vn" aria-label="Instagram" target="_blank" rel="noopener"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.tiktok.com/@mewtea.vn" aria-label="TikTok" target="_blank" rel="noopener"><i class="fa-brands fa-tiktok"></i></a>
+      </div>
+    </div>
+
+    <div class="footer__col">
+      <h4>Liên kết nhanh</h4>
+      <ul>
+        <li><a href="Index.html#hero" target="_self">Trang chủ</a></li>
+        <li><a href="Menu.html" target="_self">Menu</a></li>
+        <li><a href="Safe.html" target="_self">Khuyến mãi</a></li>
+        <li><a href="About.html" target="_self">Giới thiệu</a></li>
+      </ul>
+    </div>
+
+    <div class="footer__col">
+      <h4>Thông tin liên hệ</h4>
+      <ul class="footer__contact">
+        <li><i class="fa-solid fa-location-dot"></i> 12 Nguyễn Huệ, Q.1, TP.HCM</li>
+        <li><i class="fa-solid fa-phone"></i> 0909 123 456</li>
+        <li><i class="fa-solid fa-envelope"></i> hello@mewtea.vn</li>
+      </ul>
+    </div>
+
+    <div class="footer__col">
+      <h4>Kết nối</h4>
+      <ul>
+        <li><a href="Index.html#contact" target="_self">Tuyển dụng</a></li>
+        <li><a href="Index.html#contact" target="_self">Nhượng quyền</a></li>
+        <li><a href="Menu.html" target="_self">Blog trà</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="container footer__bottom">
+    <p>© 2026 MewTea. Bảo lưu mọi quyền.</p>
+    <div class="footer__legal">
+      <a href="About.html" target="_self">Chính sách bảo mật</a>
+      <a href="About.html" target="_self">Điều khoản sử dụng</a>
+      <a href="About.html" target="_self">Thiết kế bởi MewTea Studio</a>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/mewtea-data.js"></script>
+<script src="assets/js/Chitietsanpham.js"></script>
+
+</body>
+</html>

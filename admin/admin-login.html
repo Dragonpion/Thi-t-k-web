@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MewTea Admin — Dang nhap Quản trị</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <link rel="stylesheet" href="../assets/css/admin-login.css">
+    <style>
+      @font-face {
+        font-family: "MewFont" ;
+        src: url("../assets/Font/MewFont.ttf") format("truetype");
+        font-weight: normal;
+        font-style: normal;
+      }
+    </style>
+</head>
+<body>
+
+    <div class="bg-canvas">
+        <div class="floating-blob blob-1"></div>
+        <div class="floating-blob blob-2"></div>
+        <div class="floating-blob blob-3"></div>
+    </div>
+
+    <!-- Decorative floating tea icons -->
+    <i class="fa-solid fa-leaf tea-decor" style="top: 12%; left: 8%; font-size: 2rem;"></i>
+    <i class="fa-solid fa-mug-hot tea-decor" style="bottom: 15%; left: 6%; font-size: 2.5rem; animation-delay: -3s;"></i>
+    <i class="fa-solid fa-leaf tea-decor" style="top: 20%; right: 10%; font-size: 1.8rem; animation-delay: -6s;"></i>
+
+    <div class="admin-portal-wrapper" id="portalContainer">
+        
+        <!-- Left Hero Section -->
+        <div class="portal-hero">
+            <a href="../Index.html" class="hero-brand">
+                <img src="../assets/Logo/MT.png" alt="MewTea Logo" onerror="this.src='https://via.placeholder.com/48?text=MT'">
+                <div class="hero-brand-text">Mew<em>Tea</em></div>
+            </a>
+
+            <div class="hero-illustration">
+                <div class="hero-badge">
+                    <i class="fa-solid fa-shield-halved"></i> MewTea Management Portal
+                </div>
+                <h1 class="hero-title">Quản trị hệ thống<br><em>MewTea CMS</em></h1>
+                <p class="hero-desc">Bảng điều khiển trung tâm giúp theo dõi doanh thu, vận hành đơn hàng và trải nghiệm khách hàng tiêu chuẩn 5 sao.</p>
+            </div>
+
+        </div>
+
+        <!-- Right Form Section -->
+        <div class="portal-form-side">
+            <div class="form-header">
+                <h2>Đăng Nhập Quản Trị</h2>
+                <p>Welcome back Administrator! Vui lòng xác thực tài khoản.</p>
+            </div>
+
+            <form id="adminLoginForm">
+                <div class="form-group">
+                    <label class="form-label">Tài khoản / Email</label>
+                    <div class="input-wrapper">
+                        <input type="text" id="username" class="form-input" placeholder="Tên Tài Khoản" required>
+                        <i class="fa-regular fa-user input-icon"></i>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Mật khẩu</label>
+                    <div class="input-wrapper">
+                        <input type="password" id="password" class="form-input" placeholder="••••••••" required>
+                        <i class="fa-solid fa-lock input-icon"></i>
+                        <button type="button" class="password-toggle" id="togglePass" aria-label="Hiện mật khẩu">
+                            <i class="fa-regular fa-eye"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="form-options">
+                    <label class="remember-label">
+                        <input type="checkbox" class="remember-checkbox" checked>
+                        <span>Duy trì đăng nhập</span>
+                    </label>
+                    <a href="#" class="forgot-link" onclick="alert('Vui lòng liên hệ Admin hệ thống để cấp lại mật khẩu!'); return false;">Quên mật khẩu?</a>
+                </div>
+
+                <button type="submit" class="btn-submit">
+                    <span>Đăng Nhập Dashboard</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </form>
+
+            <div class="social-divider">
+                <span>Hoặc tiếp tục với SSO</span>
+            </div>
+
+            <div class="social-grid">
+                <a href="#" class="btn-social" title="Continue with Google" onclick="simulateSSO('Google'); return false;">
+                    <i class="fa-brands fa-google"></i>
+                </a>
+                <a href="#" class="btn-social" title="Continue with Facebook" onclick="simulateSSO('Facebook'); return false;">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+                <a href="#" class="btn-social" title="Continue with Microsoft" onclick="simulateSSO('Microsoft'); return false;">
+                    <i class="fa-brands fa-microsoft"></i>
+                </a>
+                <a href="#" class="btn-social" title="Continue with Apple" onclick="simulateSSO('Apple'); return false;">
+                    <i class="fa-brands fa-apple"></i>
+                </a>
+            </div>
+
+            <div class="back-to-site">
+                <a href="../Index.html">
+                    <i class="fa-solid fa-arrow-left"></i> Quay lại trang chủ người dùng MewTea
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Alert -->
+    <div class="toast-alert" id="toastError">
+        <i class="fa-solid fa-circle-exclamation"></i>
+        <div class="toast-content">
+            <strong>Đăng nhập thất bại!</strong>
+            <span id="toastMsg">Tài khoản hoặc mật khẩu không chính xác.</span>
+        </div>
+    </div>
+
+    <script src="../assets/js/admin-login.js"></script>
+</body>
+</html>

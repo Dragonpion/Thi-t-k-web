@@ -1,0 +1,955 @@
+
+/* ==========================================================================
+   0. ROOT TOKENS — MewTea Design System
+   ========================================================================== */
+:root{
+  /* Primary (Winter / Charcoal-Steel) */
+  --p-900:#313C45;
+  --p-800:#3C4C59;
+  --p-700:#4F6271;
+  --p-600:#64798A;
+  --p-500:#778CA4;
+  /* Secondary */
+  --s-400:#B3BFCB;
+  --s-300:#C7D1DB;
+  --s-200:#D5DBE2;
+  --s-100:#E8EDF2;
+  /* Background */
+  --bg-100:#F9FAFB;
+  --bg-200:#F4F6F8;
+  --bg-300:#EEF2F5;
+  /* Accent — Luxury Gold */
+  --gold-dark:#C9A227;
+  --gold:#D4AF37;
+  --gold-light:#F2D479;
+  /* Neutrals */
+  --white:#FFFFFF;
+  --ink:#20272D;
+
+  /* Specific SALE Theme Tokens */
+  --bg-sale-gradient: linear-gradient(135deg, #D7EFFF 0%, #F4F6F8 100%);
+  --accent-red: #E53935;
+  --accent-red-gradient: linear-gradient(135deg, #FF5252 0%, #E53935 100%);
+  --accent-green: #2E7D32;
+  --yellow-badge: #FFF9C4;
+  --yellow-badge-text: #F57F17;
+
+  /* Type */
+  --font-display:'Playfair Display', serif;
+  --font-body:'Inter', sans-serif;
+
+  /* Spacing — 8px system */
+  --sp-1:.5rem;   --sp-2:1rem;   --sp-3:1.5rem;  --sp-4:2rem;
+  --sp-5:3rem;    --sp-6:4rem;   --sp-7:6rem;    --sp-8:8rem;
+
+  /* Radius */
+  --r-sm:10px; --r-md:18px; --r-lg:28px; --r-pill:999px;
+
+  /* Shadow */
+  --sh-sm:0 2px 10px rgba(49,60,69,.06);
+  --sh-md:0 10px 30px rgba(49,60,69,.10);
+  --sh-lg:0 24px 60px rgba(49,60,69,.16);
+
+  /* Motion */
+  --ease:cubic-bezier(.4,0,.2,1);
+  --t-fast:.25s var(--ease);
+  --t-med:.45s var(--ease);
+}
+
+@media (prefers-reduced-motion: reduce){
+  *{ animation-duration:.001ms !important; animation-iteration-count:1 !important; transition-duration:.001ms !important; scroll-behavior:auto !important; }
+}
+
+/* ==========================================================================
+   1. RESET & BASE
+   ========================================================================== */
+*,*::before,*::after{ box-sizing:border-box; margin:0; padding:0; }
+html{ scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
+body{
+  font-family:var(--font-body);
+  color:var(--p-900);
+  background:var(--bg-100);
+  line-height:1.6;
+  font-weight:400;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+img{ max-width:100%; height:auto; display:block; }
+a{ text-decoration:none; color:inherit; }
+ul{ list-style:none; }
+button{ font-family:inherit; border:none; background:none; cursor:pointer; }
+input{ font-family:inherit; }
+h1,h2,h3,h4{ font-family:var(--font-display); font-weight:600; color:var(--p-900); line-height:1.2; letter-spacing:.01em; }
+:focus-visible{ outline:2px solid var(--gold-dark); outline-offset:3px; }
+
+.container{ width:100%; max-width:1320px; margin-inline:auto; padding-inline:clamp(1.25rem,4vw,2.5rem); }
+.section{ padding-block:clamp(3.5rem,7vw,6.5rem); position:relative; }
+.section--tight{ padding-block:clamp(2.5rem,5vw,4rem); }
+.bg-alt{ background:var(--bg-200); }
+.bg-dark{ background:var(--p-900); color:var(--s-200); }
+.bg-dark h2, .bg-dark h3{ color:var(--white); }
+
+.eyebrow{
+  font-family:var(--font-body); font-size:.78rem; font-weight:600; letter-spacing:.22em;
+  text-transform:uppercase; color:var(--gold-dark); margin-bottom:var(--sp-2);
+  display:inline-flex; align-items:center; gap:.6rem;
+}
+.eyebrow::before{ content:''; width:22px; height:1px; background:var(--gold-dark); display:inline-block; }
+
+.section-head{ max-width:640px; margin-bottom:clamp(2rem,4vw,3.5rem); }
+.section-head h2{ font-size:clamp(1.75rem,3.2vw,2.75rem); margin-bottom:var(--sp-2); }
+.section-head p{ color:var(--p-600); font-size:1.02rem; }
+.section-head--center{ margin-inline:auto; text-align:center; }
+.bg-dark .section-head p{ color:var(--s-300); }
+
+/* divider */
+.divider{ display:flex; align-items:center; justify-content:center; gap:var(--sp-3); margin-block:var(--sp-2) var(--sp-6); color:var(--s-400); }
+.divider::before,.divider::after{ content:''; height:1px; width:clamp(40px,10vw,110px); background:linear-gradient(90deg, transparent, var(--s-300)); }
+.divider::after{ background:linear-gradient(90deg, var(--s-300), transparent); }
+.divider i{ color:var(--gold); font-size:.85rem; }
+
+/* Buttons */
+.btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:.6rem;
+  padding:1rem 2rem; border-radius:var(--r-pill); font-weight:600; font-size:.95rem;
+  transition:transform var(--t-fast), box-shadow var(--t-fast), background var(--t-fast), color var(--t-fast), border-color var(--t-fast);
+  white-space:nowrap; position:relative; overflow:hidden;
+}
+.btn--gold{ background:linear-gradient(135deg,var(--gold-dark),var(--gold)); color:var(--p-900); box-shadow:var(--sh-sm); }
+.btn--gold:hover{ transform:translateY(-3px); box-shadow:var(--sh-md); }
+.btn--ghost{ background:transparent; border:1.5px solid rgba(249,250,251,.5); color:inherit; backdrop-filter:blur(6px); }
+.btn--ghost:hover{ background:rgba(249,250,251,.12); border-color:var(--white); transform:translateY(-3px); }
+.btn--dark{ background:var(--p-900); color:var(--white); }
+.btn--dark:hover{ background:var(--p-800); transform:translateY(-3px); box-shadow:var(--sh-md); }
+.btn--outline{ border:1.5px solid var(--s-300); color:var(--p-800); }
+.btn--outline:hover{ border-color:var(--gold-dark); color:var(--gold-dark); }
+.btn--sm{ padding:.65rem 1.3rem; font-size:.82rem; }
+.btn--block{ width:100%; }
+
+/* Red Discount Button (Premium Style) */
+.btn--red{
+  background: var(--accent-red-gradient);
+  color: var(--white);
+  box-shadow: 0 4px 15px rgba(229, 57, 53, 0.3);
+}
+.btn--red:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(229, 57, 53, 0.45);
+}
+
+/* Glass */
+.glass{ background:rgba(249,250,251,.72); backdrop-filter:blur(16px) saturate(140%); -webkit-backdrop-filter:blur(16px) saturate(140%); border:1px solid rgba(255,255,255,.5); }
+
+/* ==========================================================================
+   3. HERO SALE (Premium Gradient & Soft Geometric Animations)
+   ========================================================================== */
+.hero-sale{
+  position:relative;
+  min-height:min(85vh, 760px);
+  display:flex;
+  align-items:center;
+  background:var(--bg-sale-gradient);
+  overflow:hidden;
+  padding-block:var(--sp-5);
+}
+.hero-sale__container{
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  align-items:center;
+  gap:var(--sp-5);
+  position:relative;
+  z-index:5;
+}
+.hero-sale__content{
+  max-width:600px;
+  animation:fadeUp .8s var(--ease) forwards;
+}
+.hero-sale .eyebrow{
+  color:var(--accent-red);
+}
+.hero-sale .eyebrow::before{
+  background:var(--accent-red);
+}
+.hero-sale__title{
+  font-size:clamp(2.5rem, 5vw, 4.2rem);
+  font-weight:700;
+  color:var(--p-900);
+  margin-bottom:var(--sp-2);
+}
+.hero-sale__title span{
+  color:var(--accent-red);
+  background:linear-gradient(120deg, #FF1744, #D50000);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+.hero-sale__desc{
+  font-size:clamp(1rem, 1.3vw, 1.15rem);
+  color:var(--p-700);
+  margin-bottom:var(--sp-4);
+  line-height:1.7;
+}
+.hero-sale__cta{
+  display:flex;
+  flex-wrap:wrap;
+  gap:var(--sp-2);
+}
+
+/* Floating Art Media Section */
+.hero-sale__media{
+  position:relative;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:480px;
+}
+.blob-bg{
+  position:absolute;
+  width:380px;
+  height:380px;
+  background:linear-gradient(135deg, rgba(215,239,255,0.8) 0%, rgba(242,212,121,0.3) 100%);
+  border-radius:58% 42% 54% 46% / 46% 51% 49% 54%;
+  animation:blobMelt 8s ease-in-out infinite alternate;
+  z-index:1;
+}
+.product-cup{
+  position:relative;
+  z-index:3;
+  width:320px;
+  height:auto;
+  filter:drop-shadow(0 20px 40px rgba(49,60,69,0.18));
+  animation:floatingCup 5s ease-in-out infinite;
+}
+.bubble-float{
+  position:absolute;
+  border-radius:50%;
+  background:rgba(255,255,255,0.4);
+  box-shadow:inset 0 2px 10px rgba(255,255,255,0.6), 0 4px 10px rgba(49,60,69,0.05);
+  backdrop-filter:blur(1px);
+  z-index:4;
+  pointer-events:none;
+}
+.bubble-float--1{ width:45px; height:45px; left:10%; top:20%; animation:bubbleUpDown 4s ease-in-out infinite; }
+.bubble-float--2{ width:28px; height:28px; right:15%; top:15%; animation:bubbleUpDown 3s ease-in-out infinite 1s; }
+.bubble-float--3{ width:35px; height:35px; right:10%; bottom:25%; animation:bubbleUpDown 5s ease-in-out infinite 0.5s; }
+
+.tea-leaf{
+  position:absolute;
+  z-index:2;
+  width:45px;
+  opacity:0.85;
+  filter:drop-shadow(0 5px 10px rgba(0,0,0,0.05));
+}
+.tea-leaf--1{ top:15%; left:25%; transform:rotate(15deg); animation:leafFloat 6s ease-in-out infinite alternate; }
+.tea-leaf--2{ bottom:18%; left:15%; transform:rotate(-45deg); animation:leafFloat 5s ease-in-out infinite alternate 1.5s; }
+
+/* ==========================================================================
+   3b. BỔ SUNG: Sửa lỗi hiển thị lá trà trong Hero — thay ảnh lỗi bằng icon-font
+   (đồng bộ phong cách với .hero-about__deco-leaf của About.html)
+   ========================================================================== */
+.hero-sale__deco-leaf{
+  position:absolute;
+  z-index:2;
+  color:var(--gold-dark);
+  opacity:0.3;
+  font-size:2.1rem;
+  pointer-events:none;
+}
+.hero-sale__deco-leaf--1{ top:14%; left:22%; animation:heroLeafFloat 6s ease-in-out infinite; }
+.hero-sale__deco-leaf--2{ bottom:20%; left:12%; animation:heroLeafFloat 4.5s ease-in-out infinite 1s; }
+.hero-sale__deco-leaf--3{ top:32%; right:14%; font-size:1.5rem; animation:heroLeafFloat 5.5s ease-in-out infinite 0.6s; }
+@keyframes heroLeafFloat{
+  0%   { transform:translateY(0) rotate(0deg); opacity:0.15; }
+  50%  { transform:translateY(-16px) rotate(10deg); opacity:0.35; }
+  100% { transform:translateY(0) rotate(0deg); opacity:0.15; }
+}
+
+/* Splash details */
+.water-splash{
+  position:absolute;
+  bottom:15%;
+  right:15%;
+  width:140px;
+  z-index:2;
+  opacity:0.75;
+  transform:rotate(10deg);
+}
+
+/* CSS Keyframes Animations */
+@keyframes blobMelt{
+  0% { border-radius:58% 42% 54% 46% / 46% 51% 49% 54%; transform:scale(1); }
+  100% { border-radius:45% 55% 35% 65% / 55% 45% 55% 45%; transform:scale(1.05) rotate(15deg); }
+}
+@keyframes floatingCup{
+  0%, 100% { transform:translateY(0) rotate(0deg); }
+  50% { transform:translateY(-15px) rotate(2deg); }
+}
+@keyframes bubbleUpDown{
+  0%, 100% { transform:translateY(0) scale(1); }
+  50% { transform:translateY(-12px) scale(1.08); }
+}
+@keyframes leafFloat{
+  0% { transform:translateY(0) rotate(0deg) scale(1); }
+  100% { transform:translateY(-8px) rotate(25deg) scale(1.05); }
+}
+@keyframes fadeUp{
+  from { opacity:0; transform:translateY(30px); }
+  to { opacity:1; transform:translateY(0); }
+}
+
+@media (max-width:991px){
+  .hero-sale__container{ grid-template-columns:1fr; text-align:center; padding-top:var(--sp-4); }
+  .hero-sale__content{ margin-inline:auto; }
+  .hero-sale__cta{ justify-content:center; }
+  .hero-sale__media{ height:380px; margin-top:var(--sp-4); }
+  .blob-bg{ width:280px; height:280px; }
+  .product-cup{ width:220px; }
+}
+
+/* ==========================================================================
+   4. FLASH SALE SECTION (Elegant Banner with CSS Countdown UI)
+   ========================================================================== */
+.flash-sale{
+  padding-block:var(--sp-3);
+  margin-top:-50px;
+  position:relative;
+  z-index:10;
+}
+.flash-sale__banner{
+  background:linear-gradient(135deg, var(--p-900) 0%, var(--p-800) 100%);
+  border-radius:var(--r-lg);
+  padding:var(--sp-3) var(--sp-4);
+  box-shadow:var(--sh-lg);
+  border:1px solid rgba(255,255,255,0.08);
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  justify-content:space-between;
+  gap:var(--sp-3);
+  position:relative;
+  overflow:hidden;
+}
+.flash-sale__banner::before{
+  content:'';
+  position:absolute;
+  top:-50%; left:-50%;
+  width:200%; height:200%;
+  background:linear-gradient(45deg, transparent 45%, rgba(255,255,255,0.05) 50%, transparent 55%);
+  animation:shiningMove 6s infinite linear;
+}
+@keyframes shiningMove{
+  0% { transform:translate(-30%, -30%); }
+  100% { transform:translate(30%, 30%); }
+}
+.flash-sale__info{
+  display:flex;
+  align-items:center;
+  gap:var(--sp-3);
+  color:var(--white);
+}
+.flash-sale__icon{
+  font-size:2.2rem;
+  color:var(--gold);
+  animation:pulseScale 1.5s infinite alternate;
+}
+@keyframes pulseScale{
+  0% { transform:scale(1); }
+  100% { transform:scale(1.15); }
+}
+.flash-sale__text h3{
+  font-size:clamp(1.4rem, 2.2vw, 1.8rem);
+  color:var(--white);
+}
+.flash-sale__text p{
+  color:var(--s-300);
+  font-size:.9rem;
+}
+.flash-sale__text p span{
+  color:var(--accent-red);
+  font-weight:700;
+}
+
+/* CSS Countdown Clock UI */
+.countdown{
+  display:flex;
+  gap:.6rem;
+  align-items:center;
+}
+.countdown__title{
+  color:var(--s-300);
+  font-size:.82rem;
+  text-transform:uppercase;
+  letter-spacing:.12em;
+  font-weight:600;
+}
+.countdown__box{
+  background:rgba(255,255,255,0.08);
+  border:1px solid rgba(255,255,255,0.15);
+  backdrop-filter:blur(6px);
+  padding:.6rem .8rem;
+  border-radius:var(--r-sm);
+  min-width:54px;
+  text-align:center;
+  box-shadow:inset 0 1px 3px rgba(255,255,255,0.1);
+}
+.countdown__num{
+  display:block;
+  font-family:var(--font-body);
+  font-size:1.25rem;
+  font-weight:700;
+  color:var(--gold-light);
+  line-height:1;
+}
+.countdown__lbl{
+  display:block;
+  font-size:.65rem;
+  color:var(--s-400);
+  text-transform:uppercase;
+  margin-top:.2rem;
+}
+.countdown__sep{
+  color:var(--gold);
+  font-weight:700;
+  font-size:1.2rem;
+  animation:blinkColon 1s infinite;
+}
+@keyframes blinkColon{
+  0%, 100% { opacity:1; }
+  50% { opacity:0.3; }
+}
+
+@media (max-width:768px){
+  .flash-sale__banner{ justify-content:center; text-align:center; }
+  .flash-sale__info{ flex-direction:column; text-align:center; }
+  .countdown{ width:100%; justify-content:center; }
+}
+
+/* ==========================================================================
+   4b. BỔ SUNG: Trạng thái Flash Sale (đang diễn ra / đã kết thúc) — chỉ bổ sung
+   ========================================================================== */
+.flash-sale__status-badge{
+  display:inline-block;
+  vertical-align:middle;
+  margin-left:.6rem;
+  font-size:.62rem;
+  font-weight:700;
+  letter-spacing:.05em;
+  padding:.25rem .6rem;
+  border-radius:var(--r-pill);
+  background:rgba(212,175,55,0.18);
+  color:var(--gold-light);
+  border:1px solid rgba(212,175,55,0.4);
+  text-transform:uppercase;
+}
+.flash-sale__banner.is-expired .flash-sale__status-badge{
+  background:rgba(255,255,255,0.08);
+  color:var(--s-400);
+  border-color:rgba(255,255,255,0.15);
+}
+.flash-sale__banner.is-expired .flash-sale__icon{ animation:none; opacity:.5; }
+.flash-sale__banner.is-expired .countdown__num{ color:var(--s-400); }
+#flash-sale-buy-btn{ white-space:nowrap; }
+#flash-sale-buy-btn.is-disabled{
+  pointer-events:none;
+  cursor:not-allowed;
+  background:rgba(255,255,255,0.12);
+  color:var(--s-400);
+  border-color:rgba(255,255,255,0.15);
+  box-shadow:none;
+}
+
+/* ==========================================================================
+   5. SALE PRODUCTS GRID & REDESIGNED CARDS (10 Products, 5 Columns Grid)
+   ========================================================================== */
+.sale-menu__grid{
+  display:grid;
+  grid-template-columns:repeat(5, 1fr);
+  gap:var(--sp-3);
+}
+
+/* Redesigned Card with exact structural requirements */
+.sale-card{
+  background:var(--white);
+  border-radius:var(--r-md);
+  overflow:hidden;
+  box-shadow:var(--sh-sm);
+  border:1px solid var(--s-100);
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  height:100%;
+  transition:transform var(--t-med), box-shadow var(--t-med), border-color var(--t-med);
+}
+.sale-card:hover{
+  transform:translateY(-8px);
+  box-shadow:var(--sh-lg);
+  border-color:var(--s-300);
+}
+.sale-card__img-container{
+  position:relative;
+  aspect-ratio:1/1;
+  overflow:hidden;
+  background:var(--bg-300);
+}
+.sale-card__img-container img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:transform .6s var(--ease);
+}
+.sale-card:hover .sale-card__img-container img{
+  transform:scale(1.1);
+}
+
+/* Required Premium SALE Badge in Top-Left */
+.sale-badge{
+  position:absolute;
+  top:12px;
+  left:12px;
+  z-index:10;
+  background:var(--accent-red-gradient);
+  color:var(--white);
+  padding:.4rem .7rem;
+  border-radius:8px;
+  font-weight:700;
+  font-size:.72rem;
+  line-height:1.1;
+  text-align:center;
+  box-shadow:0 4px 10px rgba(229,57,53,0.3);
+  text-transform:uppercase;
+  letter-spacing:.03em;
+  animation:badgePulse 2s infinite alternate;
+}
+@keyframes badgePulse{
+  0% { transform:scale(1); box-shadow:0 4px 10px rgba(229,57,53,0.3); }
+  100% { transform:scale(1.05); box-shadow:0 6px 15px rgba(229,57,53,0.5); }
+}
+
+/* Content Area */
+.sale-card__body{
+  padding:1.1rem;
+  display:flex;
+  flex-direction:column;
+  flex-grow:1;
+}
+.sale-card__title{
+  font-family:var(--font-display);
+  font-size:1rem;
+  font-weight:600;
+  color:var(--p-900);
+  margin-bottom:.3rem;
+  display:-webkit-box;
+  -webkit-line-clamp:1;
+  -webkit-box-orient:vertical;
+  overflow:hidden;
+}
+.sale-card__desc{
+  font-size:.78rem;
+  color:var(--p-600);
+  margin-bottom:.6rem;
+  display:-webkit-box;
+  -webkit-line-clamp:2;
+  -webkit-box-orient:vertical;
+  overflow:hidden;
+}
+.sale-card__meta{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  font-size:.74rem;
+  color:var(--p-500);
+  margin-bottom:var(--sp-2);
+}
+.sale-card__stars{
+  color:var(--gold);
+}
+
+/* MANDATORY PRICING SYSTEM */
+.sale-card__pricing{
+  margin-bottom:var(--sp-2);
+  display:flex;
+  flex-direction:column;
+  gap:2px;
+}
+.sale-card__price-original{
+  font-size:.78rem;
+  color:var(--p-500);
+  opacity:0.8;
+  font-weight:500;
+}
+.sale-card__price-original del {
+  text-decoration: line-through;
+}
+.sale-card__price-sale-box{
+  background:var(--accent-red-gradient);
+  padding:.4rem .8rem;
+  border-radius:10px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow:0 3px 8px rgba(229, 57, 53, 0.2);
+}
+.sale-card__price-sale{
+  font-size:1.15rem;
+  font-weight:700;
+  color:var(--white);
+}
+
+/* Promo Tag Info (Green saving box below pricing) */
+.sale-card__promo-tag{
+  background:rgba(46, 125, 50, 0.08);
+  border:1.2px dashed var(--accent-green);
+  border-radius:8px;
+  padding:.35rem .6rem;
+  font-size:.72rem;
+  color:var(--accent-green);
+  font-weight:600;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:.3rem;
+  margin-bottom:var(--sp-3);
+  margin-top:auto;
+}
+
+/* Button with subtle hover shine and bounce */
+.sale-card__action{
+  position:relative;
+  overflow:hidden;
+}
+.sale-card__action .btn{
+  font-size:.82rem;
+  padding:.65rem;
+  border-radius:10px;
+}
+.sale-card__action .btn::before{
+  content:'';
+  position:absolute;
+  top:0; left:-100%;
+  width:100%; height:100%;
+  background:linear-gradient(90deg, transparent, rgba(255,255,255,0.35), transparent);
+  transition:none;
+}
+.sale-card:hover .sale-card__action .btn::before{
+  left:100%;
+  transition:0.6s ease-in-out;
+}
+
+@media (max-width:1200px){
+  .sale-menu__grid{ grid-template-columns:repeat(4, 1fr); }
+}
+@media (max-width:991px){
+  .sale-menu__grid{ grid-template-columns:repeat(3, 1fr); }
+}
+@media (max-width:768px){
+  .sale-menu__grid{ grid-template-columns:repeat(2, 1fr); gap:var(--sp-2); }
+}
+@media (max-width:480px){
+  .sale-menu__grid{ grid-template-columns:1fr; }
+}
+
+/* ==========================================================================
+   6. COMBO SALE SECTION & PROMOTION GRID BANNERS (Alternating Grid)
+   ========================================================================== */
+.promo-banners__grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:var(--sp-4);
+  margin-bottom:var(--sp-5);
+}
+.promo-banner-card{
+  border-radius:var(--r-lg);
+  overflow:hidden;
+  box-shadow:var(--sh-md);
+  display:grid;
+  grid-template-columns:1.2fr .8fr;
+  align-items:center;
+  background:var(--white);
+  border:1px solid var(--s-100);
+  transition:transform var(--t-med), box-shadow var(--t-med);
+}
+.promo-banner-card:hover{
+  transform:translateY(-6px);
+  box-shadow:var(--sh-lg);
+}
+.promo-banner-card__content{
+  padding:var(--sp-4);
+}
+.promo-banner-card__tag{
+  background:var(--yellow-badge);
+  color:var(--yellow-badge-text);
+  padding:.3rem .6rem;
+  font-size:.72rem;
+  font-weight:700;
+  border-radius:6px;
+  display:inline-block;
+  margin-bottom:var(--sp-2);
+}
+.promo-banner-card__title{
+  font-family:var(--font-display);
+  font-size:1.6rem;
+  font-weight:700;
+  margin-bottom:var(--sp-1);
+}
+.promo-banner-card__desc{
+  font-size:.88rem;
+  color:var(--p-600);
+  margin-bottom:var(--sp-3);
+}
+.promo-banner-card__img{
+  height:100%;
+  position:relative;
+  background:var(--bg-300);
+}
+.promo-banner-card__img img{
+  width:100%; height:100%;
+  object-fit:cover;
+}
+
+@media (max-width:768px){
+  .promo-banners__grid{ grid-template-columns:1fr; }
+  .promo-banner-card{ grid-template-columns:1fr; }
+  .promo-banner-card__img{ height:180px; }
+}
+
+/* COMBO SALE */
+.combo-sale{
+  border-radius:var(--r-lg);
+  background:linear-gradient(135deg, #E3F2FD 0%, #FFF3E0 100%);
+  padding:clamp(2rem, 4vw, 3.5rem);
+  box-shadow:var(--sh-md);
+  border:1px solid var(--s-100);
+}
+.combo-sale__grid{
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:var(--sp-4);
+  align-items:center;
+}
+.combo-sale__left{
+  max-width:550px;
+}
+.combo-sale__eyebrow{
+  color:var(--accent-red);
+  font-weight:700;
+  text-transform:uppercase;
+  font-size:.8rem;
+  letter-spacing:.15em;
+  margin-bottom:var(--sp-2);
+}
+.combo-sale__title{
+  font-size:clamp(1.8rem, 3vw, 2.6rem);
+  color:var(--p-900);
+  margin-bottom:var(--sp-2);
+}
+.combo-sale__desc{
+  color:var(--p-700);
+  font-size:.95rem;
+  margin-bottom:var(--sp-4);
+}
+.combo-sale__benefit-list{
+  margin-bottom:var(--sp-4);
+}
+.combo-sale__benefit-item{
+  display:flex;
+  align-items:center;
+  gap:.6rem;
+  font-weight:600;
+  color:var(--p-800);
+  margin-bottom:.5rem;
+  font-size:.9rem;
+}
+.combo-sale__benefit-item i{
+  color:var(--accent-red);
+}
+.combo-sale__right{
+  position:relative;
+  display:flex;
+  justify-content:center;
+}
+.combo-sale__img-card{
+  background:var(--white);
+  padding:1rem;
+  border-radius:var(--r-md);
+  box-shadow:var(--sh-lg);
+  max-width:380px;
+  transform:rotate(2deg);
+  transition:transform var(--t-fast);
+}
+.combo-sale__img-card:hover{
+  transform:rotate(0) scale(1.02);
+}
+.combo-sale__img-card img{
+  border-radius:12px;
+  width:100%;
+}
+.combo-sale__tag{
+  position:absolute;
+  top:-20px;
+  right:-10px;
+  background:var(--accent-red-gradient);
+  color:var(--white);
+  width:72px; height:72px;
+  border-radius:50%;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  box-shadow:var(--sh-md);
+  font-weight:700;
+  font-size:.8rem;
+  line-height:1.1;
+  animation:bubbleUpDown 4s ease-in-out infinite alternate;
+}
+
+@media (max-width:991px){
+  .combo-sale__grid{ grid-template-columns:1fr; }
+  .combo-sale__left{ text-align:center; margin-inline:auto; }
+  .combo-sale__benefit-list{ display:inline-block; text-align:left; }
+  .combo-sale__right{ margin-top:var(--sp-3); }
+}
+
+/* ==========================================================================
+   7. VOUCHER SECTIONS (Pure CSS Tickets with Hover Clip effects)
+   ========================================================================== */
+.vouchers__grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(320px, 1fr));
+  gap:var(--sp-3);
+}
+.voucher-card{
+  background:var(--white);
+  border:1px solid var(--s-200);
+  border-radius:16px;
+  position:relative;
+  display:grid;
+  grid-template-columns:1.3fr .7fr;
+  box-shadow:var(--sh-sm);
+  overflow:hidden;
+}
+.voucher-card::before, .voucher-card::after{
+  content:'';
+  position:absolute;
+  left:65%;
+  width:16px; height:16px;
+  background:var(--bg-100);
+  border:1px solid var(--s-200);
+  border-radius:50%;
+  z-index:10;
+}
+.voucher-card::before{ top:-9px; box-shadow:inset 0 -3px 3px rgba(0,0,0,0.02); }
+.voucher-card::after{ bottom:-9px; box-shadow:inset 0 3px 3px rgba(0,0,0,0.02); }
+
+.voucher-card__left{
+  padding:1.25rem;
+  border-right:1.5px dashed var(--s-300);
+}
+.voucher-card__val{
+  font-family:var(--font-display);
+  font-size:1.8rem;
+  font-weight:700;
+  color:var(--accent-red);
+  margin-bottom:.2rem;
+}
+.voucher-card__title{
+  font-size:.9rem;
+  font-weight:600;
+  color:var(--p-900);
+  margin-bottom:.4rem;
+}
+.voucher-card__rules{
+  font-size:.74rem;
+  color:var(--p-500);
+}
+.voucher-card__right{
+  padding:1.25rem;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  background:var(--bg-200);
+}
+.voucher-card__code{
+  font-family:var(--font-body);
+  font-weight:700;
+  font-size:.9rem;
+  letter-spacing:.05em;
+  color:var(--p-800);
+  margin-bottom:.5rem;
+  background:var(--white);
+  padding:.3rem .5rem;
+  border-radius:6px;
+  border:1px solid var(--s-300);
+}
+.voucher-card .btn{
+  font-size:.76rem;
+  padding:.5rem 1rem;
+}
+.voucher-card:hover{
+  box-shadow:var(--sh-md);
+  border-color:var(--s-300);
+}
+
+/* ==========================================================================
+   8. REVIEW SECTION
+   ========================================================================== */
+.reviews__grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:var(--sp-4); }
+.review-card{
+  background:var(--white); border-radius:var(--r-md); padding:var(--sp-4); box-shadow:var(--sh-sm);
+  border:1px solid var(--s-100); transition:box-shadow var(--t-fast), transform var(--t-fast);
+}
+.review-card:hover{ box-shadow:var(--sh-md); transform:translateY(-4px); }
+.review-card__stars{ color:var(--gold); font-size:.82rem; margin-bottom:var(--sp-2); }
+.review-card__quote{ color:var(--p-700); font-size:.96rem; margin-bottom:var(--sp-3); font-style:italic; }
+.review-card__author{ display:flex; align-items:center; gap:.8rem; }
+.review-card__author img{ width:46px; height:46px; border-radius:50%; object-fit:cover; }
+.review-card__author .name{ font-weight:600; font-size:.9rem; color:var(--p-900); }
+.review-card__author .role{ font-size:.76rem; color:var(--p-500); }
+
+/* ==========================================================================
+   9. BRAND CTA SECTION
+   ========================================================================== */
+.cta-banner{
+  background:linear-gradient(135deg, var(--p-900) 0%, var(--p-800) 50%, var(--gold-dark) 150%);
+  color:var(--white);
+  border-radius:var(--r-lg);
+  overflow:hidden;
+  position:relative;
+}
+.cta-banner__inner{
+  position:relative;
+  z-index:5;
+  display:grid;
+  grid-template-columns:1.2fr .8fr;
+  align-items:center;
+  gap:var(--sp-4);
+  padding:clamp(2.5rem, 5vw, 4.5rem);
+}
+.cta-banner__text{
+  max-width:550px;
+}
+.cta-banner__text h2{
+  font-size:clamp(2rem, 3.5vw, 3rem);
+  color:var(--white);
+  margin-bottom:var(--sp-2);
+}
+.cta-banner__text p{
+  color:var(--s-300);
+  font-size:1rem;
+  margin-bottom:var(--sp-4);
+}
+.cta-banner__img{
+  display:flex;
+  justify-content:center;
+  position:relative;
+}
+.cta-banner__cup{
+  width:260px;
+  filter:drop-shadow(0 20px 40px rgba(0,0,0,0.3));
+  animation:floatingCup 6s ease-in-out infinite;
+}
+
+@media (max-width:768px){
+  .cta-banner__inner{ grid-template-columns:1fr; text-align:center; }
+  .cta-banner__text{ margin-inline:auto; }
+  .cta-banner__img{ display:none; }
+}

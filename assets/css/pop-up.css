@@ -1,0 +1,321 @@
+/* ==========================================================================
+   MEWTEA PREMIUM FLOATING POPUP COMPONENT (PURE CSS)
+   Prefix: .mt-floating-* (Tránh xung đột CSS toàn cục)
+   ========================================================================== */
+
+/* Variables
+========================================================================== */
+:root {
+    --mt-gold-light: #FFE082;
+    --mt-gold-main: #D4AF37;
+    --mt-gold-dark: #AA7C11;
+    --mt-blue-bg: #D7EFFF;
+    --mt-glass-bg: rgba(255, 255, 255, 0.25);
+    --mt-glass-border: rgba(45, 55, 72, 0.3);
+    --mt-text-color: #2D3748;
+  }
+  
+  /* Wrapper Link (Anchor tag)
+  ========================================================================== */
+  a.mt-floating-popup-link {
+    position: fixed !important;
+    bottom: 30px !important;
+    right: 30px !important;
+    z-index: 999999 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-decoration: none !important;
+    outline: none !important;
+    -webkit-tap-highlight-color: transparent !important;
+    
+    /* Entry Animation */
+    animation: mtFadeScaleIn 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+  }
+  
+  /* Wave & Pulse Ring Effect (Xung quanh nút)
+  ========================================================================== */
+  a.mt-floating-popup-link::before,
+  a.mt-floating-popup-link::after {
+    content: '' !important;
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    width: 65px !important;
+    height: 65px !important;
+    border-radius: 50% !important;
+    transform: translate(-50%, -50%) scale(1) !important;
+    pointer-events: none !important;
+    z-index: -1 !important;
+  }
+  
+  /* Outer Pulse Ring */
+  a.mt-floating-popup-link::before {
+    border: 2px solid var(--mt-gold-main) !important;
+    animation: mtPulseRing 2.5s infinite cubic-bezier(0.215, 0.61, 0.355, 1) !important;
+  }
+  
+  /* Inner Glow Wave */
+  a.mt-floating-popup-link::after {
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.4) 0%, rgba(215, 239, 255, 0) 70%) !important;
+    animation: mtGlowWave 2.5s infinite linear 0.5s !important;
+  }
+  
+  /* Main Floating Button (Glassmorphism & Gold)
+  ========================================================================== */
+  button.mt-floating-popup {
+    position: relative !important;
+    width: 65px !important;
+    height: 65px !important;
+    border-radius: 50% !important;
+    border: 1.5px solid var(--mt-glass-border) !important;
+    
+    /* Premium Glassmorphism & Luxury Gold Gradient */
+    background: linear-gradient(135deg, 
+      rgba(255, 255, 255, 0.8) 0%, 
+      var(--mt-blue-bg) 45%, 
+      rgba(212, 175, 55, 0.3) 100%
+    ) !important;
+    
+    -webkit-backdrop-filter: blur(12px) saturate(180%) !important;
+    backdrop-filter: blur(12px) saturate(180%) !important;
+    
+    /* Soft Luxury Shadow */
+    box-shadow: 
+      0 10px 25px -5px rgba(212, 175, 55, 0.4),
+      0 8px 10px -6px rgba(0, 0, 0, 0.1),
+      inset 0 0 15px rgba(255, 255, 255, 0.9) !important;
+      
+    cursor: pointer !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: hidden !important;
+    
+    /* Continuous Animations */
+    animation: mtFloating 3.5s ease-in-out infinite !important;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  }
+  
+  /* Shimmer Light Effect (Vòng sáng xoay nhẹ qua nút)
+  ========================================================================== */
+  button.mt-floating-popup::before {
+    content: '' !important;
+    position: absolute !important;
+    top: -50% !important;
+    left: -50% !important;
+    width: 200% !important;
+    height: 200% !important;
+    background: linear-gradient(
+      45deg,
+      transparent 45%,
+      rgba(255, 255, 255, 0.8) 50%,
+      transparent 55%
+    ) !important;
+    transform: rotate(30deg) !important;
+    animation: mtShimmer 4s infinite linear !important;
+    pointer-events: none !important;
+  }
+  
+  /* Ripple Layer on Click
+  ========================================================================== */
+  button.mt-floating-popup::after {
+    content: '' !important;
+    position: absolute !important;
+    width: 100% !important;
+    height: 100% !important;
+    top: 0 !important;
+    left: 0 !important;
+    pointer-events: none !important;
+    background-image: radial-gradient(circle, var(--mt-gold-light) 10%, transparent 10.01%) !important;
+    background-repeat: no-repeat !important;
+    background-position: 50% !important;
+    transform: scale(10, 10) !important;
+    opacity: 0 !important;
+    transition: transform 0.5s, opacity 0.8s !important;
+  }
+  
+  /* Icon Style
+  ========================================================================== */
+  button.mt-floating-popup i {
+    font-size: 26px !important;
+    background: linear-gradient(135deg, var(--mt-gold-dark), var(--mt-gold-main)) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.15)) !important;
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+  }
+  
+  /* Tooltip (Glassmorphism + Blur)
+  ========================================================================== */
+  .mt-floating-tooltip {
+    position: absolute !important;
+    right: 80px !important;
+    top: 50% !important;
+    transform: translateY(-50%) translateX(15px) scale(0.95) !important;
+    
+    background: rgba(255, 255, 255, 0.85) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    backdrop-filter: blur(10px) !important;
+    
+    color: var(--mt-text-color) !important;
+    padding: 8px 16px !important;
+    border-radius: 30px !important;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    white-space: nowrap !important;
+    
+    border: 1px solid rgba(212, 175, 55, 0.3) !important;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05) !important;
+    
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+  }
+  
+  /* Arrow Tooltip */
+  .mt-floating-tooltip::after {
+    content: '' !important;
+    position: absolute !important;
+    right: -6px !important;
+    top: 50% !important;
+    transform: translateY(-50%) rotate(45deg) !important;
+    width: 10px !important;
+    height: 10px !important;
+    background: rgba(255, 255, 255, 0.85) !important;
+    border-top: 1px solid rgba(212, 175, 55, 0.3) !important;
+    border-right: 1px solid rgba(212, 175, 55, 0.3) !important;
+  }
+  
+  /* ==========================================================================
+     HOVER & ACTIVE STATES
+     ========================================================================== */
+  
+  /* Link Hover State */
+  a.mt-floating-popup-link:hover button.mt-floating-popup {
+    transform: scale(1.1) translateY(-3px) !important;
+    border-color: var(--mt-gold-main) !important;
+    background: linear-gradient(135deg, 
+      #FFFFFF 0%, 
+      var(--mt-gold-light) 50%, 
+      var(--mt-blue-bg) 100%
+    ) !important;
+    box-shadow: 
+      0 15px 35px -5px rgba(212, 175, 55, 0.6),
+      0 10px 15px -5px rgba(0, 0, 0, 0.15),
+      inset 0 0 20px rgba(255, 255, 255, 1) !important;
+  }
+  
+  a.mt-floating-popup-link:hover button.mt-floating-popup i {
+    transform: scale(1.15) rotate(12deg) !important;
+  }
+  
+  /* Show Tooltip on Hover */
+  a.mt-floating-popup-link:hover .mt-floating-tooltip {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(-50%) translateX(0) scale(1) !important;
+  }
+  
+  /* Click Active State (Ripple Trigger) */
+  a.mt-floating-popup-link:active button.mt-floating-popup {
+    transform: scale(0.92) !important;
+    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4) !important;
+  }
+  
+  a.mt-floating-popup-link:active button.mt-floating-popup::after {
+    transform: scale(0, 0) !important;
+    opacity: 0.6 !important;
+    transition: 0s !important;
+  }
+  
+  /* ==========================================================================
+     KEYFRAME ANIMATIONS
+     ========================================================================== */
+  
+  @keyframes mtFadeScaleIn {
+    0% {
+      opacity: 0;
+      transform: scale(0.3) translateY(40px);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+  }
+  
+  @keyframes mtFloating {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-8px);
+    }
+  }
+  
+  @keyframes mtPulseRing {
+    0% {
+      transform: translate(-50%, -50%) scale(0.9);
+      opacity: 0.8;
+    }
+    80%, 100% {
+      transform: translate(-50%, -50%) scale(1.6);
+      opacity: 0;
+    }
+  }
+  
+  @keyframes mtGlowWave {
+    0% {
+      transform: translate(-50%, -50%) scale(0.8);
+      opacity: 0.6;
+    }
+    100% {
+      transform: translate(-50%, -50%) scale(1.4);
+      opacity: 0;
+    }
+  }
+  
+  @keyframes mtShimmer {
+    0% {
+      transform: translateX(-150%) rotate(30deg);
+    }
+    20%, 100% {
+      transform: translateX(150%) rotate(30deg);
+    }
+  }
+  
+  /* ==========================================================================
+     RESPONSIVE DESIGN
+     ========================================================================== */
+  
+  @media (max-width: 768px) {
+    a.mt-floating-popup-link {
+      bottom: 20px !important;
+      right: 20px !important;
+    }
+  
+    button.mt-floating-popup {
+      width: 56px !important;
+      height: 56px !important;
+    }
+  
+    button.mt-floating-popup i {
+      font-size: 22px !important;
+    }
+  
+    a.mt-floating-popup-link::before,
+    a.mt-floating-popup-link::after {
+      width: 56px !important;
+      height: 56px !important;
+    }
+  
+    .mt-floating-tooltip {
+      right: 70px !important;
+      font-size: 13px !important;
+      padding: 6px 12px !important;
+    }
+  }

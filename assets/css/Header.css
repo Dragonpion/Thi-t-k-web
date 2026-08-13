@@ -1,0 +1,171 @@
+/* ==========================================================================
+   HEADER.CSS — MewTea Shared Site Header
+   ==========================================================================
+   Nguồn: tách nguyên trạng từ khối CSS Header/Branding của Menu.html
+   (Menu.html = SOURCE OF TRUTH cho Header/Footer theo yêu cầu refactor).
+   File này chỉ chứa CSS của: Logo (dùng chung Header/Footer), Site Header,
+   Navigation, Header actions, Icon buttons (search/cart/account), Cart badge,
+   Mobile menu toggle, Mobile overlay và Responsive Header.
+   Không chứa CSS của Hero/Banner/Main content/Footer riêng/Popup/Trang riêng.
+   ========================================================================== */
+
+/* Icon button (Search / Cart / Account trong Header) */
+.icon-btn{
+  width:44px; height:44px; display:inline-flex; align-items:center; justify-content:center;
+  border-radius:var(--r-sm); color:var(--p-800); font-size:1.05rem; position:relative;
+  transition:background var(--t-fast), color var(--t-fast);
+}
+.icon-btn:hover{ background:var(--bg-300); color:var(--gold-dark); }
+.icon-btn .cart-badge{
+  position:absolute; top:2px; right:2px; background:var(--gold-dark); color:var(--white);
+  font-size:.62rem; font-weight:700; width:16px; height:16px; border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+}
+
+/* Font riêng cho logo text (MewFont) */
+@font-face {
+  font-family: "MewFont";
+  src: url("Font/MewFont.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.logo {
+  display: flex !important;
+  align-items: center !important;
+  gap: 14px !important;
+  flex-shrink: 0;
+  text-decoration: none;
+}
+
+.logo__mark {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: none !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  flex-shrink: 0;
+  transition: transform 0.35s ease;
+}
+
+.logo__mark img {
+  border: none !important;
+  border-radius: 0 !important;
+  background: none !important;
+  object-fit: contain !important;
+  display: block;
+}
+
+.logo__text {
+  font-family: "MewFont", serif !important;
+  font-weight: normal !important;
+  line-height: 1 !important;
+  letter-spacing: 0.04em !important;
+  color: var(--p-900);
+  white-space: nowrap !important;
+  transition: color 0.35s ease;
+  margin-top: 10px;
+}
+
+.logo__text em {
+  font-style: normal;
+}
+
+.logo:hover .logo__mark {
+  transform: translateY(-2px);
+}
+
+.logo:hover .logo__text {
+  color: var(--gold-dark) !important;
+}
+
+.logo:hover .logo__text em {
+  color: var(--gold-dark) !important;
+}
+
+.logo__mark, .logo__mark img {
+  width: 60px !important;
+  height: 60px !important;
+}
+.logo__text {
+  font-size: 2.2rem !important;
+}
+
+@media (max-width: 991px) {
+  .logo__mark, .logo__mark img {
+    width: 54px !important;
+    height: 54px !important;
+  }
+  .logo__text {
+    font-size: 2rem !important;
+  }
+}
+
+@media (max-width: 575px) {
+  .logo__mark, .logo__mark img {
+    width: 48px !important;
+    height: 48px !important;
+  }
+  .logo__text {
+    font-size: 1.75rem !important;
+  }
+}
+
+.site-header {
+  position: sticky; top: 0; z-index: 200;
+  background: rgba(249, 250, 251, .82);
+  backdrop-filter: blur(14px) saturate(160%); -webkit-backdrop-filter: blur(14px) saturate(160%);
+  border-bottom: 1px solid var(--s-200);
+  transition: box-shadow var(--t-fast);
+}
+.site-header:hover { box-shadow: var(--sh-sm); }
+.header__inner { display: flex; align-items: center; justify-content: space-between; height: 82px; gap: var(--sp-3); }
+
+.nav__list { display: flex; align-items: center; gap: clamp(1.2rem,2vw,2.4rem); }
+.nav__link {
+  font-size: .94rem; font-weight: 500; color: var(--p-800); position: relative; padding: .4rem 0;
+  transition: color var(--t-fast);
+}
+.nav__link::after {
+  content: ''; position: absolute; left: 0; bottom: -2px; width: 0; height: 1.5px;
+  background: var(--gold-dark); transition: width var(--t-med);
+}
+.nav__link:hover { color: var(--gold-dark); }
+.nav__link:hover::after, .nav__link--active::after { width: 100%; }
+.nav__link--active { color: var(--p-900); font-weight: 600; }
+
+.header__actions { display: flex; align-items: center; gap: .3rem; flex-shrink: 0; }
+.header__actions .icon-btn--search { display: inline-flex; }
+
+.nav-toggle-input { display: none; }
+.nav-toggle-label {
+  display: none; width: 44px; height: 44px; border-radius: var(--r-sm); cursor: pointer;
+  align-items: center; justify-content: center; flex-direction: column; gap: 5px;
+  transition: background var(--t-fast);
+}
+.nav-toggle-label:hover { background: var(--bg-300); }
+.nav-toggle-label span { width: 20px; height: 2px; background: var(--p-900); border-radius: 2px; transition: all var(--t-med); }
+
+.nav-overlay { display: none; }
+
+@media (max-width: 991px) {
+  .nav-toggle-label { display: flex; order: 3; }
+  .header__actions { order: 2; }
+  .nav {
+    position: fixed; top: 0; right: -100%; width: min(340px,84vw); height: 100vh;
+    background: var(--bg-100); box-shadow: var(--sh-lg); padding: 6.5rem var(--sp-4) var(--sp-4);
+    transition: right var(--t-med); z-index: 220;
+  }
+  .nav__list { flex-direction: column; align-items: flex-start; gap: var(--sp-3); }
+  .nav__link { font-size: 1.1rem; }
+  .nav-overlay {
+    display: block; position: fixed; inset: 0; background: rgba(32,39,45,.45);
+    opacity: 0; visibility: hidden; transition: opacity var(--t-med); z-index: 210;
+  }
+  .nav-toggle-input:checked ~ .nav { right: 0; }
+  .nav-toggle-input:checked ~ .nav-overlay { opacity: 1; visibility: visible; }
+}

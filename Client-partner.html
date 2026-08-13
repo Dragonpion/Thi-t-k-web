@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Đánh Giá Khách Hàng & Đối Tác Đồng Hành — MewTea</title>
+<meta name="description" content="Khám phá cảm nhận từ hơn 120.000+ khách hàng yêu mến MewTea và mạng lưới đối tác đồng hành hàng đầu Việt Nam.">
+
+<!-- Google Fonts & FontAwesome -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<!-- Design System CSS kế thừa -->
+<link rel="stylesheet" href="assets/css/Header.css">
+<link rel="stylesheet" href="assets/css/Footer.css">
+<link rel="stylesheet" href="assets/css/Index.css">
+<link rel="stylesheet" href="assets/css/Menu.css">
+<link rel="stylesheet" href="assets/css/pop-up.css">
+
+<link rel="stylesheet" href="assets/css/Client-partner.css">
+<style>
+    @font-face {
+      font-family: "MewFont" ;
+      src: url("assets/Font/MewFont.ttf") format("truetype");
+      font-weight: normal;
+      font-style: normal;
+    }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="container header__inner">
+
+    <!-- Header Logo -->
+    <a href="Index.html" class="logo" aria-label="MewTea — Trang chủ" target="_self">
+      <span class="logo__mark">
+        <img src="assets/Logo/MT.png" alt="Logo MewTea">
+      </span>
+      <span class="logo__text">Mew<em>Tea</em></span>
+    </a>
+
+    <input type="checkbox" id="nav-toggle" class="nav-toggle-input">
+
+    <nav class="nav" aria-label="Điều hướng chính">
+      <ul class="nav__list">
+        <li><a href="Index.html#hero" class="nav__link" target="_self">Trang Chủ</a></li>
+        <li><a href="Menu.html" class="nav__link" target="_self">Menu</a></li>
+        <li><a href="Safe.html" class="nav__link" target="_self">Khuyến mãi</a></li>
+        <li><a href="Ourapp.html" class="nav__link" target="_self">Ứng dụng</a></li>
+        <li><a href="Client-partner.html" class="nav__link nav__link--active" target="_self">Đối Tác & Đánh Giá</a></li>
+        <li><a href="About.html" class="nav__link" target="_self">Giới thiệu</a></li>
+        <li><a href="Index.html#contact" class="nav__link" target="_self">Liên hệ</a></li>
+      </ul>
+    </nav>
+
+    <div class="header__actions">
+      <button class="icon-btn icon-btn--search" aria-label="Tìm kiếm"><i class="fa-solid fa-magnifying-glass"></i></button>
+      <a href="Giohang.html" class="icon-btn" aria-label="Giỏ hàng" target="_self">
+        <i class="fa-solid fa-bag-shopping"></i>
+        <span class="cart-badge">2</span>
+      </a>
+      <a href="Login.html" class="icon-btn" aria-label="Tài khoản" target="_self"><i class="fa-solid fa-user"></i></a>
+      <label for="nav-toggle" class="nav-toggle-label" aria-label="Mở menu">
+        <span></span><span></span><span></span>
+      </label>
+    </div>
+
+    <label for="nav-toggle" class="nav-overlay" aria-hidden="true"></label>
+  </div>
+</header>
+
+<main class="menu-page-wrapper">
+
+  <!-- Background Animated Decorators -->
+  <div class="bg-decorations" aria-hidden="true">
+    <div class="bg-blob bg-blob--1"></div>
+    <div class="bg-blob bg-blob--2"></div>
+    <div class="bg-blob bg-blob--3"></div>
+    <div class="bg-bubble bg-bubble--1"></div>
+    <div class="bg-bubble bg-bubble--2"></div>
+    <div class="bg-bubble bg-bubble--3"></div>
+  </div>
+
+  <!-- PHẦN 1: HERO -->
+  <section class="hero-menu container section">
+    <div class="hero-menu__grid">
+      <div class="hero-menu__content reveal-up">
+        <span class="eyebrow">Customer Stories & Partnerships</span>
+        <h1 class="hero-menu__title">Khách hàng yêu thích MewTea vì điều gì?</h1>
+        <p class="hero-menu__desc">
+          Từ những lá trà xanh hữu cơ được thu hái thủ công cho đến nụ cười trao tay mỗi ly trà chín mọng. Cùng lắng nghe câu chuyện trải nghiệm & hành trình kết nối thương hiệu cùng MewTea.
+        </p>
+        <div class="hero-menu__cta">
+          <a href="#reviews-section" class="btn btn--gold"><i class="fa-solid fa-star"></i> Đọc đánh giá</a>
+          <a href="#partners-section" class="btn btn--ghost">Đối tác của chúng tôi</a>
+        </div>
+      </div>
+
+      <div class="hero-partner__visual reveal-up">
+        <div class="hero-partner__img-box">
+          <img src="https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&q=80&w=800" alt="MewTea Experience">
+        </div>
+        
+        <div class="hero-floating-card hero-floating-card--top glass-card">
+          <div style="display:flex; align-items:center; gap:0.6rem;">
+            <div style="background:var(--gold-dark); color:white; width:36px; height:36px; border-radius:50%; display:flex; align-items:center; justify-content:center;">
+              <i class="fa-solid fa-award"></i>
+            </div>
+            <div>
+              <div style="font-weight:700; color:var(--p-900); font-size:0.95rem;">★ 4.9 / 5.0</div>
+              <div style="font-size:0.75rem; color:var(--p-600);">120.000+ Reviews</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-floating-card hero-floating-card--bottom glass-card">
+          <div style="display:flex; align-items:center; gap:0.6rem;">
+            <i class="fa-solid fa-heart" style="color:#e74c3c; font-size:1.4rem;"></i>
+            <div>
+              <div style="font-weight:700; color:var(--p-900); font-size:0.9rem;">98% Khách quay lại</div>
+              <div style="font-size:0.75rem; color:var(--p-600);">Trải nghiệm chuẩn 5 sao</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PHẦN 2: THỐNG KÊ -->
+  <section class="section container">
+    <div class="glass-card reveal-up" style="padding: var(--sp-4);">
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-card__number"><span class="counter" data-target="120000">0</span>+</div>
+          <p class="stat-card__label">Khách hàng tin tưởng</p>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card__number"><span class="counter" data-target="4.9" data-decimals="1">0</span>★</div>
+          <p class="stat-card__label">Đánh giá trung bình</p>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card__number"><span class="counter" data-target="98">0</span>%</div>
+          <p class="stat-card__label">Khách hàng hài lòng</p>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card__number"><span class="counter" data-target="250">0</span>+</div>
+          <p class="stat-card__label">Đối tác đồng hành</p>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card__number"><span class="counter" data-target="12">0</span></div>
+          <p class="stat-card__label">Chi nhánh cửa hàng</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PHẦN 3: CUSTOMER REVIEWS -->
+  <section class="section container" id="reviews-section">
+    <div class="section-head section-head--center reveal-up">
+      <span class="eyebrow">Trải Nghiệm Thực Tế</span>
+      <h2>Đánh giá từ khách hàng</h2>
+      <p>Lắng nghe cảm nhận chân thật từ những người yêu vị trà đậm đà của MewTea.</p>
+    </div>
+
+    <div class="reviews-filter reveal-up">
+      <button class="filter-btn active" data-filter="all">Tất cả</button>
+      <button class="filter-btn" data-filter="matcha">Trà Matcha</button>
+      <button class="filter-btn" data-filter="hokkaido">Hokkaido</button>
+      <button class="filter-btn" data-filter="oolong">Oolong Cheese</button>
+      <button class="filter-btn" data-filter="fruit">Trà Trái Cây</button>
+    </div>
+
+    <div class="reviews-masonry reveal-up">
+      <div class="review-item glass-card" data-category="hokkaido">
+        <div>
+          <div class="review-user">
+            <img src="https://i.pravatar.cc/100?img=32" alt="Thảo Nguyễn" class="review-avatar">
+            <div class="review-meta">
+              <h4>Thảo Nguyễn <span class="badge-tag"><i class="fa-solid fa-circle-check"></i> Đã mua hàng</span></h4>
+              <p>Chuyên viên thiết kế · 15/05/2026</p>
+            </div>
+          </div>
+          <div style="color:var(--gold); font-size:0.85rem; margin-bottom:0.4rem;">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <div class="review-product-tag"><i class="fa-solid fa-mug-hot"></i> Sản phẩm: Trà Sữa Hokkaido Trân Châu</div>
+          <p class="review-content">"Trà sữa béo ngậy vị sữa tươi thanh trùng, trân châu dẻo thơm ngấm mật ong nhẹ. Giao hàng qua app giữ nguyên độ lạnh. 10/10 điểm cho chất lượng!"</p>
+        </div>
+        <div>
+          <div class="review-reply">
+            <strong>MewTea Team:</strong> Cảm ơn Thảo rất nhiều! MewTea sẽ luôn giữ vững chất lượng để phục vụ bạn mỗi ngày ạ! ❤️
+          </div>
+          <div class="review-actions">
+            <span class="action-btn like-btn"><i class="fa-regular fa-thumbs-up"></i> Hữu ích (<span>24</span>)</span>
+            <span><i class="fa-solid fa-share-nodes"></i> Chia sẻ</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-item glass-card" data-category="oolong">
+        <div>
+          <div class="review-user">
+            <img src="https://i.pravatar.cc/100?img=12" alt="Minh Hoàng" class="review-avatar">
+            <div class="review-meta">
+              <h4>Minh Hoàng <span class="badge-tag"><i class="fa-solid fa-circle-check"></i> Đã mua hàng</span></h4>
+              <p>Lập trình viên · 12/05/2026</p>
+            </div>
+          </div>
+          <div style="color:var(--gold); font-size:0.85rem; margin-bottom:0.4rem;">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <div class="review-product-tag"><i class="fa-solid fa-mug-hot"></i> Sản phẩm: Oolong Kem Cheese Nướng</div>
+          <p class="review-content">"Lớp kem cheese mặn mặn béo ngậy kết hợp hoàn hảo với vị trà Oolong rang thơm lừng thanh mát. Đây là chân lý mỗi chiều làm việc căng thẳng!"</p>
+        </div>
+        <div>
+          <div class="review-actions">
+            <span class="action-btn like-btn"><i class="fa-regular fa-thumbs-up"></i> Hữu ích (<span>18</span>)</span>
+            <span><i class="fa-solid fa-share-nodes"></i> Chia sẻ</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-item glass-card" data-category="matcha">
+        <div>
+          <div class="review-user">
+            <img src="https://i.pravatar.cc/100?img=47" alt="Bảo Ngọc" class="review-avatar">
+            <div class="review-meta">
+              <h4>Bảo Ngọc <span class="badge-tag"><i class="fa-solid fa-circle-check"></i> Đã mua hàng</span></h4>
+              <p>Content Creator · 08/05/2026</p>
+            </div>
+          </div>
+          <div style="color:var(--gold); font-size:0.85rem; margin-bottom:0.4rem;">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <div class="review-product-tag"><i class="fa-solid fa-mug-hot"></i> Sản phẩm: Trà Sữa Matcha Uji Nhật Bản</div>
+          <p class="review-content">"Matcha chuẩn đắng nhẹ đầu lưỡi, sau đó là hậu vị ngọt thanh tinh tế. Bao bì ly giấy tối giản thẩm mỹ cao, check-in sống ảo siêu đẹp."</p>
+        </div>
+        <div>
+          <div class="review-reply">
+            <strong>MewTea Team:</strong> Chào Bảo Ngọc, vị Matcha Uji nguyên chất là niềm tự hào của MewTea. Chúc bạn luôn có những bức ảnh thật đẹp nhé!
+          </div>
+          <div class="review-actions">
+            <span class="action-btn like-btn"><i class="fa-regular fa-thumbs-up"></i> Hữu ích (<span>31</span>)</span>
+            <span><i class="fa-solid fa-share-nodes"></i> Chia sẻ</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-item glass-card" data-category="fruit">
+        <div>
+          <div class="review-user">
+            <img src="https://i.pravatar.cc/100?img=68" alt="Lê Anh Tuấn" class="review-avatar">
+            <div class="review-meta">
+              <h4>Lê Anh Tuấn <span class="badge-tag"><i class="fa-solid fa-circle-check"></i> Đã mua hàng</span></h4>
+              <p>Quản lý Marketing · 02/05/2026</p>
+            </div>
+          </div>
+          <div style="color:var(--gold); font-size:0.85rem; margin-bottom:0.4rem;">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <div class="review-product-tag"><i class="fa-solid fa-mug-hot"></i> Sản phẩm: Trà Đào Cam Sả Tươi</div>
+          <p class="review-content">"Miếng đào giòn sần sật, mùi thơm củ sả tự nhiên không bị dùng hương liệu nhân tạo. Uống vào ngày nắng nóng giải nhiệt tuyệt vời."</p>
+        </div>
+        <div>
+          <div class="review-actions">
+            <span class="action-btn like-btn"><i class="fa-regular fa-thumbs-up"></i> Hữu ích (<span>14</span>)</span>
+            <span><i class="fa-solid fa-share-nodes"></i> Chia sẻ</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PHẦN 4: SOCIAL MEDIA REVIEWS -->
+  <section class="section container">
+    <div class="section-head section-head--center reveal-up">
+      <span class="eyebrow">Mạng Xã Hội</span>
+      <h2>MewTea trên các nền tảng</h2>
+      <p>Hình ảnh và đánh giá phủ sóng mạnh mẽ khắp TikTok, Instagram & Google Reviews.</p>
+    </div>
+
+    <div class="social-reviews-grid reveal-up">
+      <div class="social-card glass-card">
+        <div class="social-header">
+          <div class="social-user">
+            <i class="fa-brands fa-instagram social-icon"></i>
+            <div>
+              <h5 style="font-size:0.9rem;">@mewtea.vn</h5>
+              <small style="color:var(--p-500);">Instagram</small>
+            </div>
+          </div>
+          <span style="color:var(--gold-dark);"><i class="fa-solid fa-badge-check"></i></span>
+        </div>
+        <p style="font-size:0.85rem; color:var(--p-700); margin-bottom:0.8rem;">"Một góc nhỏ bình yên giữa lòng Sài Gòn sôi động 🍵✨ #MewTea #TeaLover"</p>
+        <div style="font-size:0.78rem; color:var(--p-500);"><i class="fa-solid fa-heart" style="color:#e74c3c;"></i> 3.420 Lượt thích</div>
+      </div>
+
+      <div class="social-card glass-card">
+        <div class="social-header">
+          <div class="social-user">
+            <i class="fa-brands fa-tiktok social-icon"></i>
+            <div>
+              <h5 style="font-size:0.9rem;">@mewtea_official</h5>
+              <small style="color:var(--p-500);">TikTok</small>
+            </div>
+          </div>
+        </div>
+        <p style="font-size:0.85rem; color:var(--p-700); margin-bottom:0.8rem;">"Quy trình pha chế ly Hokkaido trân châu mật ong chuẩn thủ công 🥤🔥"</p>
+        <div style="font-size:0.78rem; color:var(--p-500);"><i class="fa-solid fa-eye"></i> 125.4K Lượt xem</div>
+      </div>
+
+      <div class="social-card glass-card">
+        <div class="social-header">
+          <div class="social-user">
+            <i class="fa-brands fa-google social-icon"></i>
+            <div>
+              <h5 style="font-size:0.9rem;">MewTea Nguyễn Huệ</h5>
+              <small style="color:var(--p-500);">Google Review</small>
+            </div>
+          </div>
+        </div>
+        <p style="font-size:0.85rem; color:var(--p-700); margin-bottom:0.8rem;">"Quán đẹp, nhân viên siêu lịch sự dễ thương, trà sữa đậm đà chuẩn vị."</p>
+        <div style="font-size:0.78rem; color:var(--gold);"><i class="fa-solid fa-star"></i> 5.0 / 5.0 Star Rating</div>
+      </div>
+
+      <div class="social-card glass-card">
+        <div class="social-header">
+          <div class="social-user">
+            <i class="fa-brands fa-facebook social-icon"></i>
+            <div>
+              <h5 style="font-size:0.9rem;">MewTea Vietnam</h5>
+              <small style="color:var(--p-500);">Facebook</small>
+            </div>
+          </div>
+        </div>
+        <p style="font-size:0.85rem; color:var(--p-700); margin-bottom:0.8rem;">"Chào đón thành viên thứ 100.000 nhận ngay ưu đãi mua 1 tặng 1 tuần này!"</p>
+        <div style="font-size:0.78rem; color:var(--p-500);"><i class="fa-solid fa-share"></i> 450 Lượt chia sẻ</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PHẦN 5: OUR TRUSTED PARTNERS (Cập nhật hình ảnh + Hover như client-partner.html) -->
+  <section class="section container" id="partners-section">
+    <div class="section-head section-head--center reveal-up">
+      <span class="eyebrow">Đối Tác Chiến Lược</span>
+      <h2>Mạng lưới đối tác đồng hành</h2>
+      <p>MewTea tự hào hợp tác cùng các nền tảng giao hàng, thanh toán & công nghệ hàng đầu.</p>
+    </div>
+
+    <div class="glass-card reveal-up" style="padding: 2.5rem 1.5rem;">
+      <div class="logo-container">
+        <img alt="Amazon" src="assets/Img/Amazon.webp" />
+        <img alt="Shopee" src="assets/Img/Shopee.webp" />
+        <img alt="TikTok" src="assets/Img/TikTok.webp" />
+        <img alt="TaoBao" src="assets/Img/TaoBao.webp" />
+      </div>
+    </div>
+  </section>
+
+  <!-- PHẦN 6: BECOME OUR PARTNER -->
+  <section class="section container">
+    <div class="glass-card reveal-up" style="padding: clamp(2.5rem, 5vw, 4.5rem); background: linear-gradient(135deg, var(--p-900) 0%, var(--p-800) 100%); color: var(--white); text-align: center; border-radius: var(--r-lg);">
+      <span class="eyebrow" style="color: var(--gold-light);">Hợp Tác Phát Triển</span>
+      <h2 style="color: var(--white); font-size: clamp(2rem, 3.8vw, 3rem); margin-bottom: 1rem;">Trở thành đối tác cùng MewTea</h2>
+      <p style="color: var(--s-300); max-width: 600px; margin: 0 auto 2rem; font-size: 1.05rem;">
+        Bạn muốn đưa sản phẩm, dịch vụ hoặc mở rộng chi nhánh nhượng quyền thương hiệu MewTea? Hãy kết nối ngay hôm nay.
+      </p>
+      <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+        <a href="Index.html#contact" class="btn btn--gold">Đăng ký đối tác <i class="fa-solid fa-arrow-right"></i></a>
+        <a href="Index.html#contact" class="btn btn--ghost" style="color:white; border-color:rgba(255,255,255,0.4);">Liên hệ tư vấn</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PHẦN 7: CUSTOMER GALLERY -->
+  <section class="section container">
+    <div class="section-head section-head--center reveal-up">
+      <span class="eyebrow">Thư Viện Ảnh</span>
+      <h2>Khoảnh khắc tại MewTea</h2>
+    </div>
+
+    <div class="gallery-grid reveal-up">
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1541658016709-82535e94bc69?auto=format&fit=crop&q=80&w=400" alt="Gallery 1">
+        <div class="gallery-overlay"><i class="fa-solid fa-heart"></i><span>1.2k</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&q=80&w=400" alt="Gallery 2">
+        <div class="gallery-overlay"><i class="fa-solid fa-heart"></i><span>890</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&q=80&w=400" alt="Gallery 3">
+        <div class="gallery-overlay"><i class="fa-solid fa-heart"></i><span>2.1k</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&q=80&w=400" alt="Gallery 4">
+        <div class="gallery-overlay"><i class="fa-solid fa-heart"></i><span>1.5k</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?auto=format&fit=crop&q=80&w=400" alt="Gallery 5">
+        <div class="gallery-overlay"><i class="fa-solid fa-heart"></i><span>3.0k</span></div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container footer__top">
+    <div class="footer__brand">
+      <a href="Index.html" class="logo" target="_self">
+        <span class="logo__mark">
+          <img src="assets/Logo/MT.png" alt="Logo MewTea">
+        </span>
+        <span class="logo__text">Mew<em>Tea</em></span>
+      </a>
+      <p>Trà sữa thủ công, phong cách tối giản — mỗi ly là một khoảnh khắc chậm rãi giữa nhịp sống hối hả.</p>
+      <div class="footer__social">
+        <a href="https://facebook.com/mewtea.vn" aria-label="Facebook" target="_blank" rel="noopener"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="https://instagram.com/mewtea.vn" aria-label="Instagram" target="_blank" rel="noopener"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.tiktok.com/@mewtea.vn" aria-label="TikTok" target="_blank" rel="noopener"><i class="fa-brands fa-tiktok"></i></a>
+      </div>
+    </div>
+
+    <div class="footer__col">
+      <h4>Liên kết nhanh</h4>
+      <ul>
+        <li><a href="Index.html#hero" target="_self">Trang chủ</a></li>
+        <li><a href="Menu.html" target="_self">Menu</a></li>
+        <li><a href="Safe.html" target="_self">Khuyến mãi</a></li>
+        <li><a href="About.html" target="_self">Giới thiệu</a></li>
+      </ul>
+    </div>
+
+    <div class="footer__col">
+      <h4>Thông tin liên hệ</h4>
+      <ul class="footer__contact">
+        <li><i class="fa-solid fa-location-dot"></i> 12 Nguyễn Huệ, Q.1, TP.HCM</li>
+        <li><i class="fa-solid fa-phone"></i> 0909 123 456</li>
+        <li><i class="fa-solid fa-envelope"></i> hello@mewtea.vn</li>
+      </ul>
+    </div>
+
+    <div class="footer__col">
+      <h4>Kết nối</h4>
+      <ul>
+        <li><a href="Index.html#contact" target="_self">Tuyển dụng</a></li>
+        <li><a href="Index.html#contact" target="_self">Nhượng quyền</a></li>
+        <li><a href="Menu.html" target="_self">Blog trà</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="container footer__bottom">
+    <p>© 2026 MewTea. Bảo lưu mọi quyền.</p>
+    <div class="footer__legal">
+      <a href="About.html" target="_self">Chính sách bảo mật</a>
+      <a href="About.html" target="_self">Điều khoản sử dụng</a>
+      <a href="About.html" target="_self">Thiết kế bởi MewTea Studio</a>
+    </div>
+  </div>
+</footer>
+
+<!-- JAVASCRIPT -->
+<script src="assets/js/cart-handler.js"></script>
+<script src="assets/js/Client-partner.js"></script>
+
+<a href="https://zalo.me/pc" class="mt-floating-popup-link" target="_blank">
+    <button class="mt-floating-popup" aria-label="Liên hệ MewTea">
+        <i class="fa-solid fa-comments"></i>
+    </button>
+    <span class="mt-floating-tooltip">
+        Chat với MewTea
+    </span>
+</a>
+</body>
+</html>

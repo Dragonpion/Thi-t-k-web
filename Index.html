@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MewTea — Trà Sữa Thủ Công Cao Cấp</title>
+<meta name="description" content="MewTea — trà sữa thủ công từ nguyên liệu tự nhiên, phong cách tối giản Nhật Bản & Bắc Âu.">
+
+<link rel="icon" type="image/png" sizes="32x32" href="assets/Logo/MT-Logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<link rel="stylesheet" href="assets/css/Header.css">
+<link rel="stylesheet" href="assets/css/Footer.css">
+<link rel="stylesheet" href="assets/css/Index.css">
+<link rel="stylesheet" href="assets/css/pop-up.css">
+<style>
+  @font-face {
+    font-family: "MewFont" ;
+    src: url("assets/Font/MewFont.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+  }
+</style>
+</head>
+
+<body>
+
+<header class="site-header">
+  <div class="container header__inner">
+
+    <!-- Header Logo -->
+    <a href="Index.html#hero" class="logo" aria-label="MewTea — Trang chủ" target="_self">
+      <span class="logo__mark">
+        <img src="assets/Logo/MT.png" alt="Logo MewTea">
+      </span>
+      <span class="logo__text">Mew<em>Tea</em></span>
+    </a>
+
+    <input type="checkbox" id="nav-toggle" class="nav-toggle-input">
+
+    <nav class="nav" aria-label="Điều hướng chính">
+      <ul class="nav__list">
+        <li><a href="#hero" class="nav__link nav__link--active" target="_self">Trang Chủ</a></li>
+        <li><a href="Menu.html" class="nav__link" target="_self">Menu</a></li>
+        <li><a href="Safe.html" class="nav__link" target="_self">Khuyến mãi</a></li>
+        <li><a href="Ourapp.html" class="nav__link" target="_self">Ứng dụng</a></li>
+        <li><a href="Client-partner.html" class="nav__link" target="_self">Đối Tác & Đánh Giá</a></li>
+        <li><a href="About.html" class="nav__link" target="_self">Giới thiệu</a></li>
+        <li><a href="#contact" class="nav__link" target="_self">Liên hệ</a></li>
+      </ul>
+    </nav>
+
+    <div class="header__actions">
+      <button class="icon-btn icon-btn--search" aria-label="Tìm kiếm"><i class="fa-solid fa-magnifying-glass"></i></button>
+      <a href="Giohang.html" class="icon-btn" aria-label="Giỏ hàng" target="_self">
+        <i class="fa-solid fa-bag-shopping"></i>
+        <span class="cart-badge">2</span>
+      </a>
+      <a href="Login.html" class="icon-btn" aria-label="Tài khoản" target="_self"><i class="fa-solid fa-user"></i></a>
+      <label for="nav-toggle" class="nav-toggle-label" aria-label="Mở menu">
+        <span></span><span></span><span></span>
+      </label>
+    </div>
+
+    <label for="nav-toggle" class="nav-overlay" aria-hidden="true"></label>
+  </div>
+</header>
+
+<section class="hero" id="hero">
+  <div class="hero__bg"><img src="https://gcs.tripi.vn/public-tripi/tripi-feed/img/482601qKY/anh-mo-ta.png" alt="Không gian MewTea"></div>
+  <div class="hero__overlay"></div>
+  <div class="hero__shape hero__shape--1" aria-hidden="true"></div>
+  <div class="hero__shape hero__shape--2" aria-hidden="true"></div>
+
+  <div class="container hero__inner">
+    <p class="eyebrow">Trà Sữa Thủ Công · Nguyên Liệu Tự Nhiên</p>
+    <h1 class="hero__title">Chậm lại một nhịp,<br><em>thưởng trà</em> đúng điệu</h1>
+    <p class="hero__desc">MewTea pha chế mỗi ly trà từ lá trà nguyên chất và sữa tươi chọn lọc — tối giản trong hương vị, trọn vẹn trong cảm nhận.</p>
+    <div class="hero__cta">
+      <a href="Menu.html" class="btn btn--gold">Khám phá Menu <i class="fa-solid fa-arrow-right-long"></i></a>
+      <a href="Safe.html" class="btn btn--ghost">Xem ưu đãi</a>
+    </div>
+  </div>
+
+  <div class="hero__card glass">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTt3PkAhqECe3VG-CmLZtAMNtaKlacT9H08khmIFOzrtksJyvRxR9rUd54&s=10" alt="Trà sữa Hokkaido trân châu">
+    <div>
+      <p class="hero__card-name">Hokkaido Trân Châu</p>
+      <p class="hero__card-price">49.000₫</p>
+      <p class="hero__card-rating"><i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i class="fa-solid fa-star-half-stroke"></i></p>
+    </div>
+  </div>
+
+  <div class="hero__steam" aria-hidden="true"><span></span><span></span><span></span></div>
+</section>
+
+
+<section class="section bg-alt" id="bestseller">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">Best Seller</p>
+      <h2>Được yêu thích nhất</h2>
+      <p>Những vị trà được khách hàng MewTea gọi nhiều nhất mỗi ngày.</p>
+    </div>
+
+    <div class="products__grid" id="bestseller-grid"></div>
+  </div>
+</section>
+
+<section class="section--tight newsletter">
+  <div class="container">
+    <div class="newsletter__inner">
+      <div class="newsletter__text">
+        <h3>Nhận ưu đãi mới nhất từ MewTea</h3>
+        <p>Đăng ký để không bỏ lỡ vị trà theo mùa và mã giảm giá độc quyền.</p>
+      </div>
+      <form class="newsletter__form" action="#">
+        <input type="email" placeholder="Email của bạn" aria-label="Email" required>
+        <button type="submit" class="btn btn--dark">Đăng ký</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container">
+    <div class="section-head section-head--center" style="margin-inline:auto;text-align:center;">
+      <p class="eyebrow" style="justify-content:center;">Cộng Đồng</p>
+      <h2>@mewtea.vn trên Instagram</h2>
+    </div>
+    <div class="insta__grid">
+      <div class="insta__item"><img src="https://picsum.photos/seed/insta-1/300/300" alt=""></div>
+      <div class="insta__item"><img src="https://picsum.photos/seed/insta-2/300/300" alt=""></div>
+      <div class="insta__item"><img src="https://picsum.photos/seed/insta-3/300/300" alt=""></div>
+      <div class="insta__item"><img src="https://picsum.photos/seed/insta-4/300/300" alt=""></div>
+      <div class="insta__item"><img src="https://picsum.photos/seed/insta-5/300/300" alt=""></div>
+      <div class="insta__item"><img src="https://picsum.photos/seed/insta-6/300/300" alt=""></div>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-alt" id="contact">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">Cửa Hàng</p>
+      <h2>Ghé thăm MewTea gần bạn</h2>
+    </div>
+    <div class="location__grid">
+      <div class="location__info">
+        <div class="info-card">
+          <i class="fa-solid fa-location-dot"></i>
+          <div><h4>Địa chỉ</h4><p>12 Nguyễn Huệ, Quận 1, TP. Hồ Chí Minh</p></div>
+        </div>
+        <div class="info-card">
+          <i class="fa-solid fa-clock"></i>
+          <div><h4>Giờ mở cửa</h4><p>07:00 – 22:00, tất cả các ngày trong tuần</p></div>
+        </div>
+        <div class="info-card">
+          <i class="fa-solid fa-phone"></i>
+          <div><h4>Hotline</h4><p>0909 123 456</p></div>
+        </div>
+        <div class="info-card">
+          <i class="fa-solid fa-envelope"></i>
+          <div><h4>Email</h4><p>hello@mewtea.vn</p></div>
+        </div>
+      </div>
+      <div class="map-placeholder">
+        <div class="map-placeholder__pin">
+          <i class="fa-solid fa-map-location-dot"></i>
+          <p>Google Map sẽ được nhúng tại đây khi triển khai thực tế</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container footer__top">
+    <div class="footer__brand">
+      <a href="Index.html#hero" class="logo" target="_self">
+        <span class="logo__mark">
+          <img src="assets/Logo/MT.png" alt="Logo MewTea">
+        </span>
+        <span class="logo__text">Mew<em>Tea</em></span>
+      </a>
+      <p>Trà sữa thủ công, phong cách tối giản — mỗi ly là một khoảnh khắc chậm rãi giữa nhịp sống hối hả.</p>
+      <div class="footer__social">
+        <a href="https://facebook.com/mewtea.vn" aria-label="Facebook" target="_blank" rel="noopener"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="https://instagram.com/mewtea.vn" aria-label="Instagram" target="_blank" rel="noopener"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.tiktok.com/@mewtea.vn" aria-label="TikTok" target="_blank" rel="noopener"><i class="fa-brands fa-tiktok"></i></a>
+      </div>
+    </div>
+
+    <div class="footer__col">
+      <h4>Liên kết nhanh</h4>
+      <ul>
+        <li><a href="#hero" target="_self">Trang chủ</a></li>
+        <li><a href="Menu.html" target="_self">Menu</a></li>
+        <li><a href="Safe.html" target="_self">Khuyến mãi</a></li>
+        <li><a href="About.html" target="_self">Giới thiệu</a></li>
+      </ul>
+    </div>
+
+    <div class="footer__col">
+      <h4>Thông tin liên hệ</h4>
+      <ul class="footer__contact">
+        <li><i class="fa-solid fa-location-dot"></i> 12 Nguyễn Huệ, Q.1, TP.HCM</li>
+        <li><i class="fa-solid fa-phone"></i> 0909 123 456</li>
+        <li><i class="fa-solid fa-envelope"></i> hello@mewtea.vn</li>
+      </ul>
+    </div>
+
+    <div class="footer__col">
+      <h4>Kết nối</h4>
+      <ul>
+        <li><a href="Index.html#contact" target="_self">Tuyển dụng</a></li>
+        <li><a href="Index.html#contact" target="_self">Nhượng quyền</a></li>
+        <li><a href="Menu.html" target="_self">Blog trà</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="container footer__bottom">
+    <p>© 2026 MewTea. Bảo lưu mọi quyền.</p>
+    <div class="footer__legal">
+      <a href="About.html" target="_self">Chính sách bảo mật</a>
+      <a href="About.html" target="_self">Điều khoản sử dụng</a>
+      <a href="About.html" target="_self">Thiết kế bởi MewTea Studio</a>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/cart-handler.js"></script>
+<script src="assets/js/mewtea-data.js"></script>
+<script src="assets/js/Index.js"></script>
+<a href="https://zalo.me/pc" class="mt-floating-popup-link" target="_blank">
+  <button class="mt-floating-popup" aria-label="Liên hệ MewTea">
+      <i class="fa-solid fa-comments"></i>
+  </button>
+  <span class="mt-floating-tooltip">
+      Chat với MewTea
+  </span>
+</a>
+</body>
+</html>

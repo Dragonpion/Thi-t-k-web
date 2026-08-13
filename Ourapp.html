@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tải Ứng Dụng MewTea — Trải Nghiệm Thưởng Trà Thông Minh</title>
+<meta name="description" content="Tải ngay ứng dụng MewTea trên App Store và Google Play. Đặt trà sữa nhanh chóng, theo dõi đơn hàng thời gian thực, tích điểm đổi quà và nhận voucher độc quyền mỗi ngày.">
+
+<!-- Fonts & FontAwesome -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<!-- Kế thừa CSS Design System gốc -->
+<link rel="stylesheet" href="assets/css/Header.css">
+<link rel="stylesheet" href="assets/css/Footer.css">
+<link rel="stylesheet" href="assets/css/Menu.css">
+<!-- CSS riêng cho App Showcase -->
+<link rel="stylesheet" href="assets/css/Ourapp.css">
+<link rel="stylesheet" href="assets/css/pop-up.css">
+
+<style>
+  @font-face {
+    font-family: "MewFont";
+    src: url("assets/Font/MewFont.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+  }
+</style>
+</head>
+<body>
+
+<!-- ==========================================
+     HEADER (Kế thừa 100% chuẩn Menu.html)
+     ========================================== -->
+<header class="site-header">
+  <div class="container header__inner">
+
+    <!-- Header Logo -->
+    <a href="Index.html" class="logo" aria-label="MewTea — Trang chủ" target="_self">
+      <span class="logo__mark">
+        <img src="assets/Logo/MT.png" alt="Logo MewTea">
+      </span>
+      <span class="logo__text">Mew<em>Tea</em></span>
+    </a>
+
+    <input type="checkbox" id="nav-toggle" class="nav-toggle-input">
+
+    <nav class="nav" aria-label="Điều hướng chính">
+      <ul class="nav__list">
+        <li><a href="Index.html#hero" class="nav__link" target="_self">Trang Chủ</a></li>
+        <li><a href="Menu.html" class="nav__link" target="_self">Menu</a></li>
+        <li><a href="Safe.html" class="nav__link" target="_self">Khuyến mãi</a></li>
+        <li><a href="Ourapp.html" class="nav__link nav__link--active" target="_self">Ứng dụng</a></li>
+        <li><a href="Client-partner.html" class="nav__link" target="_self">Đối Tác & Đánh Giá</a></li>
+        <li><a href="About.html" class="nav__link" target="_self">Giới thiệu</a></li>
+        <li><a href="Index.html#contact" class="nav__link" target="_self">Liên hệ</a></li>
+      </ul>
+    </nav>
+
+    <div class="header__actions">
+      <button class="icon-btn icon-btn--search" aria-label="Tìm kiếm"><i class="fa-solid fa-magnifying-glass"></i></button>
+      <a href="Giohang.html" class="icon-btn" aria-label="Giỏ hàng" target="_self">
+        <i class="fa-solid fa-bag-shopping"></i>
+        <span class="cart-badge">2</span>
+      </a>
+      <a href="Login.html" class="icon-btn" aria-label="Tài khoản" target="_self"><i class="fa-solid fa-user"></i></a>
+      <label for="nav-toggle" class="nav-toggle-label" aria-label="Mở menu">
+        <span></span><span></span><span></span>
+      </label>
+    </div>
+
+    <label for="nav-toggle" class="nav-overlay" aria-hidden="true"></label>
+  </div>
+</header>
+
+<main class="app-page-wrapper">
+
+  <!-- Background Animated Decorators -->
+  <div class="bg-decorations" aria-hidden="true">
+    <div class="bg-blob bg-blob--1"></div>
+    <div class="bg-blob bg-blob--2"></div>
+    <div class="bg-blob bg-blob--3"></div>
+    <div class="bg-bubble bg-bubble--1"></div>
+    <div class="bg-bubble bg-bubble--2"></div>
+    <div class="bg-bubble bg-bubble--3"></div>
+  </div>
+
+  <!-- ==========================================
+       SECTION 1: HERO APP SHOWCASE
+       ========================================== -->
+  <section class="app-hero container section">
+    <div class="app-hero__grid">
+      
+      <!-- Cột trái: Nội dung & Nút Tải -->
+      <div class="app-hero__content reveal-left">
+        <span class="eyebrow">MewTea Mobile Experience</span>
+        <h1 class="app-hero__title">Tải ứng dụng MewTea</h1>
+        <p class="app-hero__subtitle">Mọi ly trà ngọt ngào, trọn vẹn ưu đãi — Ngay trên tay bạn</p>
+        <p class="app-hero__desc">
+          Trải nghiệm giao diện đặt hàng hiện đại, cá nhân hóa mức đường đá, tích điểm thành viên và nhận ngay vô vàn voucher độc quyền chỉ dành riêng cho người dùng App.
+        </p>
+
+        <!-- Nút tải App Store & Google Play chính thức -->
+        <div class="app-download-btns">
+          <a href="https://www.apple.com/vn/app-store/" class="store-btn-link" aria-label="Tải trên App Store">
+            <button class="btn-store btn-ripple">
+              <i class="fa-brands fa-apple"></i>
+              <div class="btn-store__text">
+                <small>Download on the</small>
+                <span>App Store</span>
+              </div>
+            </button>
+          </a>
+          <a href="https://play.google.com/store/games?hl=vi" class="store-btn-link" aria-label="Tải trên Google Play">
+            <button class="btn-store btn-ripple">
+              <i class="fa-brands fa-google-play"></i>
+              <div class="btn-store__text">
+                <small>GET IT ON</small>
+                <span>Google Play</span>
+              </div>
+            </button>
+          </a>
+        </div>
+
+        <!-- Badges Thống Kê -->
+        <div class="app-badges">
+          <div class="badge-item glass-card">
+            <i class="fa-solid fa-cloud-arrow-down"></i>
+            <div>
+              <strong>100K+</strong>
+              <span>Downloads</span>
+            </div>
+          </div>
+          <div class="badge-item glass-card">
+            <i class="fa-solid fa-star"></i>
+            <div>
+              <strong>4.9 / 5.0</strong>
+              <span>Rating</span>
+            </div>
+          </div>
+          <div class="badge-item glass-card">
+            <i class="fa-solid fa-truck-fast"></i>
+            <div>
+              <strong>Freeship</strong>
+              <span>Đơn từ 0Đ</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cột phải: Banner Minh Họa Có Floating -->
+      <div class="app-hero__visual reveal-right">
+        <div class="app-banner-wrapper floating-anim" id="heroBannerContainer">
+          <!-- Ảnh banner minh họa gốc -->
+          <img src="assets/Img/OurAppBanner.png" alt="MewTea App Showcase Banner" class="app-banner-img" id="heroBannerImg">
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================
+       SECTION 2: WHY CHOOSE OUR APP (4 Glass Cards)
+       ========================================== -->
+  <section class="section container">
+    <div class="section-head section-head--center reveal-up">
+      <span class="eyebrow">Lý Do Chọn MewTea App</span>
+      <h2>Trải nghiệm thưởng trà khác biệt</h2>
+      <p>Ứng dụng giúp trải nghiệm mua sắm đồ uống của bạn mượt mà và tiết kiệm hơn bao giờ hết.</p>
+    </div>
+
+    <div class="why-grid">
+      <div class="why-card glass-card hover-elevation reveal-up" style="--delay: 0.1s;">
+        <div class="why-card__icon"><i class="fa-solid fa-bolt-lightning"></i></div>
+        <h3>Đặt hàng nhanh</h3>
+        <p>Thao tác đặt hàng tối giản chỉ trong 30 giây. Lưu lịch sử món khoái khẩu để gọi lại bất cứ lúc nào.</p>
+      </div>
+
+      <div class="why-card glass-card hover-elevation reveal-up" style="--delay: 0.2s;">
+        <div class="why-card__icon"><i class="fa-solid fa-location-crosshairs"></i></div>
+        <h3>Theo dõi đơn hàng</h3>
+        <p>Cập nhật trạng thái pha chế và lộ trình di chuyển của tài xế theo thời gian thực trực quan trên bản đồ.</p>
+      </div>
+
+      <div class="why-card glass-card hover-elevation reveal-up" style="--delay: 0.3s;">
+        <div class="why-card__icon"><i class="fa-solid fa-gift"></i></div>
+        <h3>Tích điểm đổi quà</h3>
+        <p>Nhận điểm thưởng MewPoint cho mỗi đơn hàng. Quy đổi điểm lấy đồ uống miễn phí và quà tặng sinh nhật.</p>
+      </div>
+
+      <div class="why-card glass-card hover-elevation reveal-up" style="--delay: 0.4s;">
+        <div class="why-card__icon"><i class="fa-solid fa-tags"></i></div>
+        <h3>Voucher độc quyền</h3>
+        <p>Săn vô vàn mã giảm giá đến 50%, miễn phí vận chuyển hằng ngày chỉ dành riêng cho khách hàng dùng App.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       SECTION 5: DOWNLOAD CTA WITH QR CODE
+       ========================================== -->
+  <section class="section container" id="download-cta">
+    <div class="download-cta-card gradient-bg reveal-up">
+      <div class="download-cta__inner">
+        
+        <div class="download-cta__content">
+          <div class="cta-logo">
+            <span class="logo__mark"><img src="assets/Logo/MT.png" alt="Logo MewTea"></span>
+            <span class="logo__text">Mew<em>Tea</em></span>
+          </div>
+          <h2 class="download-cta__title">Thưởng Trà Chuẩn Điệu — Tải MewTea Ngay!</h2>
+          <p class="download-cta__desc">Quét mã QR bằng camera điện thoại hoặc tải ứng dụng trực tiếp trên cửa hàng ứng dụng để nhận ngay Voucher Giảm 50% cho đơn hàng đầu tiên.</p>
+          
+          <div class="app-download-btns">
+            <a href="#" class="store-btn-link" aria-label="Tải trên App Store">
+              <button class="btn-store btn-glow btn-ripple">
+                <i class="fa-brands fa-apple"></i>
+                <div class="btn-store__text">
+                  <small>Download on the</small>
+                  <span>App Store</span>
+                </div>
+              </button>
+            </a>
+            <a href="#" class="store-btn-link" aria-label="Tải trên Google Play">
+              <button class="btn-store btn-glow btn-ripple">
+                <i class="fa-brands fa-google-play"></i>
+                <div class="btn-store__text">
+                  <small>GET IT ON</small>
+                  <span>Google Play</span>
+                </div>
+              </button>
+            </a>
+          </div>
+        </div>
+
+        <div class="download-cta__qr glass-card">
+          <div class="qr-box">
+            <!-- Simulated QR Code -->
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://mewtea.vn/app" alt="QR Code Tải App MewTea">
+          </div>
+          <p><i class="fa-solid fa-qrcode"></i> Quét mã để tải App tức thì</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       SECTION 6: FAQ ACCORDION
+       ========================================== -->
+  <section class="section container">
+    <div class="section-head section-head--center reveal-up">
+      <span class="eyebrow">Hỏi Đáp Nhanh</span>
+      <h2>Câu hỏi thường gặp về App</h2>
+    </div>
+
+    <div class="faq-accordion reveal-up">
+      
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span>Ứng dụng MewTea có hoàn toàn miễn phí không?</span>
+          <i class="fa-solid fa-plus faq-icon"></i>
+        </button>
+        <div class="faq-answer">
+          <p>Hoàn toàn miễn phí! Bạn có thể tải ứng dụng MewTea trên cả hai nền tảng iOS (App Store) và Android (Google Play) mà không mất bất kỳ chi phí nào.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span>Làm thế nào để nhận voucher giảm 50% cho đơn hàng đầu tiên?</span>
+          <i class="fa-solid fa-plus faq-icon"></i>
+        </button>
+        <div class="faq-answer">
+          <p>Sau khi tải App và đăng ký tài khoản thành công bằng số điện thoại, mã giảm giá 50% (tối đa 50.000đ) sẽ tự động xuất hiện trong mục "Ví Voucher" của bạn.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span>Tôi có thể tích điểm khi mua trực tiếp tại cửa hàng không?</span>
+          <i class="fa-solid fa-plus faq-icon"></i>
+        </button>
+        <div class="faq-answer">
+          <p>Có! Bạn chỉ cần mở ứng dụng MewTea, chọn mục "Mã Thành Viên" và đưa cho thu ngân quét mã trước khi thanh toán để tích điểm MewPoint bình thường.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span>App MewTea hỗ trợ những phương thức thanh toán nào?</span>
+          <i class="fa-solid fa-plus faq-icon"></i>
+        </button>
+        <div class="faq-answer">
+          <p>Chúng tôi hỗ trợ thanh toán khi nhận hàng (COD), thẻ ATM/Visa/MasterCard, và tất cả các ví điện tử phổ biến như MoMo, ZaloPay, VNPay, ShopeePay.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span>Làm sao để theo dõi thời gian giao hàng của tài xế?</span>
+          <i class="fa-solid fa-plus faq-icon"></i>
+        </button>
+        <div class="faq-answer">
+          <p>Vào mục "Đơn hàng" -> chọn đơn hàng đang thực hiện. Màn hình sẽ hiển thị vị trí tài xế theo thời gian thực kèm số điện thoại liên hệ trực tiếp.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================
+       SECTION 7: REVIEWS / TESTIMONIALS
+       ========================================== -->
+  <section class="section bg-alt">
+    <div class="container">
+      <div class="section-head section-head--center reveal-up">
+        <span class="eyebrow">Đánh Giá Từ Khách Hàng</span>
+        <h2>Người dùng nói gì về MewTea App</h2>
+      </div>
+
+      <div class="reviews-grid">
+        
+        <div class="review-card glass-card hover-elevation reveal-up" style="--delay: 0.1s;">
+          <div class="review-head">
+            <img src="https://i.pravatar.cc/100?img=32" alt="Avatar Nguyễn Thu Hà" class="review-avatar">
+            <div>
+              <h4>Nguyễn Thu Hà</h4>
+              <p class="review-role">Khách hàng Diamond</p>
+            </div>
+          </div>
+          <div class="review-stars">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <p class="review-text">"Giao diện app rất xịn, nhanh mượt hơn hẳn mấy app đặt đồ ăn khác. Mình cực thích tính năng lưu mức đường đá yêu thích, lần sau đặt lại chỉ mất đúng 5 giây!"</p>
+        </div>
+
+        <div class="review-card glass-card hover-elevation reveal-up" style="--delay: 0.2s;">
+          <div class="review-head">
+            <img src="https://i.pravatar.cc/100?img=12" alt="Avatar Trần Hoàng Nam" class="review-avatar">
+            <div>
+              <h4>Trần Hoàng Nam</h4>
+              <p class="review-role">Office Worker</p>
+            </div>
+          </div>
+          <div class="review-stars">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <p class="review-text">"Team văn phòng mình ngày nào cũng gom đơn đặt MewTea. Đặt qua App vừa săn được Voucher freeship nhóm vừa được tích điểm đổi voucher giảm giá tuần sau."</p>
+        </div>
+
+        <div class="review-card glass-card hover-elevation reveal-up" style="--delay: 0.3s;">
+          <div class="review-head">
+            <img src="https://i.pravatar.cc/100?img=47" alt="Avatar Lê Bảo Ngọc" class="review-avatar">
+            <div>
+              <h4>Lê Bảo Ngọc</h4>
+              <p class="review-role">Freelancer</p>
+            </div>
+          </div>
+          <div class="review-stars">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <p class="review-text">"Giao diện tông xanh xám pastel siêu sang. Theo dõi đơn hàng thời gian thực chuẩn từng phút, trà ship tới nơi vẫn giữ trọn đá lạnh mát rượi."</p>
+        </div>
+
+        <div class="review-card glass-card hover-elevation reveal-up" style="--delay: 0.4s;">
+          <div class="review-head">
+            <img src="https://i.pravatar.cc/100?img=68" alt="Avatar Phạm Quốc Minh" class="review-avatar">
+            <div>
+              <h4>Phạm Quốc Minh</h4>
+              <p class="review-role">Student</p>
+            </div>
+          </div>
+          <div class="review-stars">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <p class="review-text">"Flash Sale trên App giảm sâu dã man! Mấy món best seller trà sữa Hokkaido với Matcha Latte toàn deal ngon. 10/10 cho MewTea Studio!"</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ==========================================
+     FOOTER (Kế thừa 100% chuẩn Menu.html)
+     ========================================== -->
+<footer class="site-footer">
+  <div class="container footer__top">
+    <div class="footer__brand">
+      <a href="Index.html" class="logo" target="_self">
+        <span class="logo__mark">
+          <img src="assets/Logo/MT.png" alt="Logo MewTea">
+        </span>
+        <span class="logo__text">Mew<em>Tea</em></span>
+      </a>
+      <p>Trà sữa thủ công, phong cách tối giản — mỗi ly là một khoảnh khắc chậm rãi giữa nhịp sống hối hả.</p>
+      <div class="footer__social">
+        <a href="https://facebook.com/mewtea.vn" aria-label="Facebook" target="_blank" rel="noopener"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="https://instagram.com/mewtea.vn" aria-label="Instagram" target="_blank" rel="noopener"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.tiktok.com/@mewtea.vn" aria-label="TikTok" target="_blank" rel="noopener"><i class="fa-brands fa-tiktok"></i></a>
+      </div>
+    </div>
+
+    <div class="footer__col">
+      <h4>Liên kết nhanh</h4>
+      <ul>
+        <li><a href="Index.html#hero" target="_self">Trang chủ</a></li>
+        <li><a href="Menu.html" target="_self">Menu</a></li>
+        <li><a href="Safe.html" target="_self">Khuyến mãi</a></li>
+        <li><a href="About.html" target="_self">Giới thiệu</a></li>
+      </ul>
+    </div>
+
+    <div class="footer__col">
+      <h4>Thông tin liên hệ</h4>
+      <ul class="footer__contact">
+        <li><i class="fa-solid fa-location-dot"></i> 12 Nguyễn Huệ, Q.1, TP.HCM</li>
+        <li><i class="fa-solid fa-phone"></i> 0909 123 456</li>
+        <li><i class="fa-solid fa-envelope"></i> hello@mewtea.vn</li>
+      </ul>
+    </div>
+
+    <div class="footer__col">
+      <h4>Kết nối</h4>
+      <ul>
+        <li><a href="Index.html#contact" target="_self">Tuyển dụng</a></li>
+        <li><a href="Index.html#contact" target="_self">Nhượng quyền</a></li>
+        <li><a href="Menu.html" target="_self">Blog trà</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="container footer__bottom">
+    <p>© 2026 MewTea. Bảo lưu mọi quyền.</p>
+    <div class="footer__legal">
+      <a href="About.html" target="_self">Chính sách bảo mật</a>
+      <a href="About.html" target="_self">Điều khoản sử dụng</a>
+      <a href="About.html" target="_self">Thiết kế bởi MewTea Studio</a>
+    </div>
+  </div>
+</footer>
+
+<!-- External Scripts -->
+<script src="assets/js/cart-handler.js"></script>
+<script src="assets/js/mewtea-data.js"></script>
+<script src="assets/js/Ourapp.js"></script>
+<a href="https://zalo.me/pc" class="mt-floating-popup-link" target="_blank">
+  <button class="mt-floating-popup" aria-label="Liên hệ MewTea">
+      <i class="fa-solid fa-comments"></i>
+  </button>
+  <span class="mt-floating-tooltip">
+      Chat với MewTea
+  </span>
+</a>
+
+</body>
+</html>

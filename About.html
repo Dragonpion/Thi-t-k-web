@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Về Chúng Tôi — MewTea</title>
+<meta name="description" content="Khám phá hành trình, triết lý 'vừa đủ' và quy trình pha chế trà sữa thủ công đầy tận tâm tại MewTea.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="assets/css/Header.css">
+<link rel="stylesheet" href="assets/css/Footer.css">
+<link rel="stylesheet" href="assets/css/About.css">
+<link rel="stylesheet" href="assets/css/pop-up.css">
+<style>
+  @font-face {
+    font-family: "MewFont" ;
+    src: url("assets/Font/MewFont.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+  }
+</style>
+</head>
+
+<body>
+
+<!-- =========================================================
+     HEADER (Kế thừa từ Design System hiện tại)
+========================================================== -->
+<header class="site-header">
+  <div class="container header__inner">
+
+    <!-- Header Logo -->
+    <a href="Index.html" class="logo" aria-label="MewTea — Trang chủ" target="_self">
+      <span class="logo__mark">
+        <img src="assets/Logo/MT.png" alt="Logo MewTea">
+      </span>
+      <span class="logo__text">Mew<em>Tea</em></span>
+    </a>
+
+    <input type="checkbox" id="nav-toggle" class="nav-toggle-input">
+
+    <nav class="nav" aria-label="Điều hướng chính">
+      <ul class="nav__list">
+        <li><a href="Index.html#hero" class="nav__link" target="_self">Trang Chủ</a></li>
+        <li><a href="Menu.html" class="nav__link" target="_self">Menu</a></li>
+        <li><a href="Safe.html" class="nav__link" target="_self">Khuyến mãi</a></li>
+        <li><a href="Ourapp.html" class="nav__link" target="_self">Ứng dụng</a></li>
+        <li><a href="Client-partner.html" class="nav__link" target="_self">Đối Tác & Đánh Giá</a></li>
+        <li><a href="About.html" class="nav__link nav__link--active" target="_self">Giới thiệu</a></li>
+        <li><a href="Index.html#contact" class="nav__link" target="_self">Liên hệ</a></li>
+      </ul>
+    </nav>
+
+    <div class="header__actions">
+      <button class="icon-btn icon-btn--search" aria-label="Tìm kiếm"><i class="fa-solid fa-magnifying-glass"></i></button>
+      <a href="Giohang.html" class="icon-btn" aria-label="Giỏ hàng" target="_self">
+        <i class="fa-solid fa-bag-shopping"></i>
+        <span class="cart-badge">2</span>
+      </a>
+      <a href="Login.html" class="icon-btn" aria-label="Tài khoản" target="_self"><i class="fa-solid fa-user"></i></a>
+      <label for="nav-toggle" class="nav-toggle-label" aria-label="Mở menu">
+        <span></span><span></span><span></span>
+      </label>
+    </div>
+
+    <label for="nav-toggle" class="nav-overlay" aria-hidden="true"></label>
+  </div>
+</header>
+
+<!-- =========================================================
+     HERO ABOUT SECTION
+========================================================== -->
+<section class="hero-about">
+  <div class="hero-about__blob" aria-hidden="true"></div>
+  <i class="fa-solid fa-leaf hero-about__deco-leaf hero-about__deco-leaf--1" aria-hidden="true"></i>
+  <i class="fa-solid fa-leaf hero-about__deco-leaf hero-about__deco-leaf--2" aria-hidden="true"></i>
+  <div class="hero-about__bubble hero-about__bubble--1" aria-hidden="true"></div>
+  <div class="hero-about__bubble hero-about__bubble--2" aria-hidden="true"></div>
+
+  <div class="container hero-about__grid">
+    <div class="hero-about__content">
+      <p class="eyebrow">Câu Chuyện Của Chúng Tôi</p>
+      <h1 class="hero-about__title">Mỗi ly trà là một<br>câu chuyện được pha bằng<em> sự tận tâm</em></h1>
+      <p class="hero-about__desc">Tại MewTea, chúng tôi tin rằng một ly trà ngon không chỉ đơn thuần để giải khát. Đó là sự kết hợp nhịp nhàng giữa tinh hoa đất trời cùng quy trình pha chế thủ công tỉ mỉ, đánh thức mọi giác quan trong bạn.</p>
+      <a href="Menu.html" class="btn btn--gold">Khám phá Menu <i class="fa-solid fa-arrow-right-long"></i></a>
+    </div>
+    <div class="hero-about__media">
+      <div class="hero-about__img-wrapper">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTt3PkAhqECe3VG-CmLZtAMNtaKlacT9H08khmIFOzrtksJyvRxR9rUd54&s=10" alt="Ly trà sữa MewTea nguyên bản cao cấp" class="hero-about__img">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     BRAND STORY SECTION
+========================================================== -->
+<section class="section">
+  <div class="container story__grid">
+    <div class="story__media">
+      <img src="https://gcs.tripi.vn/public-tripi/tripi-feed/img/482601qKY/anh-mo-ta.png" alt="Không gian ấm cúng tại MewTea" class="story__img">
+      <div class="story__badge">
+        <i class="fa-solid fa-heart"></i>
+        <span>Từ 2021</span>
+      </div>
+    </div>
+    <div class="story__content">
+      <p class="eyebrow">Khởi nguồn thương hiệu</p>
+      <h2>Hành trình kiến tạo hương vị nguyên bản</h2>
+      <p>MewTea được thành lập dựa trên niềm đam mê bất tận với văn hóa trà truyền thống và mong muốn tái định nghĩa trải nghiệm trà sữa hiện đại. Giữa nhịp sống hối hả, chúng tôi nhận thấy khách hàng xứng đáng có được những khoảnh khắc tĩnh lặng trọn vẹn bên một ly thức uống chất lượng.</p>
+      <p class="story__quote">"Chúng tôi không chạy theo các xu hướng hương liệu công nghiệp. MewTea kiên định đi theo con đường thủ công, giữ lại linh hồn cốt lõi của lá trà tự nhiên."</p>
+      <p>Bắt đầu từ một cửa hàng nhỏ với những mẻ trà được ủ ấm thủ công, MewTea đã từng bước chinh phục những vị khách khó tính nhất nhờ quy trình chọn lọc nguyên liệu khắt khe và thái độ phục vụ tinh tế, biến mỗi lần ghé thăm của bạn trở thành một hành trình trải nghiệm bình yên.</p>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     CORE PHILOSOPHY SECTION
+========================================================== -->
+<section class="section bg-alt">
+  <div class="container">
+    <div class="section-head section-head--center">
+      <p class="eyebrow">Giá trị cốt lõi</p>
+      <h2>Triết lý trong mọi hành động</h2>
+    </div>
+    <div class="philosophy__grid">
+      <div class="philosophy-card">
+        <div class="philosophy-card__icon"><i class="fa-solid fa-gem"></i></div>
+        <h3>Chất Lượng</h3>
+        <p>100% nguyên liệu đều đạt chứng nhận kiểm định an toàn và giữ trọn hương vị nguyên bản từ nông trại xanh.</p>
+      </div>
+      <div class="philosophy-card">
+        <div class="philosophy-card__icon"><i class="fa-solid fa-mug-hot"></i></div>
+        <h3>Tận Tâm</h3>
+        <p>Tỉ mỉ từ khâu đo lường nhiệt độ nước, thời gian ủ trà cho đến cung cách đón tiếp nồng hậu dành cho mỗi khách hàng.</p>
+      </div>
+      <div class="philosophy-card">
+        <div class="philosophy-card__icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+        <h3>Sáng Tạo</h3>
+        <p>Không ngừng nghiên cứu và kết hợp các hương vị mới theo mùa nhằm mang lại sự bất ngờ đầy hứng khởi cho vị giác.</p>
+      </div>
+      <div class="philosophy-card">
+        <div class="philosophy-card__icon"><i class="fa-solid fa-seedling"></i></div>
+        <h3>Bền Vững</h3>
+        <p>Ưu tiên sử dụng các vật liệu đóng gói thân thiện với môi trường, chung tay giảm thiểu rác thải nhựa vì cộng đồng.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     TIMELINE DEVELOPMENT SECTION
+========================================================== -->
+<section class="section">
+  <div class="container">
+    <div class="section-head section-head--center">
+      <p class="eyebrow">Dòng thời gian</p>
+      <h2>Hành trình phát triển</h2>
+    </div>
+    <div class="timeline">
+      <div class="timeline__item timeline__item--left">
+        <div class="timeline__dot"></div>
+        <div class="timeline__year">2021</div>
+        <div class="timeline__content">
+          <h4>Khởi nguồn ý tưởng</h4>
+          <p>Dự án MewTea chính thức được thành lập từ tình yêu trà thủ công và triết lý sống tối giản Nhật Bản.</p>
+        </div>
+      </div>
+      <div class="timeline__item timeline__item--right">
+        <div class="timeline__dot"></div>
+        <div class="timeline__year">2022</div>
+        <div class="timeline__content">
+          <h4>Cửa hàng đầu tiên</h4>
+          <p>Khai trương không gian MewTea đầu tiên tại trung tâm thành phố, định hình phong cách thiết kế tinh tế.</p>
+        </div>
+      </div>
+      <div class="timeline__item timeline__item--left">
+        <div class="timeline__dot"></div>
+        <div class="timeline__year">2023</div>
+        <div class="timeline__content">
+          <h4>Đột phá thực đơn</h4>
+          <p>Ra mắt dòng trà trái cây tươi nguyên chất theo mùa và nhận được sự đón nhận nồng nhiệt từ giới trẻ.</p>
+        </div>
+      </div>
+      <div class="timeline__item timeline__item--right">
+        <div class="timeline__dot"></div>
+        <div class="timeline__year">2024</div>
+        <div class="timeline__content">
+          <h4>Cột mốc 100.000+</h4>
+          <p>Đón tiếp lượt khách hàng thứ 100.000, mở rộng mạng lưới giao hàng nội thành thần tốc.</p>
+        </div>
+      </div>
+      <div class="timeline__item timeline__item--left">
+        <div class="timeline__dot"></div>
+        <div class="timeline__year">2025</div>
+        <div class="timeline__content">
+          <h4>Vươn mình phát triển</h4>
+          <p>Đạt hệ thống 12 cửa hàng hiện đại, khẳng định vị thế thương hiệu trà sữa thủ công cao cấp hàng đầu.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- =========================================================
+     INGREDIENTS SECTION
+========================================================== -->
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">Nguồn nguyên liệu</p>
+      <h2>Tự nhiên và chọn lọc khắt khe</h2>
+      <p>Bí quyết tạo nên sự khác biệt trong cấu trúc hương vị của MewTea nằm ở nguồn nguyên liệu thuần khiết sạch từ nông trại.</p>
+    </div>
+
+    <div class="ingredients__rows">
+      <div class="ingredients__row">
+        <div class="ingredients__media">
+          <img src="https://th.bing.com/th/id/R.82d57e9cfec655ff5abfa4bf5d4b3653?rik=wwK2Ai8YLP9VJQ&riu=http%3a%2f%2ffile.hstatic.net%2f1000075078%2farticle%2f2_40694d37404e49319f9d46392cebdf28.jpg&ehk=zuLAVjy1WFVBCmqTOzJwkiXSFwa%2brnge58buRauC3iY%3d&risl=&pid=ImgRaw&r=0" alt="Lá trà xanh tuyển chọn thủ công" class="ingredients__img">
+        </div>
+        <div class="ingredients__content">
+          <div class="ingredients__title-block">
+            <span class="badge">Độc quyền</span>
+            <h3>Lá trà tuyển chọn thượng hạng</h3>
+          </div>
+          <p>Những búp trà được thu hoạch thủ công vào lúc sáng sớm tại các vùng cao nguyên có thổ nhưỡng lý tưởng như Bảo Lộc và Thái Nguyên. Trải qua quy trình sao tẩm nghiêm ngặt giữ lại tối đa hàm lượng chất chống oxy hóa tự nhiên và hậu vị ngọt thanh thuần túy.</p>
+        </div>
+      </div>
+
+      <div class="ingredients__row">
+        <div class="ingredients__media">
+          <img src="https://cdn2.tuoitre.vn/thumb_w/730/471584752817336320/2024/11/30/photo-1732925016773-1732925016906212230655.jpg" alt="Nguồn sữa tươi thanh trùng tinh khiết" class="ingredients__img">
+        </div>
+        <div class="ingredients__content">
+          <div class="ingredients__title-block">
+            <span class="badge">Tươi sạch</span>
+            <h3>Sữa tươi thanh trùng 100%</h3>
+          </div>
+          <p>MewTea nói không với các loại bột béo công nghiệp không rõ nguồn gốc. Chúng tôi độc quyền sử dụng nguồn sữa tươi thanh trùng từ các trang trại organic tiêu chuẩn, mang lại kết cấu béo mịn tự nhiên nhẹ nhàng mà không lấn át hương trà thơm ngát.</p>
+        </div>
+      </div>
+
+      <div class="ingredients__row">
+        <div class="ingredients__media">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4aizxl_GjPTm0cLn1yHx4EMzkS3XrCFfBvquEnX9J4w&s=10" alt="Trái cây tươi mát theo mùa" class="ingredients__img">
+        </div>
+        <div class="ingredients__content">
+          <div class="ingredients__title-block">
+            <span class="badge">Fresh</span>
+            <h3>Trái cây và Topping tự nhiên</h3>
+          </div>
+          <p>Trái cây tươi được nhập mới mỗi ngày và sơ chế trực tiếp tại quầy pha chế nhằm bảo toàn lượng vitamin nguyên vẹn. Hệ thống topping phong phú từ trân châu nghệ nhân đến pudding thạch đều được nấu mới sau mỗi 4 tiếng để đảm bảo độ giòn dai hoàn hảo.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     PROCESS SECTION
+========================================================== -->
+<section class="section bg-alt">
+  <div class="container">
+    <div class="section-head section-head--center">
+      <p class="eyebrow">Quy trình nghệ nhân</p>
+      <h2>5 bước pha chế nghiêm ngặt</h2>
+    </div>
+    <div class="process__grid">
+      <div class="process-card">
+        <div class="process-card__step">1</div>
+        <div class="process-card__icon"><i class="fa-solid fa-basket-shopping"></i></div>
+        <h4>Tuyển chọn</h4>
+        <p>Kiểm tra định lượng chất lượng đầu vào của nguyên liệu đầu ngày.</p>
+      </div>
+      <div class="process-card">
+        <div class="process-card__step">2</div>
+        <div class="process-card__icon"><i class="fa-solid fa-hourglass-start"></i></div>
+        <h4>Ủ trà chuẩn nhiệt</h4>
+        <p>Ủ trà theo chính xác khung nhiệt độ riêng biệt cho từng loại.</p>
+      </div>
+      <div class="process-card">
+        <div class="process-card__step">3</div>
+        <div class="process-card__icon"><i class="fa-solid fa-blender-phone"></i></div>
+        <h4>Pha chế thủ công</h4>
+        <p>Lắc đều tay tạo cấu trúc bọt mịn kết hợp hài hòa nguyên liệu.</p>
+      </div>
+      <div class="process-card">
+        <div class="process-card__step">4</div>
+        <div class="process-card__icon"><i class="fa-solid fa-clipboard-check"></i></div>
+        <h4>Kiểm định kĩ</h4>
+        <p>Đo lường độ ngọt và độ lạnh chuẩn xác trước khi đóng màng.</p>
+      </div>
+      <div class="process-card">
+        <div class="process-card__step">5</div>
+        <div class="process-card__icon"><i class="fa-solid fa-hand-holding-heart"></i></div>
+        <h4>Phục vụ tinh tế</h4>
+        <p>Trao gửi tận tay khách hàng kèm nụ cười nồng hậu nụ ấm áp.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     ACHIEVEMENTS SECTION
+========================================================== -->
+<section class="section">
+  <div class="container achieve__grid">
+    <div class="achieve-card">
+      <div class="achieve-card__number">15+</div>
+      <div class="achieve-card__label">Chi nhánh hiện đại</div>
+    </div>
+    <div class="achieve-card">
+      <div class="achieve-card__number">120k+</div>
+      <div class="achieve-card__label">Khách hàng tin yêu</div>
+    </div>
+    <div class="achieve-card">
+      <div class="achieve-card__number">1.5M+</div>
+      <div class="achieve-card__label">Ly trà đã phục vụ</div>
+    </div>
+    <div class="achieve-card">
+      <div class="achieve-card__number">98%</div>
+      <div class="achieve-card__label">Đánh giá hài lòng</div>
+    </div>
+    <div class="achieve-card">
+      <div class="achieve-card__number">100%</div>
+      <div class="achieve-card__label">Hữu cơ chọn lọc</div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     TEAM SECTION
+========================================================== -->
+<section class="section bg-alt">
+  <div class="container">
+    <div class="section-head section-head--center">
+      <p class="eyebrow">Đội ngũ sáng tạo</p>
+      <h2>Những người đứng sau hương vị</h2>
+    </div>
+    <div class="team__grid">
+      <div class="team-card">
+        <div class="team-card__media">
+          <img src="https://picsum.photos/seed/team-1/400/400" alt="Founder" class="team-card__img">
+        </div>
+        <div class="team-card__body">
+          <div class="team-card__name">Alex Trần</div>
+          <div class="team-card__role">Founder & CEO</div>
+          <div class="team-card__desc">Người thổi hồn triết lý tối giản vào định hướng chiến lược thương hiệu.</div>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-card__media">
+          <img src="https://picsum.photos/seed/team-2/400/400" alt="R&D Chef" class="team-card__img">
+        </div>
+        <div class="team-card__body">
+          <div class="team-card__name">Elena Nguyễn</div>
+          <div class="team-card__role">Giám Đốc R&D</div>
+          <div class="team-card__desc">Nghệ nhân trà với hơn 10 năm kinh nghiệm nghiên cứu cấu trúc hương vị F&B.</div>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-card__media">
+          <img src="https://picsum.photos/seed/team-3/400/400" alt="Store Manager" class="team-card__img">
+        </div>
+        <div class="team-card__body">
+          <div class="team-card__name">Marcus Lê</div>
+          <div class="team-card__role">Quản Lý Vận Hành</div>
+          <div class="team-card__desc">Đảm bảo tính đồng bộ hoàn hảo của hệ thống dịch vụ trên toàn chi nhánh.</div>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-card__media">
+          <img src="https://picsum.photos/seed/team-4/400/400" alt="Barista Trainer" class="team-card__img">
+        </div>
+        <div class="team-card__body">
+          <div class="team-card__name">Sofia Vũ</div>
+          <div class="team-card__role">Chuyên Gia Đào Tạo</div>
+          <div class="team-card__desc">Người truyền lửa đam mê và chuẩn mực pha chế cho mọi thế hệ barista.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     KHÁCH HÀNG NÓI GÌ (Review Card Độc Bản)
+========================================================== -->
+<section class="section">
+  <div class="container">
+    <div class="section-head section-head--center">
+      <p class="eyebrow">Trải nghiệm thực tế</p>
+      <h2>Lời chia sẻ từ khách hàng</h2>
+    </div>
+    <div class="reviews__grid-about">
+      <div class="review-card-about">
+        <p class="review-card-about__stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></p>
+        <p class="review-card-about__quote">Trà Ô Long Nướng ở đây cực kì xuất sắc, thơm rõ mùi củi nướng mà không bị chát đắng gắt. Lớp kem sữa béo mịn tự nhiên bùi bùi vô cùng bắt miệng.</p>
+        <div class="review-card-about__author">
+          <img src="https://picsum.photos/seed/user-1/80/80" alt="">
+          <div><p class="name">Hoàng Yến</p><p class="role">Nhà thiết kế đồ họa</p></div>
+        </div>
+      </div>
+      <div class="review-card-about">
+        <p class="review-card-about__stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></p>
+        <p class="review-card-about__quote">Điểm cộng lớn nhất là phong cách thiết kế không gian quán tối giản cực kì sang trọng, yên tĩnh. Nhân viên chu đáo lễ phép hết mức.</p>
+        <div class="review-card-about__author">
+          <img src="https://picsum.photos/seed/user-2/80/80" alt="">
+          <div><p class="name">Đức Anh</p><p class="role">Nhiếp ảnh gia tự do</p></div>
+        </div>
+      </div>
+      <div class="review-card-about">
+        <p class="review-card-about__stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></p>
+        <p class="review-card-about__quote">Trà trái cây tươi mát thanh nhẹ, hậu vị ngọt lành rõ rệt từ trái cây tươi chứ hoàn toàn không có cảm giác siro hóa chất như những nơi khác.</p>
+        <div class="review-card-about__author">
+          <img src="https://picsum.photos/seed/user-3/80/80" alt="">
+          <div><p class="name">Khánh Linh</p><p class="role">Chuyên viên Marketing</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     KHÔNG GIAN CỬA HÀNG (Grid Gallery Hiện Đại)
+========================================================== -->
+<section class="section bg-alt">
+  <div class="container">
+    <div class="section-head section-head--center">
+      <p class="eyebrow">Kiến trúc không gian</p>
+      <h2>MewTea Cửa Hàng Gallery</h2>
+    </div>
+    <div class="gallery__grid">
+      <div class="gallery__item"><img src="https://picsum.photos/seed/space-1/600/600" alt="Không gian mặt tiền MewTea"></div>
+      <div class="gallery__item"><img src="https://picsum.photos/seed/space-2/600/600" alt="Quầy pha chế tối giản"></div>
+      <div class="gallery__item"><img src="https://picsum.photos/seed/space-3/600/600" alt="Góc bàn ngồi làm việc"></div>
+      <div class="gallery__item"><img src="https://picsum.photos/seed/space-4/600/600" alt="Chi tiết trang trí nghệ thuật"></div>
+      <div class="gallery__item"><img src="https://picsum.photos/seed/space-5/600/600" alt="Khu vực đón tiếp ánh sáng tự nhiên"></div>
+      <div class="gallery__item"><img src="https://picsum.photos/seed/space-6/600/600" alt="Ly nước trong không gian quán"></div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     CAM KẾT CỦA MEWTEA
+========================================================== -->
+<section class="section commitment">
+  <div class="container commitment__inner">
+    <p class="eyebrow" style="color:var(--gold-light);">Tuyên ngôn từ tâm</p>
+    <h2>Lời cam kết từ MewTea</h2>
+    <p>"Chúng tôi tin rằng một ly trà ngon không chỉ đến từ nguyên liệu chất lượng sạch thượng hạng, mà còn được kiến tạo nên bởi sự tận tâm trọn vẹn trong từng công đoạn nhỏ nhất."</p>
+    <a href="Menu.html" class="btn btn--gold">Khám phá Menu ngay</a>
+  </div>
+</section>
+
+<!-- =========================================================
+     FAQ ACCORDION SECTION
+========================================================== -->
+<section class="section bg-alt" id="faq">
+  <div class="container">
+    <div class="section-head section-head--center">
+      <p class="eyebrow">Giải đáp thắc mắc</p>
+      <h2>Câu hỏi thường gặp</h2>
+    </div>
+    <div class="faq__list">
+      <details class="faq__item" open>
+        <summary>MewTea có cam kết sử dụng hương liệu tự nhiên hoàn toàn không?</summary>
+        <p>Chính xác. Toàn bộ vị thơm béo hay thanh mát ngọt hậu của sản phẩm đều đến trực tiếp từ cốt lá trà cao cấp nguyên bản kết hợp cùng sữa tươi thanh trùng và trái cây tươi nhập mới mỗi ngày, nói không với hóa chất công nghiệp.</p>
+      </details>
+      <details class="faq__item">
+        <summary>Tôi có thể tùy chỉnh các mức độ ngọt và đá theo sở thích cá nhân?</summary>
+        <p>Hoàn toàn có thể. MewTea hỗ trợ tùy chọn linh hoạt định lượng đường (0%, 30%, 50%, 70%, 100%) và lượng đá tương ứng để đảm bảo phù hợp tuyệt đối với gu thưởng thức riêng biệt của bạn.</p>
+      </details>
+      <details class="faq__item">
+        <summary>Hệ thống Topping tại MewTea có đặc điểm gì nổi bật?</summary>
+        <p>Toàn bộ trân châu nghệ nhân, puding trứng siêu mịn hay thạch trái cây tại MewTea đều được đội ngũ Barista tự nấu thủ công theo công thức độc quyền trực tiếp tại cửa hàng và chỉ có thời hạn sử dụng tối đa trong vòng 4 giờ đồng hồ.</p>
+      </details>
+      <details class="faq__item">
+        <summary>Chính sách giao hàng nội thành của MewTea cam kết thời gian bao lâu?</summary>
+        <p>MewTea liên kết chặt chẽ cùng các đơn vị vận chuyển chuyên nghiệp để đảm bảo ly trà được giao tận tay bạn trong khoảng thời gian từ 20 đến 35 phút kể từ lúc đặt đơn, giữ trọn vẹn nhiệt độ mát lạnh nguyên bản.</p>
+      </details>
+      <details class="faq__item">
+        <summary>Cách thức bảo quản thức uống tốt nhất nếu chưa sử dụng ngay?</summary>
+        <p>Đối với dòng trà sữa, bạn nên bảo quản tối ưu trong ngăn mát tủ lạnh từ 2–8 độ C và dùng hết trong vòng 12 giờ. Đối với dòng trà trái cây tươi, khuyến khích thưởng thức ngon nhất ngay trong vòng 2 giờ đầu sau pha chế.</p>
+      </details>
+      <details class="faq__item">
+        <summary>Làm thế nào để nhận thông tin về các chương trình khuyến mãi độc quyền?</summary>
+        <p>Bạn có thể đăng ký nhận bản tin Newsletter tại chân trang hoặc theo dõi các kênh truyền thông chính thức như Fanpage Instagram, Zalo OA để cập nhật nhanh nhất các ưu đãi hấp dẫn theo mùa của chúng tôi.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     CTA CUỐI TRANG
+========================================================== -->
+<section class="section cta-end">
+  <div class="container cta-end__inner">
+    <div class="cta-end__content">
+      <h2>Khát quá thì tag tên MewTea vào!</h2>
+      <p>Một ly trà sữa béo mịn ngọt lành hay một tách trà trái cây thanh mát ngập tràn vitamin đã sẵn sàng để nâng niu cảm xúc ngày mới của bạn. Đặt lịch hẹn giao ngay thôi!</p>
+      <div style="display: flex; gap: var(--sp-2); flex-wrap: wrap;">
+        <a href="Menu.html" class="btn btn--gold">Xem Menu</a>
+        <a href="Index.html#contact" class="btn btn--ghost">Đặt Ngay Hoả Tốc</a>
+      </div>
+    </div>
+    <div class="cta-end__media">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSv9g6OPnGifsht2mRJSdqVZGMVgfKBvqvshyhfPkfI_UIMAX2ZNB7hHw7H&s=10" alt="Ly trà sữa MewTea tươi ngon" class="cta-end__img">
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     FOOTER (Kế thừa từ Design System hiện tại)
+========================================================== -->
+<footer class="site-footer">
+  <div class="container footer__top">
+    <div class="footer__brand">
+      <a href="Index.html" class="logo" target="_self">
+        <span class="logo__mark">
+          <img src="assets/Logo/MT.png" alt="Logo MewTea">
+        </span>
+        <span class="logo__text">Mew<em>Tea</em></span>
+      </a>
+      <p>Trà sữa thủ công, phong cách tối giản — mỗi ly là một khoảnh khắc chậm rãi giữa nhịp sống hối hả.</p>
+      <div class="footer__social">
+        <a href="https://facebook.com/mewtea.vn" aria-label="Facebook" target="_blank" rel="noopener"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="https://instagram.com/mewtea.vn" aria-label="Instagram" target="_blank" rel="noopener"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.tiktok.com/@mewtea.vn" aria-label="TikTok" target="_blank" rel="noopener"><i class="fa-brands fa-tiktok"></i></a>
+      </div>
+    </div>
+
+    <div class="footer__col">
+      <h4>Liên kết nhanh</h4>
+      <ul>
+        <li><a href="Index.html#hero" target="_self">Trang chủ</a></li>
+        <li><a href="Menu.html" target="_self">Menu</a></li>
+        <li><a href="Safe.html" target="_self">Khuyến mãi</a></li>
+        <li><a href="About.html" target="_self">Giới thiệu</a></li>
+      </ul>
+    </div>
+
+    <div class="footer__col">
+      <h4>Thông tin liên hệ</h4>
+      <ul class="footer__contact">
+        <li><i class="fa-solid fa-location-dot"></i> 12 Nguyễn Huệ, Q.1, TP.HCM</li>
+        <li><i class="fa-solid fa-phone"></i> 0909 123 456</li>
+        <li><i class="fa-solid fa-envelope"></i> hello@mewtea.vn</li>
+      </ul>
+    </div>
+
+    <div class="footer__col">
+      <h4>Kết nối</h4>
+      <ul>
+        <li><a href="Index.html#contact" target="_self">Tuyển dụng</a></li>
+        <li><a href="Index.html#contact" target="_self">Nhượng quyền</a></li>
+        <li><a href="Menu.html" target="_self">Blog trà</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="container footer__bottom">
+    <p>© 2026 MewTea. Bảo lưu mọi quyền.</p>
+    <div class="footer__legal">
+      <a href="About.html" target="_self">Chính sách bảo mật</a>
+      <a href="About.html" target="_self">Điều khoản sử dụng</a>
+      <a href="About.html" target="_self">Thiết kế bởi MewTea Studio</a>
+    </div>
+  </div>
+</footer>
+
+<script src="js/cart-handler.js"></script>
+<a href="https://zalo.me/pc" class="mt-floating-popup-link" target="_blank">
+  <button class="mt-floating-popup" aria-label="Liên hệ MewTea">
+      <i class="fa-solid fa-comments"></i>
+  </button>
+  <span class="mt-floating-tooltip">
+      Chat với MewTea
+  </span>
+</a>
+</body>
+</html>
