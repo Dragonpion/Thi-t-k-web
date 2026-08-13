@@ -29,7 +29,7 @@
           '<div class="menu-card__footer">' +
             '<span class="menu-card__price">' + (typeof formatVnd === 'function' ? formatVnd(p.price) : p.price + 'đ') + '</span>' +
             '<div class="menu-card__actions">' +
-              '<a href="chitietsanpham.html?id=' + p.id + '" target="_self" class="menu-card__btn">Xem Chi Tiết</a>' +
+              '<a href="Chitietsanpham.html?id=' + p.id + '" target="_self" class="menu-card__btn">Xem Chi Tiết</a>' +
               '<button type="button" class="menu-card__btn menu-card__btn--cart btn-quick-add" aria-label="Thêm giỏ hàng"><i class="fa-solid fa-cart-plus"></i></button>' +
             '</div>' +
           '</div>' +
