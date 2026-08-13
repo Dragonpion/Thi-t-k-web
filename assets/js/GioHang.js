@@ -15,13 +15,13 @@
       '<article class="rec-card" data-id="' + p.id + '" data-name="' + p.name + '" data-price="' + p.price + '" data-image="' + p.image + '">' +
         '<div class="rec-card__visual">' +
           '<div class="rec-card__bg-blob"></div>' +
-          '<a href="chitietsanpham.html?id=' + p.id + '" target="_self">' +
+          '<a href="Chitietsanpham.html?id=' + p.id + '" target="_self">' +
             '<img src="' + p.image + '" alt="' + p.name + '" class="rec-card__img">' +
           '</a>' +
           '<button type="button" class="rec-quick-add btn-quick-add" title="Thêm nhanh"><i class="fa-solid fa-plus"></i></button>' +
         '</div>' +
         '<div class="rec-card__info">' +
-          '<h3 class="rec-card__title"><a href="chitietsanpham.html?id=' + p.id + '" target="_self">' + p.name + '</a></h3>' +
+          '<h3 class="rec-card__title"><a href="Chitietsanpham.html?id=' + p.id + '" target="_self">' + p.name + '</a></h3>' +
           '<p class="rec-card__desc">' + p.shortDesc + '</p>' +
           '<div class="rec-card__footer">' +
             '<span class="rec-card__price">' + formatVnd(p.price) + '</span>' +
