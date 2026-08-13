@@ -87,7 +87,7 @@
         '</div>' +
         '<div class="product-card__body">' +
           '<p class="product-card__cat">' + p.category + '</p>' +
-          '<h3 class="product-card__name"><a href="chitietsanpham.html?id=' + p.id + '" target="_self">' + p.name + '</a></h3>' +
+          '<h3 class="product-card__name"><a href="Chitietsanpham.html?id=' + p.id + '" target="_self">' + p.name + '</a></h3>' +
           '<div class="product-card__footer">' +
             '<span class="product-card__price">' + formatVnd(p.price) + '</span>' +
             '<button type="button" class="product-card__buy btn-quick-add" aria-label="Thêm vào giỏ"><i class="fa-solid fa-plus"></i></button>' +
