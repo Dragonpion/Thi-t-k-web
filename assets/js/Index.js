@@ -17,7 +17,7 @@
 
   function cardHtml(p, stats) {
     return '' +
-      '<a href="chitietsanpham.html?id=' + p.id + '" target="_self">' +
+      '<a href="Chitietsanpham.html?id=' + p.id + '" target="_self">' +
         '<article class="product-card" data-id="' + p.id + '" data-name="' + p.name + '" data-price="' + p.price + '" data-image="' + p.image + '">' +
           '<div class="product-card__img">' +
             '<span class="ribbon ribbon--hot"><i class="fa-solid fa-fire"></i> Bán chạy</span>' +
