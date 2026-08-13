@@ -38,7 +38,7 @@
           '</div>' +
           '<div class="sale-card__promo-tag"><i class="fa-solid fa-ticket"></i> ' + voucher.title + '</div>' +
           '<div class="sale-card__action">' +
-            '<a href="chitietsanpham.html?id=' + product.id + '" class="btn btn--outline btn--block">Xem Chi Tiết</a>' +
+            '<a href="Chitietsanpham.html?id=' + product.id + '" class="btn btn--outline btn--block">Xem Chi Tiết</a>' +
           '</div>' +
         '</div>' +
       '</article>';
